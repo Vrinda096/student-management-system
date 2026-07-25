@@ -1,0 +1,61 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#F5F7FB;
+
+    color:#333;
+
+}
+
+/* Links */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* Buttons */
+
+button{
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* Inputs */
+
+input{
+
+    transition:0.3s;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border:1px solid #2563EB;
+
+}
