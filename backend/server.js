@@ -11,14 +11,17 @@ connectDB();
 
 const app = express();
 
+const cors = require("cors");
+
 app.use(
-    cors({
-        origin: [
-            "http://localhost:5173",
-            "https://student-management-system-git-main-vrinda4.vercel.app",
-        ],
-        credentials: true,
-    })
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://student-management-system-dq3fm0jpi-vrinda4.vercel.app",
+      "https://student-management-system-git-main-vrinda4.vercel.app",
+    ],
+    credentials: true,
+  })
 );
 app.use(express.json());
 app.use("/api/ai",aiRoutes);
