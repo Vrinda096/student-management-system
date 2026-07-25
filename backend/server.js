@@ -14,16 +14,21 @@ connectDB();
 const app = express();
 
 // CORS Configuration
+
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://student-management-system-frontend-vrinda4.vercel.app",
       "https://student-management-system-dq3fm0jpi-vrinda4.vercel.app",
-      "https://student-management-system-git-main-vrinda4.vercel.app",
+      "https://student-management-system-git-main-vrinda4.vercel.app"
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
+
 
 app.use(express.json());
 
