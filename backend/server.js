@@ -11,7 +11,15 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5173",
+            "https://student-management-system-4mqjrwn75-vrinda4.vercel.app/",
+        ],
+        credentials: true,
+    })
+);
 app.use(express.json());
 app.use("/api/ai",aiRoutes);
 app.use("/api/auth", authRoutes);
