@@ -18,11 +18,11 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://student-management-system-frontend-vrinda096.vercel.app",
-      "https://student-management-system-dq3fm0jpi-vrinda096.vercel.app",
-      "https://student-management-system-git-main-vrinda096.vercel.app"
-    ],
+  "http://localhost:5173",
+  "https://student-management-system-frontend-vrinda4.vercel.app",
+  "https://student-management-system-dq3fm0jpi-vrinda4.vercel.app",
+  "https://student-management-system-git-main-vrinda4.vercel.app"
+],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
