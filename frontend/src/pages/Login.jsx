@@ -18,10 +18,10 @@ function Login() {
 
         try {
 
-            const response = await api.post("/auth/login", {
-                email,
-                password
-            });
+          const response = await api.post("/api/auth/login", {
+    email,
+    password
+});
 
             console.log("Response:", response.data);
             console.log("Token:", response.data.token);
