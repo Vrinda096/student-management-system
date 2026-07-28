@@ -26,6 +26,6 @@ router.put("/:id", authMiddleware, updateStudent);
 
 // Delete Student
 router.delete("/:id", authMiddleware, deleteStudent);
-router.get("/:id", authMiddleware, getStudentById);
+
 
 module.exports = router;
