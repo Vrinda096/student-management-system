@@ -16,17 +16,16 @@ const app = express();
 
 // CORS Configuration
 
+
 app.use(
   cors({
     origin: [
-  "http://localhost:5173",
-  "https://student-management-system-frontend-vrinda4.vercel.app",
-  "https://student-management-system-dq3fm0jpi-vrinda4.vercel.app",
-  "https://student-management-system-git-main-vrinda4.vercel.app"
-],
+      "http://localhost:5173",
+      process.env.FRONTEND_URL,
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -54,11 +53,7 @@ app.get("/profile", authMiddleware, (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
