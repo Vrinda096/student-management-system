@@ -1,3 +1,4 @@
+const path = require("path");
 const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
@@ -53,7 +54,11 @@ app.get("/profile", authMiddleware, (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
