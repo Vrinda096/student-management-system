@@ -18,8 +18,8 @@ function Login() {
 
         try {
         console.log("API URL:", import.meta.env.VITE_API_URL);
-console.log("Login URL:", `${import.meta.env.VITE_API_URL}/api/auth/login`);
-          const response = await api.post("/api/auth/login", {
+console.log("Login URL:", `${import.meta.env.VITE_API_URL}/auth/login`);
+          const response = await api.post("/auth/login", {
     email,
     password
 });
