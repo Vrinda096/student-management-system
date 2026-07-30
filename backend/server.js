@@ -15,8 +15,6 @@ connectDB();
 const app = express();
 
 // CORS Configuration
-
-
 app.use(
   cors({
     origin: [
@@ -29,3 +27,40 @@ app.use(
   })
 );
 
+app.use(express.json());
+
+
+// 👇 ADD THIS HERE
+app.get("/test-cors", (req, res) => {
+  res.json({
+    origin: req.headers.origin,
+    message: "CORS test works",
+  });
+});
+
+
+// Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/students", studentRoutes);
+app.use("/api/ai", aiRoutes);
+
+// Test route
+app.get("/", (req, res) => {
+  res.send("Student Management API is Running...");
+});
+
+// Protected profile route
+const authMiddleware = require("./middleware/authMiddleware");
+
+app.get("/profile", authMiddleware, (req, res) => {
+  res.json({
+    message: "Welcome!",
+    user: req.user,
+  });
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
