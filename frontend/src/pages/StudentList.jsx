@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/StudentList.css";
 import { toast } from "react-toastify";
 
@@ -10,6 +10,12 @@ function StudentList() {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCourse, setSelectedCourse] = useState("");
+    const [selectedStudent, setSelectedStudent] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const handleView = (student) => {
+    setSelectedStudent(student);
+    setShowModal(true);
+};
     useEffect(() => {
         fetchStudents();
     }, []);
@@ -60,25 +66,25 @@ function StudentList() {
     if (loading) {
         return <h2>Loading...</h2>;
     }
-  const filteredStudents = students.filter((student) => {
+    const filteredStudents = students.filter((student) => {
 
-    const matchesSearch =
+        const matchesSearch =
 
-        student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
 
-        student.rollNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            student.rollNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
 
-        student.course.toLowerCase().includes(searchTerm.toLowerCase());
+            student.course.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesCourse =
+        const matchesCourse =
 
-        selectedCourse === "" ||
+            selectedCourse === "" ||
 
-        student.course === selectedCourse;
+            student.course === selectedCourse;
 
-    return matchesSearch && matchesCourse;
+        return matchesSearch && matchesCourse;
 
-});
+    });
     return (
 
         <div className="student-container">
@@ -143,9 +149,6 @@ function StudentList() {
                         <th>Name</th>
                         <th>Roll</th>
                         <th>Course</th>
-                        <th>Semester</th>
-                        <th>Email</th>
-                        <th>Phone</th>
                         <th>Actions</th>
 
                     </tr>
@@ -153,62 +156,67 @@ function StudentList() {
                 </thead>
 
                 <tbody>
+                    {filteredStudents.length > 0 ? (
+                        filteredStudents.map((student) => (
+                            <tr key={student._id}>
+                                <td>{student.name}</td>
+                                <td>{student.rollNo}</td>
+                                <td>{student.course}</td>
 
-                    {
-                        filteredStudents.length > 0 ? (
+                                <td>
+                                    <button
+                                        className="view-btn"
+                                        onClick={() => handleView(student)}
+                                    >
+                                        👁 View
+                                    </button>
 
-                            filteredStudents.map((student) => (
-
-                                <tr key={student._id}>
-
-                                    <td>{student.name}</td>
-                                    <td>{student.rollNo}</td>
-                                    <td>{student.course}</td>
-                                    <td>{student.semester}</td>
-                                    <td>{student.email}</td>
-                                    <td>{student.phone}</td>
-
-                                    <td>
-
-                                        <Link to={`/student/${student._id}`}>
-                                            <button className="view-btn">👁 View</button>
-                                        </Link>
-
-                                        <Link to={`/edit-student/${student._id}`}>
-                                            <button className="edit-btn">✏ Edit</button>
-                                        </Link>
-
-                                        <button
-                                            className="delete-btn"
-                                            onClick={() => handleDelete(student._id)}
-                                        >
-                                            🗑 Delete
+                                    <Link to={`/edit-student/${student._id}`}>
+                                        <button className="edit-btn">
+                                            ✏ Edit
                                         </button>
+                                    </Link>
 
-                                    </td>
-
-                                </tr>
-
-                            ))
-
-                        ) : (
-
-                            <tr>
-
-                                <td colSpan="7">
-
-                                    No Students Found
-
+                                    <button
+                                        className="delete-btn"
+                                        onClick={() => handleDelete(student._id)}
+                                    >
+                                        🗑 Delete
+                                    </button>
                                 </td>
-
                             </tr>
-
-                        )
-                    }
-
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="4">
+                                No Students Found
+                            </td>
+                        </tr>
+                    )}
                 </tbody>
 
             </table>
+            {showModal && selectedStudent && (
+    <div className="modal-overlay">
+        <div className="modal">
+            <h2>Student Details</h2>
+
+            <p><strong>Name:</strong> {selectedStudent.name}</p>
+            <p><strong>Roll No:</strong> {selectedStudent.rollNo}</p>
+            <p><strong>Course:</strong> {selectedStudent.course}</p>
+            <p><strong>Semester:</strong> {selectedStudent.semester}</p>
+            <p><strong>Email:</strong> {selectedStudent.email}</p>
+            <p><strong>Phone:</strong> {selectedStudent.phone}</p>
+
+            <button
+                className="close-btn"
+                onClick={() => setShowModal(false)}
+            >
+                Close
+            </button>
+        </div>
+    </div>
+)}
 
         </div>
 
