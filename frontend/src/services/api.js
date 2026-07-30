@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://charming-flow-production-3ddf.up.railway.app" ,
+    baseURL: "https://charming-flow-production-3ddf.up.railway.app/api" ,
 });
 
 api.interceptors.request.use((config) => {
