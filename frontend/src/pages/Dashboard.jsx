@@ -32,7 +32,7 @@ const [totalCourses, setTotalCourses] = useState(0);
 
         try {
 
-            const response = await api.get("/students");
+            const response = await api.get("/api/students");
 
             setTotalStudents(response.data.students.length);
             const students = response.data.students;
