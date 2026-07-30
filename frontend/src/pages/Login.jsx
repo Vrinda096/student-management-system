@@ -17,12 +17,14 @@ function Login() {
         e.preventDefault();
 
         try {
-        console.log("API URL:", import.meta.env.VITE_API_URL);
-console.log("Login URL:", `${import.meta.env.VITE_API_URL}/api/auth/login`);
-          const response = await api.post("api/auth/login", {
-    email,
-    password
-});
+            console.log("API URL:", api.defaults.baseURL);
+            console.log("Login URL:", `${api.defaults.baseURL}api/auth/login`);
+
+            const response = await api.post("/api/auth/login", {
+                email,
+                password,
+            });
+
 
             console.log("Response:", response.data);
             console.log("Token:", response.data.token);
@@ -50,87 +52,87 @@ console.log("Login URL:", `${import.meta.env.VITE_API_URL}/api/auth/login`);
 
 
 
-   return (
+    return (
 
-<div className="auth-container">
+        <div className="auth-container">
 
-<div className="auth-card">
+            <div className="auth-card">
 
-<h1 className="auth-title">
+                <h1 className="auth-title">
 
-🎓 Student Management System
+                    🎓 Student Management System
 
-</h1>
+                </h1>
 
-<p className="auth-subtitle">
+                <p className="auth-subtitle">
 
-Welcome Back 👋
+                    Welcome Back 👋
 
-</p>
+                </p>
 
-<form
-className="auth-form"
-onSubmit={handleSubmit}
->
+                <form
+                    className="auth-form"
+                    onSubmit={handleSubmit}
+                >
 
-<input
+                    <input
 
-type="email"
+                        type="email"
 
-placeholder="Enter Email"
+                        placeholder="Enter Email"
 
-value={email}
+                        value={email}
 
-onChange={(e)=>setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
 
-required
+                        required
 
-/>
+                    />
 
-<input
+                    <input
 
-type="password"
+                        type="password"
 
-placeholder="Enter Password"
+                        placeholder="Enter Password"
 
-value={password}
+                        value={password}
 
-onChange={(e)=>setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
 
-required
+                        required
 
-/>
+                    />
 
-<button
-className="auth-btn"
-type="submit"
->
+                    <button
+                        className="auth-btn"
+                        type="submit"
+                    >
 
-Login →
+                        Login →
 
-</button>
+                    </button>
 
-</form>
+                </form>
 
-<div className="auth-footer">
+                <div className="auth-footer">
 
-Don't have an account?
+                    Don't have an account?
 
-{" "}
+                    {" "}
 
-<Link to="/register">
+                    <Link to="/register">
 
-Register
+                        Register
 
-</Link>
+                    </Link>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-);
+    );
 }
 
 export default Login;
