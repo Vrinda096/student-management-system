@@ -16,7 +16,7 @@ function StudentList() {
 
     const fetchStudents = async () => {
         try {
-            const response = await api.get("/api/students");
+            const response = await api.get("/students");
 
             console.log(response.data);
 

@@ -18,9 +18,9 @@ function Login() {
 
         try {
             console.log("API URL:", api.defaults.baseURL);
-            console.log("Login URL:", `${api.defaults.baseURL}/api/auth/login`);
+            console.log("Login URL:", `${api.defaults.baseURL}/auth/login`);
 
-            const response = await api.post("/api/auth/login", {
+            const response = await api.post("/auth/login", {
                 email,
                 password,
             });
