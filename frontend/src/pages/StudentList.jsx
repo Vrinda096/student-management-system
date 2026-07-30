@@ -165,11 +165,16 @@ function StudentList() {
 
                                 <td>
                                     <button
-                                        className="view-btn"
-                                        onClick={() => handleView(student)}
-                                    >
-                                        👁 View
-                                    </button>
+    type="button"
+    className="view-btn"
+    onClick={() => {
+        console.log("View clicked");
+        alert("View clicked");
+        handleView(student);
+    }}
+>
+    👁 View
+</button>
 
                                     <Link to={`/edit-student/${student._id}`}>
                                         <button className="edit-btn">
@@ -196,6 +201,7 @@ function StudentList() {
                 </tbody>
 
             </table>
+
             {showModal && selectedStudent && (
     <div className="modal-overlay">
         <div className="modal">
