@@ -68,3 +68,32 @@
 .close-btn:hover{
     background:#1D4ED8;
 }
+.student-page{
+    width:95%;
+    max-width:1400px;
+    margin:40px auto;
+}
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+.action-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+
+    width:95px;
+    height:40px;
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    white-space:nowrap;
+}

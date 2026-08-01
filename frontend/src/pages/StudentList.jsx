@@ -167,30 +167,24 @@ function StudentList() {
                                 <td>{student.result}</td>
 
                                 <td>
-                                    <button
-                                        type="button"
-                                        className="view-btn"
-                                        onClick={() => {
-                                            console.log("View clicked");
-                                            alert("View clicked");
-                                            handleView(student);
-                                        }}
-                                    >
-                                        👁 View
-                                    </button>
+                                    <div className="action-buttons">
 
-                                    <Link to={`/edit-student/${student._id}`}>
-                                        <button className="edit-btn">
-                                            ✏ Edit
-                                        </button>
-                                    </Link>
+<button className="action-btn view-btn">
+   <FaEye/>
+   View
+</button>
 
-                                    <button
-                                        className="delete-btn"
-                                        onClick={() => handleDelete(student._id)}
-                                    >
-                                        🗑 Delete
-                                    </button>
+<button className="action-btn edit-btn">
+   <FaEdit/>
+   Edit
+</button>
+
+<button className="action-btn delete-btn">
+   <FaTrash/>
+   Delete
+</button>
+
+</div>
                                 </td>
                             </tr>
                         ))
