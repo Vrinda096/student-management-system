@@ -138,8 +138,7 @@ function StudentList() {
 
             </div>
 
-            <br /><br />
-
+            
             <table className="student-table">
 
                 <thead>

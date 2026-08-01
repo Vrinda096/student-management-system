@@ -56,7 +56,7 @@ function StudentForm({
 
                     </div>
 
-                    <br /><br />
+                    
 
                     <div className="form-row">
 
@@ -153,7 +153,7 @@ function StudentForm({
                             />
 
                         </div>
-                        <br /><br />
+                        
 
 <div className="form-row">
 
@@ -234,7 +234,7 @@ function StudentForm({
 
                     </div>
 
-                    <br /><br />
+                   
 
                     <button type="submit">
 
