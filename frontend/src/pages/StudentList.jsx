@@ -13,9 +13,9 @@ function StudentList() {
     const [selectedStudent, setSelectedStudent] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const handleView = (student) => {
-    setSelectedStudent(student);
-    setShowModal(true);
-};
+        setSelectedStudent(student);
+        setShowModal(true);
+    };
     useEffect(() => {
         fetchStudents();
     }, []);
@@ -147,8 +147,10 @@ function StudentList() {
                     <tr>
 
                         <th>Name</th>
-                        <th>Roll</th>
+                        <th>Roll No</th>
                         <th>Course</th>
+                        <th>CGPA</th>
+                        <th>Result</th>
                         <th>Actions</th>
 
                     </tr>
@@ -162,19 +164,21 @@ function StudentList() {
                                 <td>{student.name}</td>
                                 <td>{student.rollNo}</td>
                                 <td>{student.course}</td>
+                                <td>{student.cgpa}</td>
+                                <td>{student.result}</td>
 
                                 <td>
                                     <button
-    type="button"
-    className="view-btn"
-    onClick={() => {
-        console.log("View clicked");
-        alert("View clicked");
-        handleView(student);
-    }}
->
-    👁 View
-</button>
+                                        type="button"
+                                        className="view-btn"
+                                        onClick={() => {
+                                            console.log("View clicked");
+                                            alert("View clicked");
+                                            handleView(student);
+                                        }}
+                                    >
+                                        👁 View
+                                    </button>
 
                                     <Link to={`/edit-student/${student._id}`}>
                                         <button className="edit-btn">
@@ -203,36 +207,45 @@ function StudentList() {
             </table>
 
             {showModal && selectedStudent && (
-    <div className="modal-overlay">
-        <div className="modal">
-            <h2>Student Details</h2>
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h2 className="profile-title">
+                            👨‍🎓 Student Profile
+                        </h2>
 
-           <p><strong>Name:</strong> {selectedStudent.name}</p>
-<p><strong>Roll No:</strong> {selectedStudent.rollNo}</p>
-<p><strong>Course:</strong> {selectedStudent.course}</p>
-<p><strong>Semester:</strong> {selectedStudent.semester}</p>
+                        <p><span>👤 Name</span> {selectedStudent.name}</p>
 
-<p><strong>CGPA:</strong> {selectedStudent.cgpa}</p>
+                        <p><span>🆔 Roll No</span> {selectedStudent.rollNo}</p>
 
-<p><strong>Result:</strong> {selectedStudent.result}</p>
+                        <p><span>📚 Course</span> {selectedStudent.course}</p>
 
-<p><strong>Gender:</strong> {selectedStudent.gender}</p>
+                        <p><span>🎓 Semester</span> {selectedStudent.semester}</p>
 
-<p><strong>Email:</strong> {selectedStudent.email}</p>
+                        <hr />
 
-<p><strong>Phone:</strong> {selectedStudent.phone}</p>
+                        <p><span>📊 CGPA</span> {selectedStudent.cgpa}</p>
 
-<p><strong>Address:</strong> {selectedStudent.address}</p>
+                        <p><span>📄 Result</span> {selectedStudent.result}</p>
 
-            <button
-                className="close-btn"
-                onClick={() => setShowModal(false)}
-            >
-                Close
-            </button>
-        </div>
-    </div>
-)}
+                        <p><span>🚻 Gender</span> {selectedStudent.gender}</p>
+
+                        <hr />
+
+                        <p><span>📧 Email</span> {selectedStudent.email}</p>
+
+                        <p><span>📱 Phone</span> {selectedStudent.phone}</p>
+
+                        <p><span>📍 Address</span> {selectedStudent.address}</p>
+
+                        <button
+                            className="close-btn"
+                            onClick={() => setShowModal(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
 
         </div>
 
