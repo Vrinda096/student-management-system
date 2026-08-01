@@ -207,12 +207,22 @@ function StudentList() {
         <div className="modal">
             <h2>Student Details</h2>
 
-            <p><strong>Name:</strong> {selectedStudent.name}</p>
-            <p><strong>Roll No:</strong> {selectedStudent.rollNo}</p>
-            <p><strong>Course:</strong> {selectedStudent.course}</p>
-            <p><strong>Semester:</strong> {selectedStudent.semester}</p>
-            <p><strong>Email:</strong> {selectedStudent.email}</p>
-            <p><strong>Phone:</strong> {selectedStudent.phone}</p>
+           <p><strong>Name:</strong> {selectedStudent.name}</p>
+<p><strong>Roll No:</strong> {selectedStudent.rollNo}</p>
+<p><strong>Course:</strong> {selectedStudent.course}</p>
+<p><strong>Semester:</strong> {selectedStudent.semester}</p>
+
+<p><strong>CGPA:</strong> {selectedStudent.cgpa}</p>
+
+<p><strong>Result:</strong> {selectedStudent.result}</p>
+
+<p><strong>Gender:</strong> {selectedStudent.gender}</p>
+
+<p><strong>Email:</strong> {selectedStudent.email}</p>
+
+<p><strong>Phone:</strong> {selectedStudent.phone}</p>
+
+<p><strong>Address:</strong> {selectedStudent.address}</p>
 
             <button
                 className="close-btn"

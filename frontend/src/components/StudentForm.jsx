@@ -153,6 +153,84 @@ function StudentForm({
                             />
 
                         </div>
+                        <br /><br />
+
+<div className="form-row">
+
+    <div className="form-group">
+
+        <label>📊 CGPA</label>
+
+        <input
+            type="number"
+            name="cgpa"
+            placeholder="Enter CGPA"
+            step="0.01"
+            min="0"
+            max="10"
+            value={formData.cgpa}
+            onChange={handleChange}
+        />
+
+    </div>
+
+    <div className="form-group">
+
+        <label>📄 Result</label>
+
+        <select
+            name="result"
+            value={formData.result}
+            onChange={handleChange}
+        >
+
+            <option value="">Select Result</option>
+            <option value="Pass">Pass</option>
+            <option value="Fail">Fail</option>
+
+        </select>
+
+    </div>
+
+</div>
+<br /><br />
+
+<div className="form-row">
+
+    <div className="form-group">
+
+        <label>🚻 Gender</label>
+
+        <select
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+        >
+
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+    </div>
+
+    <div className="form-group">
+
+        <label>🏠 Address</label>
+
+        <input
+            type="text"
+            name="address"
+            placeholder="Enter Address"
+            value={formData.address}
+            onChange={handleChange}
+        />
+
+    </div>
+
+</div>
 
                     </div>
 

@@ -10,13 +10,17 @@ function EditStudent() {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        name: "",
-        rollNo: "",
-        course: "",
-        semester: "",
-        email: "",
-        phone: ""
-    });
+    name: "",
+    rollNo: "",
+    course: "",
+    semester: "",
+    email: "",
+    phone: "",
+    cgpa: "",
+    result: "",
+    gender: "",
+    address: ""
+});
 
     useEffect(() => {
 

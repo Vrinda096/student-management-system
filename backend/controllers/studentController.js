@@ -6,23 +6,31 @@ const addStudent = async (req, res) => {
     try {
 
         const {
-            name,
-            rollNo,
-            course,
-            semester,
-            email,
-            phone
-        } = req.body;
+    name,
+    rollNo,
+    course,
+    semester,
+    email,
+    phone,
+    cgpa,
+    result,
+    gender,
+    address
+} = req.body;
 
         // Check required fields
         if (
-            !name ||
-            !rollNo ||
-            !course ||
-            !semester ||
-            !email ||
-            !phone
-        ) {
+    !name ||
+    !rollNo ||
+    !course ||
+    !semester ||
+    !email ||
+    !phone ||
+    cgpa === undefined ||
+    !result ||
+    !gender ||
+    !address
+) {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required"
@@ -49,14 +57,18 @@ const addStudent = async (req, res) => {
             });
         }
 
-        const student = await Student.create({
-            name,
-            rollNo,
-            course,
-            semester,
-            email,
-            phone
-        });
+      const student = await Student.create({
+    name,
+    rollNo,
+    course,
+    semester,
+    email,
+    phone,
+    cgpa,
+    result,
+    gender,
+    address
+});
 
         res.status(201).json({
             success: true,
