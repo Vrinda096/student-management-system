@@ -9,6 +9,7 @@ import EditStudent from "./pages/EditStudent";
 import NotFound from "./pages/NotFound";
 import StudentProfile from "./pages/StudentProfile";
 import AIAssistant from "./pages/AIAssistant";
+import AdminRoute from "./components/AdminRoute";
 function App() {
   return (
     <Routes>
