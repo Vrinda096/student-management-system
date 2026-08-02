@@ -8,7 +8,10 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const studentRoutes = require("./routes/studentRoutes");
 const aiRoutes = require("./routes/aiRoutes");
-
+const {
+  authMiddleware,
+  adminOnly,
+} = require("./middleware/authMiddleware");
 dotenv.config();
 
 connectDB();
@@ -51,7 +54,7 @@ app.get("/", (req, res) => {
 });
 
 // Protected profile route
-const authMiddleware = require("./middleware/authMiddleware");
+const { authMiddleware } = require("./middleware/authMiddleware");
 
 app.get("/profile", authMiddleware, (req, res) => {
   res.json({
