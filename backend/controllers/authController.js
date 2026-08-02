@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 // Register User
 const registerUser = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, role } = req.body;
 
         if (!name || !email || !password) {
             return res.status(400).json({
@@ -23,12 +23,12 @@ const registerUser = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const user = new User({
-            name,
-            email,
-            password: hashedPassword
-        });
-
+       const user = new User({
+    name,
+    email,
+    password: hashedPassword,
+    role: role || "student"
+});
         await user.save();
 
         res.status(201).json({
@@ -72,19 +72,22 @@ const loginUser = async (req, res) => {
         }
 
         const token = jwt.sign(
-            {
-                id: user._id
-            },
-            process.env.JWT_SECRET,
-            {
-                expiresIn: "1d"
-            }
-        );
+    {
+        id: user._id,
+        role: user.role
+    },
+    process.env.JWT_SECRET,
+    {
+        expiresIn: "1d"
+    }
+);
+        
 
         res.status(200).json({
-            message: "Login Successful",
-            token
-        });
+    token,
+    role: user.role,
+    user
+});
 
     } catch (error) {
 

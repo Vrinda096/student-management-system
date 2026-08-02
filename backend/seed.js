@@ -10,1768 +10,1279 @@ mongoose
     await Student.deleteMany({});
 
     await Student.insertMany([
-      {
-        name: "Rahul Sharma",
-        rollNo: "23CSE101",
-        course: "B.Tech CSE",
-        semester: 5,
-        email: "rahul@gmail.com",
-        phone: "9876543210",
-      },
-      {
-        name: "Aman Verma",
-        rollNo: "23CSE102",
-        course: "B.Tech CSE",
-        semester: 5,
-        email: "aman@gmail.com",
-        phone: "9876543211",
-      },
-      {
-        name: "Priya Singh",
-        rollNo: "23CSE103",
-        course: "B.Tech AI",
-        semester: 5,
-        email: "priya@gmail.com",
-        phone: "9876543212",
-      },
-      {
-        name: "Anjali Gupta",
-        rollNo: "23CSE104",
-        course: "B.Tech IT",
-        semester: 6,
-        email: "anjali@gmail.com",
-        phone: "9876543213",
-      },
-      {
-        name: "Mohit Kumar",
-        rollNo: "23CSE105",
-        course: "B.Tech AI",
-        semester: 6,
-        email: "mohit@gmail.com",
-        phone: "9876543214",
-      },
-      {
-        name: "Sneha Sharma",
-        rollNo: "23CSE106",
-        course: "B.Tech CSE",
-        semester: 7,
-        email: "sneha@gmail.com",
-        phone: "9876543215",
-      },
-      {
-        name: "Rohan Mehta",
-        rollNo: "23CSE107",
-        course: "B.Tech IT",
-        semester: 5,
-        email: "rohan@gmail.com",
-        phone: "9876543216",
-      },
-      {
-        name: "Neha Arora",
-        rollNo: "23CSE108",
-        course: "B.Tech AI",
-        semester: 6,
-        email: "neha@gmail.com",
-        phone: "9876543217",
-      },
-      {
-        name: "Karan Singh",
-        rollNo: "23CSE109",
-        course: "B.Tech CSE",
-        semester: 7,
-        email: "karan@gmail.com",
-        phone: "9876543218",
-      },
-      {
-        name: "Simran Kaur",
-        rollNo: "23CSE110",
-        course: "B.Tech IT",
-        semester: 5,
-        email: "simran@gmail.com",
-        phone: "9876543219",
-      },
      
-    {
-     name: "Aarav Sharma",
-     rollNo: "CSE23001",
-    course: "B.Tech CSE",
-    semester: 5,
-    email: "aarav.sharma@example.com",
-    phone: "9876501001"
-  },
-  {
-    name: "Ananya Gupta",
-   rollNo: "AIML23002",
-    course: "B.Tech AI & ML",
-    semester: 5,
-    email: "ananya.gupta@example.com",
-    phone: "9876501002"
-  },
-  {
-    name: "Rohan Verma",
-    rollNo: "ECE23003",
-    course: "B.Tech ECE",
-    semester: 3,
-    email: "rohan.verma@example.com",
-    phone: "9876501003"
-  },
-  {
-    name: "Priya Singh",
-    rollNo: "IT23004",
-    course: "B.Tech IT",
-    semester: 7,
-    email: "priya.singh@example.com",
-    phone: "9876501004"
-  },
-  {
-    name: "Karan Mehta",
-    rollNo: "CSE23005",
-    course: "B.Tech CSE",
-    semester: 1,
-    email: "karan.mehta@example.com",
-    phone: "9876501005"
-  },
-  {
-    name: "Neha Kapoor",
-    rollNo: "AIML23006",
-    course: "B.Tech AI & ML",
-    semester: 5,
-    email: "neha.kapoor@example.com",
-    phone: "9876501006"
-  },
-  {
-    name: "Aditya Joshi",
-    rollNo: "ME23007",
-    course: "B.Tech Mechanical",
-    semester: 3,
-    email: "aditya.joshi@example.com",
-    phone: "9876501007"
-  },
-  {
-    name: "Sneha Yadav",
-    rollNo: "CE23008",
-    course: "B.Tech Civil",
-    semester: 7,
-    email: "sneha.yadav@example.com",
-    phone: "9876501008"
-  },
-  {
-    name: "Harsh Patel",
-    rollNo: "EE23009",
-    course: "B.Tech Electrical",
-    semester: 1,
-    email: "harsh.patel@example.com",
-    phone: "9876501009"
-  },
-  {
-    "name": "Harsh Singh",
-    "rollNo": "IT23001",
-    "course": "B.Tech ECE",
-    "semester": 5,
-    "email": "harsh.singh1@example.com",
-    "phone": "9991510816"
-  },
-  {
-    "name": "Meera Singh",
-    "rollNo": "AIML23012",
-    "course": "B.Tech AI & ML",
-    "semester": 8,
-    "email": "meera.singh2@example.com",
-    "phone": "9425788359"
-  },
-  {
-    "name": "Arjun Verma",
-    "rollNo": "CE23003",
-    "course": "B.Tech Mechanical",
-    "semester": 1,
-    "email": "arjun.verma3@example.com",
-    "phone": "9402308396"
-  },
-  {
-    "name": "Nikhil Kapoor",
-    "rollNo": "ME23004",
-    "course": "B.Tech IT",
-    "semester": 4,
-    "email": "nikhil.kapoor4@example.com",
-    "phone": "9564173812"
-  },
-  {
-    "name": "Neha Singh",
-    "rollNo": "CE23005",
-    "course": "B.Tech AI & ML",
-    "semester": 7,
-    "email": "neha.singh5@example.com",
-    "phone": "9012798946"
-  },
-  {
-    "name": "Arjun Mehta",
-    "rollNo": "CSE23006",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "arjun.mehta6@example.com",
-    "phone": "9403124394"
-  },
-  {
-    "name": "Karan Sharma",
-    "rollNo": "CSE23007",
-    "course": "B.Tech Mechanical",
-    "semester": 7,
-    "email": "karan.sharma7@example.com",
-    "phone": "9158511106"
-  },
-  {
-    "name": "Ananya Mehta",
-    "rollNo": "EE23008",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "ananya.mehta8@example.com",
-    "phone": "9344092381"
-  },
-  {
-    "name": "Nikhil Bansal",
-    "rollNo": "CSE23009",
-    "course": "B.Tech IT",
-    "semester": 3,
-    "email": "nikhil.bansal9@example.com",
-    "phone": "9031713706"
-  },
-  {
-    "name": "Meera Kumar",
-    "rollNo": "EE23010",
-    "course": "B.Tech Electrical",
-    "semester": 4,
-    "email": "meera.kumar10@example.com",
-    "phone": "9925900188"
-  },
-  {
-    "name": "Diya Yadav",
-    "rollNo": "EE23011",
-    "course": "B.Tech AI & ML",
-    "semester": 2,
-    "email": "diya.yadav11@example.com",
-    "phone": "9655736547"
-  },
-  {
-    "name": "Riya Agarwal",
-    "rollNo": "CE23012",
-    "course": "B.Tech AI & ML",
-    "semester": 7,
-    "email": "riya.agarwal12@example.com",
-    "phone": "9933954333"
-  },
-  {
-    "name": "Harsh Mehta",
-    "rollNo": "CSE23013",
-    "course": "B.Tech IT",
-    "semester": 3,
-    "email": "harsh.mehta13@example.com",
-    "phone": "9213914168"
-  },
-  {
-    "name": "Riya Sharma",
-    "rollNo": "ECE23014",
-    "course": "B.Tech Civil",
-    "semester": 8,
-    "email": "riya.sharma14@example.com",
-    "phone": "9125257276"
-  },
-  {
-    "name": "Arjun Verma",
-    "rollNo": "EE23015",
-    "course": "B.Tech Civil",
-    "semester": 6,
-    "email": "arjun.verma15@example.com",
-    "phone": "9985885166"
-  },
-  {
-    "name": "Diya Yadav",
-    "rollNo": "IT23016",
-    "course": "B.Tech Mechanical",
-    "semester": 7,
-    "email": "diya.yadav16@example.com",
-    "phone": "9091437149"
-  },
-  {
-    "name": "Neha Kumar",
-    "rollNo": "CE23017",
-    "course": "B.Tech Mechanical",
-    "semester": 8,
-    "email": "neha.kumar17@example.com",
-    "phone": "9575808234"
-  },
-  {
-    "name": "Arjun Kapoor",
-    "rollNo": "CSE23018",
-    "course": "B.Tech ECE",
-    "semester": 2,
-    "email": "arjun.kapoor18@example.com",
-    "phone": "9049623372"
-  },
-  {
-    "name": "Aarav Saxena",
-    "rollNo": "EE23019",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "aarav.saxena19@example.com",
-    "phone": "9861484183"
-  },
-  {
-    "name": "Pooja Yadav",
-    "rollNo": "EE23020",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "pooja.yadav20@example.com",
-    "phone": "9397060594"
-  },
-  {
-    "name": "Riya Sharma",
-    "rollNo": "CSE23021",
-    "course": "B.Tech Electrical",
-    "semester": 4,
-    "email": "riya.sharma21@example.com",
-    "phone": "9747707890"
-  },
-  {
-    "name": "Nikhil Mehta",
-    "rollNo": "IT23022",
-    "course": "B.Tech ECE",
-    "semester": 8,
-    "email": "nikhil.mehta22@example.com",
-    "phone": "9396632117"
-  },
-  {
-    "name": "Neha Sharma",
-    "rollNo": "ME23023",
-    "course": "B.Tech Electrical",
-    "semester": 5,
-    "email": "neha.sharma23@example.com",
-    "phone": "9187474845"
-  },
-  {
-    "name": "Rahul Mishra",
-    "rollNo": "CE23024",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "rahul.mishra24@example.com",
-    "phone": "9337992068"
-  },
-  {
-    "name": "Priya Gupta",
-    "rollNo": "ME23025",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "priya.gupta25@example.com",
-    "phone": "9666916952"
-  },
-  {
-    "name": "Aarav Sharma",
-    "rollNo": "IT23026",
-    "course": "B.Tech Civil",
-    "semester": 3,
-    "email": "aarav.sharma26@example.com",
-    "phone": "9839576070"
-  },
-  {
-    "name": "Pooja Singh",
-    "rollNo": "CSE23027",
-    "course": "B.Tech IT",
-    "semester": 7,
-    "email": "pooja.singh27@example.com",
-    "phone": "9037848131"
-  },
-  {
-    "name": "Nikhil Kapoor",
-    "rollNo": "CE23028",
-    "course": "B.Tech Electrical",
-    "semester": 8,
-    "email": "nikhil.kapoor28@example.com",
-    "phone": "9327913805"
-  },
-  {
-    "name": "Neha Mishra",
-    "rollNo": "AIML23029",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "neha.mishra29@example.com",
-    "phone": "9235506965"
-  },
-  {
-    "name": "Kavya Mehta",
-    "rollNo": "EE23030",
-    "course": "B.Tech Electrical",
-    "semester": 8,
-    "email": "kavya.mehta30@example.com",
-    "phone": "9073453627"
-  },
-  {
-    "name": "Nikhil Mehta",
-    "rollNo": "AIML23031",
-    "course": "B.Tech AI & ML",
-    "semester": 6,
-    "email": "nikhil.mehta31@example.com",
-    "phone": "9903462484"
-  },
-  {
-    "name": "Ananya Kapoor",
-    "rollNo": "CSE23032",
-    "course": "B.Tech Mechanical",
-    "semester": 8,
-    "email": "ananya.kapoor32@example.com",
-    "phone": "9201884380"
-  },
-  {
-    "name": "Ananya Malhotra",
-    "rollNo": "CSE23033",
-    "course": "B.Tech Mechanical",
-    "semester": 1,
-    "email": "ananya.malhotra33@example.com",
-    "phone": "9057055778"
-  },
-  {
-    "name": "Kavya Mehta",
-    "rollNo": "ME23034",
-    "course": "B.Tech IT",
-    "semester": 6,
-    "email": "kavya.mehta34@example.com",
-    "phone": "9789763508"
-  },
-  {
-    "name": "Ishita Patel",
-    "rollNo": "AIML23035",
-    "course": "B.Tech Civil",
-    "semester": 5,
-    "email": "ishita.patel35@example.com",
-    "phone": "9751972718"
-  },
-  {
-    "name": "Vivaan Sharma",
-    "rollNo": "CSE23036",
-    "course": "B.Tech Civil",
-    "semester": 8,
-    "email": "vivaan.sharma36@example.com",
-    "phone": "9486307990"
-  },
-  {
-    "name": "Pooja Saxena",
-    "rollNo": "IT23037",
-    "course": "B.Tech Electrical",
-    "semester": 8,
-    "email": "pooja.saxena37@example.com",
-    "phone": "9399649754"
-  },
-  {
-    "name": "Ananya Kapoor",
-    "rollNo": "ME23038",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "ananya.kapoor38@example.com",
-    "phone": "9123439038"
-  },
-  {
-    "name": "Rohan Joshi",
-    "rollNo": "AIML23039",
-    "course": "B.Tech Electrical",
-    "semester": 6,
-    "email": "rohan.joshi39@example.com",
-    "phone": "9389305520"
-  },
-  {
-    "name": "Meera Verma",
-    "rollNo": "CSE23040",
-    "course": "B.Tech ECE",
-    "semester": 8,
-    "email": "meera.verma40@example.com",
-    "phone": "9002817076"
-  },
-  {
-    "name": "Arjun Mishra",
-    "rollNo": "AIML23041",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "arjun.mishra41@example.com",
-    "phone": "9399228796"
-  },
-  {
-    "name": "Meera Saxena",
-    "rollNo": "EE23042",
-    "course": "B.Tech CSE",
-    "semester": 6,
-    "email": "meera.saxena42@example.com",
-    "phone": "9167124202"
-  },
-  {
-    "name": "Rahul Bansal",
-    "rollNo": "ME23043",
-    "course": "B.Tech Mechanical",
-    "semester": 8,
-    "email": "rahul.bansal43@example.com",
-    "phone": "9580139721"
-  },
-  {
-    "name": "Nikhil Bansal",
-    "rollNo": "IT23044",
-    "course": "B.Tech Electrical",
-    "semester": 2,
-    "email": "nikhil.bansal44@example.com",
-    "phone": "9026627302"
-  },
-  {
-    "name": "Arjun Verma",
-    "rollNo": "EE23045",
-    "course": "B.Tech AI & ML",
-    "semester": 2,
-    "email": "arjun.verma45@example.com",
-    "phone": "9421764754"
-  },
-  {
-    "name": "Ananya Agarwal",
-    "rollNo": "AIML23046",
-    "course": "B.Tech IT",
-    "semester": 4,
-    "email": "ananya.agarwal46@example.com",
-    "phone": "9894093182"
-  },
-  {
-    "name": "Pooja Malhotra",
-    "rollNo": "AIML23047",
-    "course": "B.Tech Mechanical",
-    "semester": 4,
-    "email": "pooja.malhotra47@example.com",
-    "phone": "9123711770"
-  },
-  {
-    "name": "Nikhil Saxena",
-    "rollNo": "CE23048",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "nikhil.saxena48@example.com",
-    "phone": "9641986536"
-  },
-  {
-    "name": "Aarav Saxena",
-    "rollNo": "CE23049",
-    "course": "B.Tech Electrical",
-    "semester": 5,
-    "email": "aarav.saxena49@example.com",
-    "phone": "9481155303"
-  },
-  {
-    "name": "Rahul Singh",
-    "rollNo": "EE23050",
-    "course": "B.Tech Civil",
-    "semester": 3,
-    "email": "rahul.singh50@example.com",
-    "phone": "9631722897"
-  },
-  {
-    "name": "Diya Bansal",
-    "rollNo": "CE23051",
-    "course": "B.Tech Mechanical",
-    "semester": 5,
-    "email": "diya.bansal51@example.com",
-    "phone": "9731101746"
-  },
-  {
-    "name": "Pooja Patel",
-    "rollNo": "CE23052",
-    "course": "B.Tech CSE",
-    "semester": 3,
-    "email": "pooja.patel52@example.com",
-    "phone": "9496202088"
-  },
-  {
-    "name": "Ishita Agarwal",
-    "rollNo": "ECE23053",
-    "course": "B.Tech CSE",
-    "semester": 1,
-    "email": "ishita.agarwal53@example.com",
-    "phone": "9646971950"
-  },
-  {
-    "name": "Pooja Joshi",
-    "rollNo": "ME23054",
-    "course": "B.Tech CSE",
-    "semester": 8,
-    "email": "pooja.joshi54@example.com",
-    "phone": "9278035626"
-  },
-  {
-    "name": "Vivaan Gupta",
-    "rollNo": "ME23055",
-    "course": "B.Tech Mechanical",
-    "semester": 5,
-    "email": "vivaan.gupta55@example.com",
-    "phone": "9116972320"
-  },
-  {
-    "name": "Meera Saxena",
-    "rollNo": "CSE23056",
-    "course": "B.Tech Mechanical",
-    "semester": 4,
-    "email": "meera.saxena56@example.com",
-    "phone": "9808791123"
-  },
-  {
-    "name": "Diya Agarwal",
-    "rollNo": "ECE23057",
-    "course": "B.Tech AI & ML",
-    "semester": 1,
-    "email": "diya.agarwal57@example.com",
-    "phone": "9838105287"
-  },
-  {
-    "name": "Rohan Kapoor",
-    "rollNo": "EE23058",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "rohan.kapoor58@example.com",
-    "phone": "9403707947"
-  },
-  {
-    "name": "Sneha Saxena",
-    "rollNo": "IT23059",
-    "course": "B.Tech ECE",
-    "semester": 3,
-    "email": "sneha.saxena59@example.com",
-    "phone": "9370841185"
-  },
-  {
-    "name": "Rohan Sharma",
-    "rollNo": "AIML23060",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "rohan.sharma60@example.com",
-    "phone": "9972270678"
-  },
-  {
-    "name": "Rahul Bansal",
-    "rollNo": "IT23061",
-    "course": "B.Tech Civil",
-    "semester": 2,
-    "email": "rahul.bansal61@example.com",
-    "phone": "9194850164"
-  },
-  {
-    "name": "Sneha Singh",
-    "rollNo": "IT23062",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "sneha.singh62@example.com",
-    "phone": "9627691045"
-  },
-  {
-    "name": "Riya Saxena",
-    "rollNo": "ECE23063",
-    "course": "B.Tech Mechanical",
-    "semester": 1,
-    "email": "riya.saxena63@example.com",
-    "phone": "9583198978"
-  },
-  {
-    "name": "Rahul Yadav",
-    "rollNo": "AIML23064",
-    "course": "B.Tech Mechanical",
-    "semester": 8,
-    "email": "rahul.yadav64@example.com",
-    "phone": "9901592247"
-  },
-  {
-    "name": "Sneha Sharma",
-    "rollNo": "EE23065",
-    "course": "B.Tech Electrical",
-    "semester": 8,
-    "email": "sneha.sharma65@example.com",
-    "phone": "9427341258"
-  },
-  {
-    "name": "Meera Agarwal",
-    "rollNo": "EE23066",
-    "course": "B.Tech Mechanical",
-    "semester": 4,
-    "email": "meera.agarwal66@example.com",
-    "phone": "9157073651"
-  },
-  {
-    "name": "Pooja Agarwal",
-    "rollNo": "IT23067",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "pooja.agarwal67@example.com",
-    "phone": "9984896158"
-  },
-  {
-    "name": "Riya Kumar",
-    "rollNo": "IT23068",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "riya.kumar68@example.com",
-    "phone": "9012013356"
-  },
-  {
-    "name": "Karan Verma",
-    "rollNo": "CSE23069",
-    "course": "B.Tech AI & ML",
-    "semester": 5,
-    "email": "karan.verma69@example.com",
-    "phone": "9204890132"
-  },
-  {
-    "name": "Rohan Bansal",
-    "rollNo": "IT23070",
-    "course": "B.Tech IT",
-    "semester": 8,
-    "email": "rohan.bansal70@example.com",
-    "phone": "9524778103"
-  },
-  {
-    "name": "Aditya Gupta",
-    "rollNo": "CSE23071",
-    "course": "B.Tech Electrical",
-    "semester": 3,
-    "email": "aditya.gupta71@example.com",
-    "phone": "9021063831"
-  },
-  {
-    "name": "Pooja Malhotra",
-    "rollNo": "EE23072",
-    "course": "B.Tech Mechanical",
-    "semester": 7,
-    "email": "pooja.malhotra72@example.com",
-    "phone": "9441219516"
-  },
-  {
-    "name": "Diya Malhotra",
-    "rollNo": "ME23073",
-    "course": "B.Tech Civil",
-    "semester": 2,
-    "email": "diya.malhotra73@example.com",
-    "phone": "9583800296"
-  },
-  {
-    "name": "Ishita Singh",
-    "rollNo": "CE23074",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "ishita.singh74@example.com",
-    "phone": "9606022841"
-  },
-  {
-    "name": "Vivaan Joshi",
-    "rollNo": "EE23075",
-    "course": "B.Tech AI & ML",
-    "semester": 5,
-    "email": "vivaan.joshi75@example.com",
-    "phone": "9357068331"
-  },
-  {
-    "name": "Nikhil Kapoor",
-    "rollNo": "CE23076",
-    "course": "B.Tech Electrical",
-    "semester": 1,
-    "email": "nikhil.kapoor76@example.com",
-    "phone": "9034123171"
-  },
-  {
-    "name": "Ananya Yadav",
-    "rollNo": "ECE23077",
-    "course": "B.Tech CSE",
-    "semester": 8,
-    "email": "ananya.yadav77@example.com",
-    "phone": "9318600204"
-  },
-  {
-    "name": "Priya Malhotra",
-    "rollNo": "EE23078",
-    "course": "B.Tech Electrical",
-    "semester": 2,
-    "email": "priya.malhotra78@example.com",
-    "phone": "9626936471"
-  },
-  {
-    "name": "Sneha Kapoor",
-    "rollNo": "EE23079",
-    "course": "B.Tech Electrical",
-    "semester": 8,
-    "email": "sneha.kapoor79@example.com",
-    "phone": "9546709235"
-  },
-  {
-    "name": "Priya Sharma",
-    "rollNo": "IT23080",
-    "course": "B.Tech AI & ML",
-    "semester": 2,
-    "email": "priya.sharma80@example.com",
-    "phone": "9816325557"
-  },
-  {
-    "name": "Nikhil Saxena",
-    "rollNo": "ECE23081",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "nikhil.saxena81@example.com",
-    "phone": "9154539743"
-  },
-  {
-    "name": "Kavya Mishra",
-    "rollNo": "EE23082",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "kavya.mishra82@example.com",
-    "phone": "9334610911"
-  },
-  {
-    "name": "Sneha Patel",
-    "rollNo": "IT23083",
-    "course": "B.Tech AI & ML",
-    "semester": 4,
-    "email": "sneha.patel83@example.com",
-    "phone": "9692029580"
-  },
-  {
-    "name": "Riya Joshi",
-    "rollNo": "IT23084",
-    "course": "B.Tech Civil",
-    "semester": 6,
-    "email": "riya.joshi84@example.com",
-    "phone": "9669669023"
-  },
-  {
-    "name": "Neha Malhotra",
-    "rollNo": "CE23085",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "neha.malhotra85@example.com",
-    "phone": "9768802451"
-  },
-  {
-    "name": "Rohan Malhotra",
-    "rollNo": "CE23086",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "rohan.malhotra86@example.com",
-    "phone": "9957346509"
-  },
-  {
-    "name": "Karan Kumar",
-    "rollNo": "EE23087",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "karan.kumar87@example.com",
-    "phone": "9771301875"
-  },
-  {
-    "name": "Meera Patel",
-    "rollNo": "ME23088",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "meera.patel88@example.com",
-    "phone": "9733058443"
-  },
-  {
-    "name": "Ananya Saxena",
-    "rollNo": "CE23089",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "ananya.saxena89@example.com",
-    "phone": "9037721892"
-  },
-  {
-    "name": "Neha Sharma",
-    "rollNo": "IT23090",
-    "course": "B.Tech Electrical",
-    "semester": 2,
-    "email": "neha.sharma90@example.com",
-    "phone": "9770047334"
-  },
-  {
-    "name": "Rohan Malhotra",
-    "rollNo": "EE23091",
-    "course": "B.Tech Mechanical",
-    "semester": 7,
-    "email": "rohan.malhotra91@example.com",
-    "phone": "9662020192"
-  },
-  {
-    "name": "Aditya Patel",
-    "rollNo": "AIML23092",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "aditya.patel92@example.com",
-    "phone": "9931879308"
-  },
-  {
-    "name": "Aditya Gupta",
-    "rollNo": "EE23093",
-    "course": "B.Tech IT",
-    "semester": 6,
-    "email": "aditya.gupta93@example.com",
-    "phone": "9399818456"
-  },
-  {
-    "name": "Aarav Malhotra",
-    "rollNo": "EE23094",
-    "course": "B.Tech ECE",
-    "semester": 5,
-    "email": "aarav.malhotra94@example.com",
-    "phone": "9678256229"
-  },
-  {
-    "name": "Ananya Joshi",
-    "rollNo": "CE23095",
-    "course": "B.Tech ECE",
-    "semester": 1,
-    "email": "ananya.joshi95@example.com",
-    "phone": "9650653578"
-  },
-  {
-    "name": "Rahul Yadav",
-    "rollNo": "AIML23096",
-    "course": "B.Tech IT",
-    "semester": 7,
-    "email": "rahul.yadav96@example.com",
-    "phone": "9841883924"
-  },
-  {
-    "name": "Ishita Kumar",
-    "rollNo": "ECE23097",
-    "course": "B.Tech IT",
-    "semester": 6,
-    "email": "ishita.kumar97@example.com",
-    "phone": "9299234144"
-  },
-  {
-    "name": "Neha Saxena",
-    "rollNo": "AIML23098",
-    "course": "B.Tech IT",
-    "semester": 5,
-    "email": "neha.saxena98@example.com",
-    "phone": "9739171898"
-  },
-  {
-    "name": "Rahul Singh",
-    "rollNo": "EE23099",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "rahul.singh99@example.com",
-    "phone": "9922269125"
-  },
-  {
-    "name": "Vivaan Kumar",
-    "rollNo": "ME23100",
-    "course": "B.Tech Civil",
-    "semester": 2,
-    "email": "vivaan.kumar100@example.com",
-    "phone": "9702309102"
-  },
-  {
-    "name": "Aarav Gupta",
-    "rollNo": "ME23101",
-    "course": "B.Tech Civil",
-    "semester": 5,
-    "email": "aarav.gupta101@example.com",
-    "phone": "9246064088"
-  },
-  {
-    "name": "Neha Yadav",
-    "rollNo": "CSE23102",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "neha.yadav102@example.com",
-    "phone": "9197967566"
-  },
-  {
-    "name": "Sneha Kumar",
-    "rollNo": "AIML23103",
-    "course": "B.Tech IT",
-    "semester": 6,
-    "email": "sneha.kumar103@example.com",
-    "phone": "9457106104"
-  },
-  {
-    "name": "Aditi Kumar",
-    "rollNo": "CE23104",
-    "course": "B.Tech ECE",
-    "semester": 1,
-    "email": "aditi.kumar104@example.com",
-    "phone": "9946406449"
-  },
-  {
-    "name": "Nikhil Saxena",
-    "rollNo": "ECE23105",
-    "course": "B.Tech Electrical",
-    "semester": 3,
-    "email": "nikhil.saxena105@example.com",
-    "phone": "9315730286"
-  },
-  {
-    "name": "Diya Mehta",
-    "rollNo": "IT23106",
-    "course": "B.Tech CSE",
-    "semester": 3,
-    "email": "diya.mehta106@example.com",
-    "phone": "9895665386"
-  },
-  {
-    "name": "Harsh Gupta",
-    "rollNo": "EE23107",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "harsh.gupta107@example.com",
-    "phone": "9395647770"
-  },
-  {
-    "name": "Vivaan Sharma",
-    "rollNo": "ECE23108",
-    "course": "B.Tech CSE",
-    "semester": 3,
-    "email": "vivaan.sharma108@example.com",
-    "phone": "9993623730"
-  },
-  {
-    "name": "Arjun Sharma",
-    "rollNo": "CSE23109",
-    "course": "B.Tech Civil",
-    "semester": 2,
-    "email": "arjun.sharma109@example.com",
-    "phone": "9131565177"
-  },
-  {
-    "name": "Aditya Joshi",
-    "rollNo": "CSE23110",
-    "course": "B.Tech IT",
-    "semester": 5,
-    "email": "aditya.joshi110@example.com",
-    "phone": "9561055629"
-  },
-  {
-    "name": "Rahul Yadav",
-    "rollNo": "EE23111",
-    "course": "B.Tech AI & ML",
-    "semester": 5,
-    "email": "rahul.yadav111@example.com",
-    "phone": "9463195587"
-  },
-  {
-    "name": "Ishita Kapoor",
-    "rollNo": "EE23112",
-    "course": "B.Tech Civil",
-    "semester": 7,
-    "email": "ishita.kapoor112@example.com",
-    "phone": "9208521668"
-  },
-  {
-    "name": "Harsh Kumar",
-    "rollNo": "EE23113",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "harsh.kumar113@example.com",
-    "phone": "9631932054"
-  },
-  {
-    "name": "Meera Patel",
-    "rollNo": "CSE23114",
-    "course": "B.Tech Electrical",
-    "semester": 1,
-    "email": "meera.patel114@example.com",
-    "phone": "9002739552"
-  },
-  {
-    "name": "Diya Bansal",
-    "rollNo": "EE23115",
-    "course": "B.Tech AI & ML",
-    "semester": 8,
-    "email": "diya.bansal115@example.com",
-    "phone": "9348925200"
-  },
-  {
-    "name": "Nikhil Patel",
-    "rollNo": "IT23116",
-    "course": "B.Tech Civil",
-    "semester": 6,
-    "email": "nikhil.patel116@example.com",
-    "phone": "9726118469"
-  },
-  {
-    "name": "Pooja Gupta",
-    "rollNo": "EE23117",
-    "course": "B.Tech ECE",
-    "semester": 6,
-    "email": "pooja.gupta117@example.com",
-    "phone": "9111148784"
-  },
-  {
-    "name": "Neha Singh",
-    "rollNo": "EE23118",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "neha.singh118@example.com",
-    "phone": "9671352683"
-  },
-  {
-    "name": "Arjun Agarwal",
-    "rollNo": "CSE23119",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "arjun.agarwal119@example.com",
-    "phone": "9920228999"
-  },
-  {
-    "name": "Arjun Singh",
-    "rollNo": "ME23120",
-    "course": "B.Tech Mechanical",
-    "semester": 3,
-    "email": "arjun.singh120@example.com",
-    "phone": "9956702478"
-  },
-  {
-    "name": "Pooja Joshi",
-    "rollNo": "CSE23121",
-    "course": "B.Tech Electrical",
-    "semester": 2,
-    "email": "pooja.joshi121@example.com",
-    "phone": "9798423774"
-  },
-  {
-    "name": "Sneha Joshi",
-    "rollNo": "CSE23122",
-    "course": "B.Tech CSE",
-    "semester": 6,
-    "email": "sneha.joshi122@example.com",
-    "phone": "9585754720"
-  },
-  {
-    "name": "Rohan Patel",
-    "rollNo": "ME23123",
-    "course": "B.Tech ECE",
-    "semester": 1,
-    "email": "rohan.patel123@example.com",
-    "phone": "9786993868"
-  },
-  {
-    "name": "Rahul Gupta",
-    "rollNo": "CE23124",
-    "course": "B.Tech Electrical",
-    "semester": 2,
-    "email": "rahul.gupta124@example.com",
-    "phone": "9016504670"
-  },
-  {
-    "name": "Priya Mehta",
-    "rollNo": "AIML23125",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "priya.mehta125@example.com",
-    "phone": "9347706861"
-  },
-  {
-    "name": "Ananya Mishra",
-    "rollNo": "CE23126",
-    "course": "B.Tech Civil",
-    "semester": 4,
-    "email": "ananya.mishra126@example.com",
-    "phone": "9405987903"
-  },
-  {
-    "name": "Karan Gupta",
-    "rollNo": "CSE23127",
-    "course": "B.Tech AI & ML",
-    "semester": 3,
-    "email": "karan.gupta127@example.com",
-    "phone": "9525999088"
-  },
-  {
-    "name": "Harsh Verma",
-    "rollNo": "EE23128",
-    "course": "B.Tech Electrical",
-    "semester": 5,
-    "email": "harsh.verma128@example.com",
-    "phone": "9984890328"
-  },
-  {
-    "name": "Rohan Bansal",
-    "rollNo": "IT23129",
-    "course": "B.Tech ECE",
-    "semester": 8,
-    "email": "rohan.bansal129@example.com",
-    "phone": "9787308283"
-  },
-  {
-    "name": "Rahul Kumar",
-    "rollNo": "CSE23130",
-    "course": "B.Tech Mechanical",
-    "semester": 1,
-    "email": "rahul.kumar130@example.com",
-    "phone": "9174051568"
-  },
-  {
-    "name": "Meera Kapoor",
-    "rollNo": "ME23131",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "meera.kapoor131@example.com",
-    "phone": "9326720529"
-  },
-  {
-    "name": "Rahul Agarwal",
-    "rollNo": "IT23132",
-    "course": "B.Tech ECE",
-    "semester": 2,
-    "email": "rahul.agarwal132@example.com",
-    "phone": "9446846733"
-  },
-  {
-    "name": "Diya Verma",
-    "rollNo": "ECE23133",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "diya.verma133@example.com",
-    "phone": "9864527457"
-  },
-  {
-    "name": "Aditya Joshi",
-    "rollNo": "CE23134",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "aditya.joshi134@example.com",
-    "phone": "9290495655"
-  },
-  {
-    "name": "Aditya Agarwal",
-    "rollNo": "ME23135",
-    "course": "B.Tech Civil",
-    "semester": 7,
-    "email": "aditya.agarwal135@example.com",
-    "phone": "9825893950"
-  },
-  {
-    "name": "Aditi Kumar",
-    "rollNo": "ECE23136",
-    "course": "B.Tech ECE",
-    "semester": 3,
-    "email": "aditi.kumar136@example.com",
-    "phone": "9990570359"
-  },
-  {
-    "name": "Aarav Singh",
-    "rollNo": "EE23137",
-    "course": "B.Tech ECE",
-    "semester": 1,
-    "email": "aarav.singh137@example.com",
-    "phone": "9314341725"
-  },
-  {
-    "name": "Nikhil Saxena",
-    "rollNo": "CSE23138",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "nikhil.saxena138@example.com",
-    "phone": "9969255115"
-  },
-  {
-    "name": "Riya Yadav",
-    "rollNo": "AIML23139",
-    "course": "B.Tech Electrical",
-    "semester": 3,
-    "email": "riya.yadav139@example.com",
-    "phone": "9514180389"
-  },
-  {
-    "name": "Aditi Yadav",
-    "rollNo": "ME23140",
-    "course": "B.Tech CSE",
-    "semester": 2,
-    "email": "aditi.yadav140@example.com",
-    "phone": "9622027469"
-  },
-  {
-    "name": "Harsh Saxena",
-    "rollNo": "AIML23141",
-    "course": "B.Tech Mechanical",
-    "semester": 7,
-    "email": "harsh.saxena141@example.com",
-    "phone": "9995212500"
-  },
-  {
-    "name": "Aarav Mishra",
-    "rollNo": "IT23142",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "aarav.mishra142@example.com",
-    "phone": "9662802872"
-  },
-  {
-    "name": "Vivaan Gupta",
-    "rollNo": "CE23143",
-    "course": "B.Tech AI & ML",
-    "semester": 8,
-    "email": "vivaan.gupta143@example.com",
-    "phone": "9625122691"
-  },
-  {
-    "name": "Aditya Sharma",
-    "rollNo": "CSE23144",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "aditya.sharma144@example.com",
-    "phone": "9358019485"
-  },
-  {
-    "name": "Riya Yadav",
-    "rollNo": "AIML23145",
-    "course": "B.Tech AI & ML",
-    "semester": 5,
-    "email": "riya.yadav145@example.com",
-    "phone": "9057539462"
-  },
-  {
-    "name": "Vivaan Joshi",
-    "rollNo": "CSE23146",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "vivaan.joshi146@example.com",
-    "phone": "9263854417"
-  },
-  {
-    "name": "Harsh Joshi",
-    "rollNo": "CSE23147",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "harsh.joshi147@example.com",
-    "phone": "9298422588"
-  },
-  {
-    "name": "Rohan Sharma",
-    "rollNo": "CSE23148",
-    "course": "B.Tech Civil",
-    "semester": 3,
-    "email": "rohan.sharma148@example.com",
-    "phone": "9923262919"
-  },
-  {
-    "name": "Diya Bansal",
-    "rollNo": "AIML23149",
-    "course": "B.Tech Mechanical",
-    "semester": 3,
-    "email": "diya.bansal149@example.com",
-    "phone": "9671861711"
-  },
-  {
-    "name": "Rohan Singh",
-    "rollNo": "IT23150",
-    "course": "B.Tech Electrical",
-    "semester": 5,
-    "email": "rohan.singh150@example.com",
-    "phone": "9077541068"
-  },
-  {
-    "name": "Diya Verma",
-    "rollNo": "IT23151",
-    "course": "B.Tech IT",
-    "semester": 7,
-    "email": "diya.verma151@example.com",
-    "phone": "9270021150"
-  },
-  {
-    "name": "Nikhil Mishra",
-    "rollNo": "ME23152",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "nikhil.mishra152@example.com",
-    "phone": "9819002364"
-  },
-  {
-    "name": "Diya Agarwal",
-    "rollNo": "ECE23153",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "diya.agarwal153@example.com",
-    "phone": "9634489354"
-  },
-  {
-    "name": "Aditi Kumar",
-    "rollNo": "CE23154",
-    "course": "B.Tech IT",
-    "semester": 5,
-    "email": "aditi.kumar154@example.com",
-    "phone": "9352600091"
-  },
-  {
-    "name": "Riya Mehta",
-    "rollNo": "ME23155",
-    "course": "B.Tech Civil",
-    "semester": 5,
-    "email": "riya.mehta155@example.com",
-    "phone": "9577373092"
-  },
-  {
-    "name": "Meera Agarwal",
-    "rollNo": "ECE23156",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "meera.agarwal156@example.com",
-    "phone": "9282434166"
-  },
-  {
-    "name": "Rahul Mehta",
-    "rollNo": "EE23157",
-    "course": "B.Tech CSE",
-    "semester": 7,
-    "email": "rahul.mehta157@example.com",
-    "phone": "9127364604"
-  },
-  {
-    "name": "Sneha Patel",
-    "rollNo": "EE23158",
-    "course": "B.Tech CSE",
-    "semester": 6,
-    "email": "sneha.patel158@example.com",
-    "phone": "9937315100"
-  },
-  {
-    "name": "Vivaan Bansal",
-    "rollNo": "CE23159",
-    "course": "B.Tech ECE",
-    "semester": 4,
-    "email": "vivaan.bansal159@example.com",
-    "phone": "9843318516"
-  },
-  {
-    "name": "Diya Bansal",
-    "rollNo": "ME23160",
-    "course": "B.Tech Mechanical",
-    "semester": 3,
-    "email": "diya.bansal160@example.com",
-    "phone": "9834112253"
-  },
-  {
-    "name": "Arjun Malhotra",
-    "rollNo": "ECE23161",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "arjun.malhotra161@example.com",
-    "phone": "9407836880"
-  },
-  {
-    "name": "Sneha Patel",
-    "rollNo": "CE23162",
-    "course": "B.Tech Civil",
-    "semester": 1,
-    "email": "sneha.patel162@example.com",
-    "phone": "9650333404"
-  },
-  {
-    "name": "Diya Bansal",
-    "rollNo": "AIML23163",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "diya.bansal163@example.com",
-    "phone": "9406544487"
-  },
-  {
-    "name": "Sneha Singh",
-    "rollNo": "CE23164",
-    "course": "B.Tech IT",
-    "semester": 8,
-    "email": "sneha.singh164@example.com",
-    "phone": "9815101855"
-  },
-  {
-    "name": "Meera Saxena",
-    "rollNo": "CSE23165",
-    "course": "B.Tech Civil",
-    "semester": 4,
-    "email": "meera.saxena165@example.com",
-    "phone": "9119309608"
-  },
-  {
-    "name": "Pooja Singh",
-    "rollNo": "EE23166",
-    "course": "B.Tech IT",
-    "semester": 1,
-    "email": "pooja.singh166@example.com",
-    "phone": "9159734529"
-  },
-  {
-    "name": "Riya Verma",
-    "rollNo": "EE23167",
-    "course": "B.Tech CSE",
-    "semester": 4,
-    "email": "riya.verma167@example.com",
-    "phone": "9247063311"
-  },
-  {
-    "name": "Diya Mehta",
-    "rollNo": "EE23168",
-    "course": "B.Tech AI & ML",
-    "semester": 5,
-    "email": "diya.mehta168@example.com",
-    "phone": "9384935086"
-  },
-  {
-    "name": "Harsh Agarwal",
-    "rollNo": "ECE23169",
-    "course": "B.Tech IT",
-    "semester": 4,
-    "email": "harsh.agarwal169@example.com",
-    "phone": "9265942947"
-  },
-  {
-    "name": "Diya Yadav",
-    "rollNo": "EE23170",
-    "course": "B.Tech AI & ML",
-    "semester": 7,
-    "email": "diya.yadav170@example.com",
-    "phone": "9788760481"
-  },
-  {
-    "name": "Riya Verma",
-    "rollNo": "CSE23171",
-    "course": "B.Tech Electrical",
-    "semester": 7,
-    "email": "riya.verma171@example.com",
-    "phone": "9629067211"
-  },
-  {
-    "name": "Rohan Kumar",
-    "rollNo": "EE23172",
-    "course": "B.Tech Electrical",
-    "semester": 6,
-    "email": "rohan.kumar172@example.com",
-    "phone": "9264636916"
-  },
-  {
-    "name": "Aditya Bansal",
-    "rollNo": "CSE23173",
-    "course": "B.Tech Mechanical",
-    "semester": 5,
-    "email": "aditya.bansal173@example.com",
-    "phone": "9795222301"
-  },
-  {
-    "name": "Harsh Mehta",
-    "rollNo": "EE23174",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "harsh.mehta174@example.com",
-    "phone": "9636551445"
-  },
-  {
-    "name": "Meera Joshi",
-    "rollNo": "ME23175",
-    "course": "B.Tech CSE",
-    "semester": 6,
-    "email": "meera.joshi175@example.com",
-    "phone": "9370634536"
-  },
-  {
-    "name": "Diya Patel",
-    "rollNo": "EE23176",
-    "course": "B.Tech Civil",
-    "semester": 2,
-    "email": "diya.patel176@example.com",
-    "phone": "9648233349"
-  },
-  {
-    "name": "Rahul Malhotra",
-    "rollNo": "EE23177",
-    "course": "B.Tech Mechanical",
-    "semester": 5,
-    "email": "rahul.malhotra177@example.com",
-    "phone": "9297651329"
-  },
-  {
-    "name": "Arjun Saxena",
-    "rollNo": "EE23178",
-    "course": "B.Tech ECE",
-    "semester": 2,
-    "email": "arjun.saxena178@example.com",
-    "phone": "9217884764"
-  },
-  {
-    "name": "Rahul Yadav",
-    "rollNo": "CE23179",
-    "course": "B.Tech AI & ML",
-    "semester": 4,
-    "email": "rahul.yadav179@example.com",
-    "phone": "9860214368"
-  },
-  {
-    "name": "Vivaan Kapoor",
-    "rollNo": "ME23180",
-    "course": "B.Tech AI & ML",
-    "semester": 7,
-    "email": "vivaan.kapoor180@example.com",
-    "phone": "9503087392"
-  },
-  {
-    "name": "Sneha Mishra",
-    "rollNo": "IT23181",
-    "course": "B.Tech ECE",
-    "semester": 7,
-    "email": "sneha.mishra181@example.com",
-    "phone": "9146999935"
-  },
-  {
-    "name": "Nikhil Patel",
-    "rollNo": "EE23182",
-    "course": "B.Tech Civil",
-    "semester": 1,
-    "email": "nikhil.patel182@example.com",
-    "phone": "9189227269"
-  },
-  {
-    "name": "Diya Sharma",
-    "rollNo": "IT23183",
-    "course": "B.Tech Civil",
-    "semester": 8,
-    "email": "diya.sharma183@example.com",
-    "phone": "9655024046"
-  },
-  {
-    "name": "Ishita Yadav",
-    "rollNo": "AIML23184",
-    "course": "B.Tech Civil",
-    "semester": 4,
-    "email": "ishita.yadav184@example.com",
-    "phone": "9657897607"
-  },
-  {
-    "name": "Karan Kumar",
-    "rollNo": "CSE23185",
-    "course": "B.Tech Civil",
-    "semester": 4,
-    "email": "karan.kumar185@example.com",
-    "phone": "9104754524"
-  },
-  {
-    "name": "Meera Bansal",
-    "rollNo": "EE23186",
-    "course": "B.Tech IT",
-    "semester": 4,
-    "email": "meera.bansal186@example.com",
-    "phone": "9466645220"
-  },
-  {
-    "name": "Meera Sharma",
-    "rollNo": "CSE23187",
-    "course": "B.Tech Mechanical",
-    "semester": 6,
-    "email": "meera.sharma187@example.com",
-    "phone": "9120148339"
-  },
-  {
-    "name": "Sneha Gupta",
-    "rollNo": "ECE23188",
-    "course": "B.Tech Mechanical",
-    "semester": 8,
-    "email": "sneha.gupta188@example.com",
-    "phone": "9923132099"
-  },
-  {
-    "name": "Harsh Mishra",
-    "rollNo": "ME23189",
-    "course": "B.Tech AI & ML",
-    "semester": 3,
-    "email": "harsh.mishra189@example.com",
-    "phone": "9220863786"
-  },
-  {
-    "name": "Harsh Saxena",
-    "rollNo": "CSE23190",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "harsh.saxena190@example.com",
-    "phone": "9107138769"
-  },
-  {
-    "name": "Priya Kapoor",
-    "rollNo": "AIML23191",
-    "course": "B.Tech IT",
-    "semester": 3,
-    "email": "priya.kapoor191@example.com",
-    "phone": "9960310676"
-  },
-  {
-    "name": "Harsh Kumar",
-    "rollNo": "ME23192",
-    "course": "B.Tech Civil",
-    "semester": 7,
-    "email": "harsh.kumar192@example.com",
-    "phone": "9756966708"
-  },
-  {
-    "name": "Arjun Agarwal",
-    "rollNo": "IT23193",
-    "course": "B.Tech Civil",
-    "semester": 5,
-    "email": "arjun.agarwal193@example.com",
-    "phone": "9541778435"
-  },
-  {
-    "name": "Rohan Joshi",
-    "rollNo": "ECE23194",
-    "course": "B.Tech Civil",
-    "semester": 7,
-    "email": "rohan.joshi194@example.com",
-    "phone": "9568879947"
-  },
-  {
-    "name": "Aditya Saxena",
-    "rollNo": "IT23195",
-    "course": "B.Tech ECE",
-    "semester": 2,
-    "email": "aditya.saxena195@example.com",
-    "phone": "9569966847"
-  },
-  {
-    "name": "Rahul Malhotra",
-    "rollNo": "CE23196",
-    "course": "B.Tech CSE",
-    "semester": 8,
-    "email": "rahul.malhotra196@example.com",
-    "phone": "9607648048"
-  },
-  {
-    "name": "Priya Joshi",
-    "rollNo": "AIML23197",
-    "course": "B.Tech AI & ML",
-    "semester": 3,
-    "email": "priya.joshi197@example.com",
-    "phone": "9884032838"
-  },
-  {
-    "name": "Aditya Saxena",
-    "rollNo": "CE23198",
-    "course": "B.Tech CSE",
-    "semester": 5,
-    "email": "aditya.saxena198@example.com",
-    "phone": "9325977126"
-  },
-  {
-    "name": "Meera Mehta",
-    "rollNo": "AIML23199",
-    "course": "B.Tech IT",
-    "semester": 2,
-    "email": "meera.mehta199@example.com",
-    "phone": "9859884278"
-  },
-  {
-    "name": "Diya Mishra",
-    "rollNo": "CE23200",
-    "course": "B.Tech ECE",
-    "semester": 6,
-    "email": "diya.mishra200@example.com",
-    "phone": "9182015504"
-  }
-,
-  {
-    name: "Ishita Malhotra",
-    rollNo: "CSE23010",
-    course: "B.Tech CSE",
-    semester: 5,
-    email: "ishita.malhotra@example.com",
-    phone: "9876501010"
-  }
+ {
+  name: "Rahul Sharma",
+  rollNo: "23AIML001",
+  course: "B.Tech AI & ML",
+  semester: 5,
+  email: "rahul.sharma@gmail.com",
+  phone: "9876543210",
+  cgpa: 8.74,
+  result: "Pass",
+  gender: "Male",
+  address: "Sector 15, Hisar, Haryana"
+},
+{
+  name: "Priya Verma",
+  rollNo: "23CSE002",
+  course: "B.Tech CSE",
+  semester: 4,
+  email: "priya.verma@gmail.com",
+  phone: "9876543211",
+  cgpa: 9.15,
+  result: "Pass",
+  gender: "Female",
+  address: "Model Town, Rohtak, Haryana"
+},
+{
+  name: "Aman Gupta",
+  rollNo: "23IT003",
+  course: "B.Tech IT",
+  semester: 6,
+  email: "aman.gupta@gmail.com",
+  phone: "9876543212",
+  cgpa: 7.92,
+  result: "Pass",
+  gender: "Male",
+  address: "Rajendra Nagar, New Delhi"
+},
+{
+  name: "Sneha Patel",
+  rollNo: "23ECE004",
+  course: "B.Tech ECE",
+  semester: 3,
+  email: "sneha.patel@gmail.com",
+  phone: "9876543213",
+  cgpa: 8.56,
+  result: "Pass",
+  gender: "Female",
+  address: "Navrangpura, Ahmedabad, Gujarat"
+},
+{
+  name: "Arjun Singh",
+  rollNo: "23ME005",
+  course: "B.Tech Mechanical",
+  semester: 7,
+  email: "arjun.singh@gmail.com",
+  phone: "9876543214",
+  cgpa: 6.95,
+  result: "Pass",
+  gender: "Male",
+  address: "Civil Lines, Jaipur, Rajasthan"
+},
+{
+  name: "Neha Yadav",
+  rollNo: "23CV006",
+  course: "B.Tech Civil",
+  semester: 5,
+  email: "neha.yadav@gmail.com",
+  phone: "9876543215",
+  cgpa: 9.42,
+  result: "Pass",
+  gender: "Female",
+  address: "Gomti Nagar, Lucknow, Uttar Pradesh"
+},
+{
+  name: "Karan Mehta",
+  rollNo: "23AIML007",
+  course: "B.Tech AI & ML",
+  semester: 8,
+  email: "karan.mehta@gmail.com",
+  phone: "9876543216",
+  cgpa: 7.64,
+  result: "Pass",
+  gender: "Male",
+  address: "Vaishali Nagar, Jaipur, Rajasthan"
+},
+{
+  name: "Ananya Sharma",
+  rollNo: "23CSE008",
+  course: "B.Tech CSE",
+  semester: 2,
+  email: "ananya.sharma@gmail.com",
+  phone: "9876543217",
+  cgpa: 9.67,
+  result: "Pass",
+  gender: "Female",
+  address: "Sector 22, Chandigarh"
+},
+{
+  name: "Rohit Kumar",
+  rollNo: "23IT009",
+  course: "B.Tech IT",
+  semester: 4,
+  email: "rohit.kumar@gmail.com",
+  phone: "9876543218",
+  cgpa: 5.84,
+  result: "Fail",
+  gender: "Male",
+  address: "Kankarbagh, Patna, Bihar"
+},
+{
+  name: "Aditi Jain",
+  rollNo: "23ECE010",
+  course: "B.Tech ECE",
+  semester: 6,
+  email: "aditi.jain@gmail.com",
+  phone: "9876543219",
+  cgpa: 8.88,
+  result: "Pass",
+  gender: "Female",
+  address: "Vijay Nagar, Indore, Madhya Pradesh"
+},
+{
+  name: "Vikram Choudhary",
+  rollNo: "23ME011",
+  course: "B.Tech Mechanical",
+  semester: 5,
+  email: "vikram.choudhary@gmail.com",
+  phone: "9876543220",
+  cgpa: 7.45,
+  result: "Pass",
+  gender: "Male",
+  address: "Bikaner, Rajasthan"
+},
+{
+  name: "Pooja Rani",
+  rollNo: "23CV012",
+  course: "B.Tech Civil",
+  semester: 7,
+  email: "pooja.rani@gmail.com",
+  phone: "9876543221",
+  cgpa: 8.11,
+  result: "Pass",
+  gender: "Female",
+  address: "Panipat, Haryana"
+},
+{
+  name: "Saurabh Mishra",
+  rollNo: "23CSE013",
+  course: "B.Tech CSE",
+  semester: 3,
+  email: "saurabh.mishra@gmail.com",
+  phone: "9876543222",
+  cgpa: 8.25,
+  result: "Pass",
+  gender: "Male",
+  address: "Prayagraj, Uttar Pradesh"
+},
+{
+  name: "Kavya Nair",
+  rollNo: "23IT014",
+  course: "B.Tech IT",
+  semester: 2,
+  email: "kavya.nair@gmail.com",
+  phone: "9876543223",
+  cgpa: 9.32,
+  result: "Pass",
+  gender: "Female",
+  address: "Kochi, Kerala"
+},
+{
+  name: "Harsh Vardhan",
+  rollNo: "23ECE015",
+  course: "B.Tech ECE",
+  semester: 8,
+  email: "harsh.vardhan@gmail.com",
+  phone: "9876543224",
+  cgpa: 7.18,
+  result: "Pass",
+  gender: "Male",
+  address: "Kanpur, Uttar Pradesh"
+},
+{
+  name: "Riya Kapoor",
+  rollNo: "23AIML016",
+  course: "B.Tech AI & ML",
+  semester: 5,
+  email: "riya.kapoor@gmail.com",
+  phone: "9876543225",
+  cgpa: 9.51,
+  result: "Pass",
+  gender: "Female",
+  address: "Ludhiana, Punjab"
+},
+{
+  name: "Deepak Yadav",
+  rollNo: "23ME017",
+  course: "B.Tech Mechanical",
+  semester: 6,
+  email: "deepak.yadav@gmail.com",
+  phone: "9876543226",
+  cgpa: 6.88,
+  result: "Pass",
+  gender: "Male",
+  address: "Rewari, Haryana"
+},
+{
+  name: "Nisha Singh",
+  rollNo: "23CV018",
+  course: "B.Tech Civil",
+  semester: 4,
+  email: "nisha.singh@gmail.com",
+  phone: "9876543227",
+  cgpa: 8.73,
+  result: "Pass",
+  gender: "Female",
+  address: "Varanasi, Uttar Pradesh"
+},
+{
+  name: "Abhishek Das",
+  rollNo: "23IT019",
+  course: "B.Tech IT",
+  semester: 7,
+  email: "abhishek.das@gmail.com",
+  phone: "9876543228",
+  cgpa: 7.94,
+  result: "Pass",
+  gender: "Male",
+  address: "Bhubaneswar, Odisha"
+},
+{
+  name: "Meera Joshi",
+  rollNo: "23CSE020",
+  course: "B.Tech CSE",
+  semester: 1,
+  email: "meera.joshi@gmail.com",
+  phone: "9876543229",
+  cgpa: 9.81,
+  result: "Pass",
+  gender: "Female",
+  address: "Dehradun, Uttarakhand"
+},
+{
+  name: "Yash Malhotra",
+  rollNo: "23ECE021",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "yash.malhotra@gmail.com",
+  phone: "9876543230",
+  cgpa: 7.61,
+  result: "Pass",
+  gender: "Male",
+  address: "Gurugram, Haryana"
+},
+{
+  name: "Simran Kaur",
+  rollNo: "23AIML022",
+  course: "B.Tech AI & ML",
+  semester: 3,
+  email: "simran.kaur@gmail.com",
+  phone: "9876543231",
+  cgpa: 8.93,
+  result: "Pass",
+  gender: "Female",
+  address: "Amritsar, Punjab"
+},
+{
+  name: "Ishita Roy",
+  rollNo: "23CSE026",
+  course: "B.Tech CSE",
+  semester: 2,
+  email: "ishita.roy@gmail.com",
+  phone: "9876543235",
+  cgpa: 9.22,
+  result: "Pass",
+  gender: "Female",
+  address: "Salt Lake, Kolkata, West Bengal"
+},
+{
+  name: "Rohan Thakur",
+  rollNo: "23AIML027",
+  course: "B.Tech AI & ML",
+  semester: 6,
+  email: "rohan.thakur@gmail.com",
+  phone: "9876543236",
+  cgpa: 8.14,
+  result: "Pass",
+  gender: "Male",
+  address: "Shimla, Himachal Pradesh"
+},
+{
+  name: "Tanvi Sharma",
+  rollNo: "23IT028",
+  course: "B.Tech IT",
+  semester: 5,
+  email: "tanvi.sharma@gmail.com",
+  phone: "9876543237",
+  cgpa: 8.91,
+  result: "Pass",
+  gender: "Female",
+  address: "Noida, Uttar Pradesh"
+},
+{
+  name: "Aditya Rao",
+  rollNo: "23ECE029",
+  course: "B.Tech ECE",
+  semester: 7,
+  email: "aditya.rao@gmail.com",
+  phone: "9876543238",
+  cgpa: 7.56,
+  result: "Pass",
+  gender: "Male",
+  address: "Hyderabad, Telangana"
+},
+{
+  name: "Muskan Arora",
+  rollNo: "23ME030",
+  course: "B.Tech Mechanical",
+  semester: 4,
+  email: "muskan.arora@gmail.com",
+  phone: "9876543239",
+  cgpa: 8.42,
+  result: "Pass",
+  gender: "Female",
+  address: "Ambala, Haryana"
+},
+{
+  name: "Naveen Kumar",
+  rollNo: "23CV031",
+  course: "B.Tech Civil",
+  semester: 8,
+  email: "naveen.kumar@gmail.com",
+  phone: "9876543240",
+  cgpa: 6.89,
+  result: "Pass",
+  gender: "Male",
+  address: "Sonipat, Haryana"
+},
+{
+  name: "Pallavi Mishra",
+  rollNo: "23CSE032",
+  course: "B.Tech CSE",
+  semester: 3,
+  email: "pallavi.mishra@gmail.com",
+  phone: "9876543241",
+  cgpa: 9.36,
+  result: "Pass",
+  gender: "Female",
+  address: "Bhopal, Madhya Pradesh"
+},
+{
+  name: "Akash Verma",
+  rollNo: "23IT033",
+  course: "B.Tech IT",
+  semester: 1,
+  email: "akash.verma@gmail.com",
+  phone: "9876543242",
+  cgpa: 8.05,
+  result: "Pass",
+  gender: "Male",
+  address: "Meerut, Uttar Pradesh"
+},
+{
+  name: "Sakshi Gupta",
+  rollNo: "23ECE034",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "sakshi.gupta@gmail.com",
+  phone: "9876543243",
+  cgpa: 9.11,
+  result: "Pass",
+  gender: "Female",
+  address: "Jalandhar, Punjab"
+},
+{
+  name: "Ritesh Singh",
+  rollNo: "23AIML035",
+  course: "B.Tech AI & ML",
+  semester: 6,
+  email: "ritesh.singh@gmail.com",
+  phone: "9876543244",
+  cgpa: 7.83,
+  result: "Pass",
+  gender: "Male",
+  address: "Gaya, Bihar"
+},
+{
+  name: "Anjali Chauhan",
+  rollNo: "23ME036",
+  course: "B.Tech Mechanical",
+  semester: 2,
+  email: "anjali.chauhan@gmail.com",
+  phone: "9876543245",
+  cgpa: 8.97,
+  result: "Pass",
+  gender: "Female",
+  address: "Haridwar, Uttarakhand"
+},
+{
+  name: "Dev Malhotra",
+  rollNo: "23CV037",
+  course: "B.Tech Civil",
+  semester: 4,
+  email: "dev.malhotra@gmail.com",
+  phone: "9876543246",
+  cgpa: 7.28,
+  result: "Pass",
+  gender: "Male",
+  address: "Karnal, Haryana"
+},
+{
+  name: "Ruchi Agarwal",
+  rollNo: "23CSE038",
+  course: "B.Tech CSE",
+  semester: 7,
+  email: "ruchi.agarwal@gmail.com",
+  phone: "9876543247",
+  cgpa: 9.44,
+  result: "Pass",
+  gender: "Female",
+  address: "Agra, Uttar Pradesh"
+},
+{
+  name: "Gaurav Saini",
+  rollNo: "23IT039",
+  course: "B.Tech IT",
+  semester: 5,
+  email: "gaurav.saini@gmail.com",
+  phone: "9876543248",
+  cgpa: 7.75,
+  result: "Pass",
+  gender: "Male",
+  address: "Hisar, Haryana"
+},
+{
+  name: "Khushi Jain",
+  rollNo: "23ECE040",
+  course: "B.Tech ECE",
+  semester: 3,
+  email: "khushi.jain@gmail.com",
+  phone: "9876543249",
+  cgpa: 9.58,
+  result: "Pass",
+  gender: "Female",
+  address: "Udaipur, Rajasthan"
+},
+{
+  name: "Manish Rawat",
+  rollNo: "23AIML041",
+  course: "B.Tech AI & ML",
+  semester: 8,
+  email: "manish.rawat@gmail.com",
+  phone: "9876543250",
+  cgpa: 6.91,
+  result: "Pass",
+  gender: "Male",
+  address: "Dehradun, Uttarakhand"
+},
+{
+  name: "Bhavna Kapoor",
+  rollNo: "23ME042",
+  course: "B.Tech Mechanical",
+  semester: 6,
+  email: "bhavna.kapoor@gmail.com",
+  phone: "9876543251",
+  cgpa: 8.36,
+  result: "Pass",
+  gender: "Female",
+  address: "Ludhiana, Punjab"
+},
+{
+  name: "Suraj Pandey",
+  rollNo: "23CV043",
+  course: "B.Tech Civil",
+  semester: 4,
+  email: "suraj.pandey@gmail.com",
+  phone: "9876543252",
+  cgpa: 7.62,
+  result: "Pass",
+  gender: "Male",
+  address: "Ranchi, Jharkhand"
+},
+{
+  name: "Nandini Rao",
+  rollNo: "23CSE044",
+  course: "B.Tech CSE",
+  semester: 5,
+  email: "nandini.rao@gmail.com",
+  phone: "9876543253",
+  cgpa: 9.18,
+  result: "Pass",
+  gender: "Female",
+  address: "Mysuru, Karnataka"
+},
+{
+  name: "Kunal Joshi",
+  rollNo: "23IT045",
+  course: "B.Tech IT",
+  semester: 7,
+  email: "kunal.joshi@gmail.com",
+  phone: "9876543254",
+  cgpa: 7.44,
+  result: "Pass",
+  gender: "Male",
+  address: "Nashik, Maharashtra"
+},
+{
+  name: "Aarohi Bhatia",
+  rollNo: "23ECE046",
+  course: "B.Tech ECE",
+  semester: 2,
+  email: "aarohi.bhatia@gmail.com",
+  phone: "9876543255",
+  cgpa: 9.63,
+  result: "Pass",
+  gender: "Female",
+  address: "Chandigarh"
+},
+{
+  name: "Shivam Dubey",
+  rollNo: "23AIML047",
+  course: "B.Tech AI & ML",
+  semester: 3,
+  email: "shivam.dubey@gmail.com",
+  phone: "9876543256",
+  cgpa: 8.24,
+  result: "Pass",
+  gender: "Male",
+  address: "Jabalpur, Madhya Pradesh"
+},
+{
+  name: "Payal Saxena",
+  rollNo: "23ME048",
+  course: "B.Tech Mechanical",
+  semester: 1,
+  email: "payal.saxena@gmail.com",
+  phone: "9876543257",
+  cgpa: 9.27,
+  result: "Pass",
+  gender: "Female",
+  address: "Bareilly, Uttar Pradesh"
+},
+{
+  name: "Vivek Tiwari",
+  rollNo: "23CV049",
+  course: "B.Tech Civil",
+  semester: 8,
+  email: "vivek.tiwari@gmail.com",
+  phone: "9876543258",
+  cgpa: 6.73,
+  result: "Pass",
+  gender: "Male",
+  address: "Raipur, Chhattisgarh"
+},
+{
+  name: "Ritika Sood",
+  rollNo: "23CSE050",
+  course: "B.Tech CSE",
+  semester: 6,
+  email: "ritika.sood@gmail.com",
+  phone: "9876543259",
+  cgpa: 8.84,
+  result: "Pass",
+  gender: "Female",
+  address: "Mohali, Punjab"
+},
+{
+  name: "Ayush Saxena",
+  rollNo: "23IT051",
+  course: "B.Tech IT",
+  semester: 5,
+  email: "ayush.saxena@gmail.com",
+  phone: "9876543260",
+  cgpa: 8.35,
+  result: "Pass",
+  gender: "Male",
+  address: "Aligarh, Uttar Pradesh"
+},
+{
+  name: "Divya Khanna",
+  rollNo: "23ECE052",
+  course: "B.Tech ECE",
+  semester: 4,
+  email: "divya.khanna@gmail.com",
+  phone: "9876543261",
+  cgpa: 9.08,
+  result: "Pass",
+  gender: "Female",
+  address: "Patiala, Punjab"
+},
+{
+  name: "Rajat Bansal",
+  rollNo: "23AIML053",
+  course: "B.Tech AI & ML",
+  semester: 7,
+  email: "rajat.bansal@gmail.com",
+  phone: "9876543262",
+  cgpa: 7.91,
+  result: "Pass",
+  gender: "Male",
+  address: "Hisar, Haryana"
+},
+{
+  name: "Komal Arora",
+  rollNo: "23CSE054",
+  course: "B.Tech CSE",
+  semester: 2,
+  email: "komal.arora@gmail.com",
+  phone: "9876543263",
+  cgpa: 9.47,
+  result: "Pass",
+  gender: "Female",
+  address: "Kurukshetra, Haryana"
+},
+{
+  name: "Sachin Yadav",
+  rollNo: "23ME055",
+  course: "B.Tech Mechanical",
+  semester: 6,
+  email: "sachin.yadav@gmail.com",
+  phone: "9876543264",
+  cgpa: 7.32,
+  result: "Pass",
+  gender: "Male",
+  address: "Rewari, Haryana"
+},
+{
+  name: "Preeti Sharma",
+  rollNo: "23CV056",
+  course: "B.Tech Civil",
+  semester: 3,
+  email: "preeti.sharma@gmail.com",
+  phone: "9876543265",
+  cgpa: 8.88,
+  result: "Pass",
+  gender: "Female",
+  address: "Jaipur, Rajasthan"
+},
+{
+  name: "Hemant Verma",
+  rollNo: "23IT057",
+  course: "B.Tech IT",
+  semester: 8,
+  email: "hemant.verma@gmail.com",
+  phone: "9876543266",
+  cgpa: 6.84,
+  result: "Pass",
+  gender: "Male",
+  address: "Ghaziabad, Uttar Pradesh"
+},
+{
+  name: "Riya Mehta",
+  rollNo: "23ECE058",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "riya.mehta@gmail.com",
+  phone: "9876543267",
+  cgpa: 9.52,
+  result: "Pass",
+  gender: "Female",
+  address: "Ahmedabad, Gujarat"
+},
+{
+  name: "Ankit Sharma",
+  rollNo: "23AIML059",
+  course: "B.Tech AI & ML",
+  semester: 4,
+  email: "ankit.sharma@gmail.com",
+  phone: "9876543268",
+  cgpa: 8.13,
+  result: "Pass",
+  gender: "Male",
+  address: "Faridabad, Haryana"
+},
+{
+  name: "Neha Kapoor",
+  rollNo: "23CSE060",
+  course: "B.Tech CSE",
+  semester: 1,
+  email: "neha.kapoor@gmail.com",
+  phone: "9876543269",
+  cgpa: 9.71,
+  result: "Pass",
+  gender: "Female",
+  address: "Chandigarh"
+},
+{
+  name: "Lokesh Kumar",
+  rollNo: "23ME061",
+  course: "B.Tech Mechanical",
+  semester: 7,
+  email: "lokesh.kumar@gmail.com",
+  phone: "9876543270",
+  cgpa: 7.24,
+  result: "Pass",
+  gender: "Male",
+  address: "Rohtak, Haryana"
+},
+{
+  name: "Ayesha Khan",
+  rollNo: "23CV062",
+  course: "B.Tech Civil",
+  semester: 6,
+  email: "ayesha.khan@gmail.com",
+  phone: "9876543271",
+  cgpa: 8.97,
+  result: "Pass",
+  gender: "Female",
+  address: "Bhopal, Madhya Pradesh"
+},
+{
+  name: "Harshit Garg",
+  rollNo: "23IT063",
+  course: "B.Tech IT",
+  semester: 3,
+  email: "harshit.garg@gmail.com",
+  phone: "9876543272",
+  cgpa: 8.41,
+  result: "Pass",
+  gender: "Male",
+  address: "Sirsa, Haryana"
+},
+{
+  name: "Sanya Malhotra",
+  rollNo: "23ECE064",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "sanya.malhotra@gmail.com",
+  phone: "9876543273",
+  cgpa: 9.34,
+  result: "Pass",
+  gender: "Female",
+  address: "Noida, Uttar Pradesh"
+},
+{
+  name: "Abhinav Jain",
+  rollNo: "23AIML065",
+  course: "B.Tech AI & ML",
+  semester: 8,
+  email: "abhinav.jain@gmail.com",
+  phone: "9876543274",
+  cgpa: 7.78,
+  result: "Pass",
+  gender: "Male",
+  address: "Indore, Madhya Pradesh"
+},
+{
+  name: "Tanisha Arora",
+  rollNo: "23CSE066",
+  course: "B.Tech CSE",
+  semester: 4,
+  email: "tanisha.arora@gmail.com",
+  phone: "9876543275",
+  cgpa: 8.94,
+  result: "Pass",
+  gender: "Female",
+  address: "Delhi"
+},
+{
+  name: "Nikhil Saini",
+  rollNo: "23ME067",
+  course: "B.Tech Mechanical",
+  semester: 6,
+  email: "nikhil.saini@gmail.com",
+  phone: "9876543276",
+  cgpa: 7.53,
+  result: "Pass",
+  gender: "Male",
+  address: "Panipat, Haryana"
+},
+{
+  name: "Pallak Gupta",
+  rollNo: "23CV068",
+  course: "B.Tech Civil",
+  semester: 2,
+  email: "pallak.gupta@gmail.com",
+  phone: "9876543277",
+  cgpa: 9.29,
+  result: "Pass",
+  gender: "Female",
+  address: "Lucknow, Uttar Pradesh"
+},
+{
+  name: "Adarsh Mishra",
+  rollNo: "23IT069",
+  course: "B.Tech IT",
+  semester: 5,
+  email: "adarsh.mishra@gmail.com",
+  phone: "9876543278",
+  cgpa: 8.07,
+  result: "Pass",
+  gender: "Male",
+  address: "Prayagraj, Uttar Pradesh"
+},
+{
+  name: "Isha Bhatia",
+  rollNo: "23ECE070",
+  course: "B.Tech ECE",
+  semester: 3,
+  email: "isha.bhatia@gmail.com",
+  phone: "9876543279",
+  cgpa: 9.46,
+  result: "Pass",
+  gender: "Female",
+  address: "Ludhiana, Punjab"
+},
+{
+  name: "Varun Sharma",
+  rollNo: "23AIML071",
+  course: "B.Tech AI & ML",
+  semester: 7,
+  email: "varun.sharma@gmail.com",
+  phone: "9876543280",
+  cgpa: 7.69,
+  result: "Pass",
+  gender: "Male",
+  address: "Karnal, Haryana"
+},
+{
+  name: "Ruchi Sood",
+  rollNo: "23CSE072",
+  course: "B.Tech CSE",
+  semester: 1,
+  email: "ruchi.sood@gmail.com",
+  phone: "9876543281",
+  cgpa: 9.75,
+  result: "Pass",
+  gender: "Female",
+  address: "Mohali, Punjab"
+},
+{
+  name: "Deepanshu Yadav",
+  rollNo: "23ME073",
+  course: "B.Tech Mechanical",
+  semester: 8,
+  email: "deepanshu.yadav@gmail.com",
+  phone: "9876543282",
+  cgpa: 6.92,
+  result: "Pass",
+  gender: "Male",
+  address: "Jhajjar, Haryana"
+},
+{
+  name: "Mansi Verma",
+  rollNo: "23CV074",
+  course: "B.Tech Civil",
+  semester: 4,
+  email: "mansi.verma@gmail.com",
+  phone: "9876543283",
+  cgpa: 8.82,
+  result: "Pass",
+  gender: "Female",
+  address: "Kanpur, Uttar Pradesh"
+},
+{
+  name: "Rohit Arora",
+  rollNo: "23IT075",
+  course: "B.Tech IT",
+  semester: 6,
+  email: "rohit.arora@gmail.com",
+  phone: "9876543284",
+  cgpa: 7.96,
+  result: "Pass",
+  gender: "Male",
+  address: "Gurugram, Haryana"
+},
+{
+  name: "Vrinda Angira",
+  rollNo: "23AIML101",
+  course: "B.Tech AI & ML",
+  semester: 5,
+  email: "vrinda.angira@gmail.com",
+  phone: "9876543285",
+  cgpa: 8.96,
+  result: "Pass",
+  gender: "Female",
+  address: "Delhi"
+},
+{
+  name: "Mafi Jangra",
+  rollNo: "23CSE102",
+  course: "B.Tech CSE",
+  semester: 5,
+  email: "mafi.jangra@gmail.com",
+  phone: "9876543286",
+  cgpa: 8.42,
+  result: "Pass",
+  gender: "Female",
+  address: "Kaithal, Haryana"
+},
+{
+  name: "Sanjana Mudhai",
+  rollNo: "23IT103",
+  course: "B.Tech IT",
+  semester: 5,
+  email: "sanjana.mudhai@gmail.com",
+  phone: "9876543287",
+  cgpa: 9.14,
+  result: "Pass",
+  gender: "Female",
+  address: "Hisar, Haryana"
+},
+{
+  name: "Yashika Kaushik",
+  rollNo: "23ECE104",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "yashika.kaushik@gmail.com",
+  phone: "9876543288",
+  cgpa: 8.71,
+  result: "Pass",
+  gender: "Female",
+  address: "Meham, Haryana"
+},
+{
+  name: "Anamika Ranga",
+  rollNo: "23CV105",
+  course: "B.Tech Civil",
+  semester: 5,
+  email: "anamika.ranga@gmail.com",
+  phone: "9876543289",
+  cgpa: 8.83,
+  result: "Pass",
+  gender: "Female",
+  address: "Chandana, Kaithal, Haryana"
+},
+{
+  name: "Komal Chahal",
+  rollNo: "23ME106",
+  course: "B.Tech Mechanical",
+  semester: 5,
+  email: "komal.chahal@gmail.com",
+  phone: "9876543290",
+  cgpa: 8.37,
+  result: "Pass",
+  gender: "Female",
+  address: "Hisar, Haryana"
+},
+{
+  name: "Sakshi Malhotra",
+  rollNo: "23ECE076",
+  course: "B.Tech ECE",
+  semester: 3,
+  email: "sakshi.malhotra@gmail.com",
+  phone: "9876543285",
+  cgpa: 9.13,
+  result: "Pass",
+  gender: "Female",
+  address: "Chandigarh"
+},
+{
+  name: "Aakash Chauhan",
+  rollNo: "23AIML077",
+  course: "B.Tech AI & ML",
+  semester: 5,
+  email: "aakash.chauhan@gmail.com",
+  phone: "9876543286",
+  cgpa: 8.26,
+  result: "Pass",
+  gender: "Male",
+  address: "Meerut, Uttar Pradesh"
+},
+{
+  name: "Nidhi Kapoor",
+  rollNo: "23CSE078",
+  course: "B.Tech CSE",
+  semester: 2,
+  email: "nidhi.kapoor@gmail.com",
+  phone: "9876543287",
+  cgpa: 9.61,
+  result: "Pass",
+  gender: "Female",
+  address: "Patiala, Punjab"
+},
+{
+  name: "Mayank Sharma",
+  rollNo: "23ME079",
+  course: "B.Tech Mechanical",
+  semester: 6,
+  email: "mayank.sharma@gmail.com",
+  phone: "9876543288",
+  cgpa: 7.41,
+  result: "Pass",
+  gender: "Male",
+  address: "Hisar, Haryana"
+},
+{
+  name: "Anjali Gupta",
+  rollNo: "23CV080",
+  course: "B.Tech Civil",
+  semester: 4,
+  email: "anjali.gupta@gmail.com",
+  phone: "9876543289",
+  cgpa: 8.89,
+  result: "Pass",
+  gender: "Female",
+  address: "Jaipur, Rajasthan"
+},
+{
+  name: "Vikas Kumar",
+  rollNo: "23IT081",
+  course: "B.Tech IT",
+  semester: 7,
+  email: "vikas.kumar@gmail.com",
+  phone: "9876543290",
+  cgpa: 7.75,
+  result: "Pass",
+  gender: "Male",
+  address: "Rohtak, Haryana"
+},
+{
+  name: "Shivani Jain",
+  rollNo: "23ECE082",
+  course: "B.Tech ECE",
+  semester: 5,
+  email: "shivani.jain@gmail.com",
+  phone: "9876543291",
+  cgpa: 9.29,
+  result: "Pass",
+  gender: "Female",
+  address: "Indore, Madhya Pradesh"
+},
+{
+  name: "Harsh Gupta",
+  rollNo: "23AIML083",
+  course: "B.Tech AI & ML",
+  semester: 8,
+  email: "harsh.gupta@gmail.com",
+  phone: "9876543292",
+  cgpa: 7.54,
+  result: "Pass",
+  gender: "Male",
+  address: "Delhi"
+},
+{
+  name: "Mehak Arora",
+  rollNo: "23CSE084",
+  course: "B.Tech CSE",
+  semester: 1,
+  email: "mehak.arora@gmail.com",
+  phone: "9876543293",
+  cgpa: 9.83,
+  result: "Pass",
+  gender: "Female",
+  address: "Mohali, Punjab"
+},
+{
+  name: "Sumit Yadav",
+  rollNo: "23ME085",
+  course: "B.Tech Mechanical",
+  semester: 5,
+  email: "sumit.yadav@gmail.com",
+  phone: "9876543294",
+  cgpa: 7.23,
+  result: "Pass",
+  gender: "Male",
+  address: "Rewari, Haryana"
+},
+{
+  name: "Poonam Verma",
+  rollNo: "23CV086",
+  course: "B.Tech Civil",
+  semester: 6,
+  email: "poonam.verma@gmail.com",
+  phone: "9876543295",
+  cgpa: 8.91,
+  result: "Pass",
+  gender: "Female",
+  address: "Lucknow, Uttar Pradesh"
+},
+{
+  name: "Aditya Bansal",
+  rollNo: "23IT087",
+  course: "B.Tech IT",
+  semester: 4,
+  email: "aditya.bansal@gmail.com",
+  phone: "9876543296",
+  cgpa: 8.14,
+  result: "Pass",
+  gender: "Male",
+  address: "Faridabad, Haryana"
+},
+{
+  name: "Khushi Sharma",
+  rollNo: "23ECE088",
+  course: "B.Tech ECE",
+  semester: 2,
+  email: "khushi.sharma@gmail.com",
+  phone: "9876543297",
+  cgpa: 9.58,
+  result: "Pass",
+  gender: "Female",
+  address: "Dehradun, Uttarakhand"
+},
+{
+  name: "Rajat Singh",
+  rollNo: "23AIML089",
+  course: "B.Tech AI & ML",
+  semester: 7,
+  email: "rajat.singh@gmail.com",
+  phone: "9876543298",
+  cgpa: 7.88,
+  result: "Pass",
+  gender: "Male",
+  address: "Prayagraj, Uttar Pradesh"
+},
+{
+  name: "Ankita Mishra",
+  rollNo: "23CSE090",
+  course: "B.Tech CSE",
+  semester: 3,
+  email: "ankita.mishra@gmail.com",
+  phone: "9876543299",
+  cgpa: 9.36,
+  result: "Pass",
+  gender: "Female",
+  address: "Varanasi, Uttar Pradesh"
+},
+{
+  name: "Deepak Arora",
+  rollNo: "23ME091",
+  course: "B.Tech Mechanical",
+  semester: 8,
+  email: "deepak.arora@gmail.com",
+  phone: "9876543300",
+  cgpa: 6.95,
+  result: "Pass",
+  gender: "Male",
+  address: "Panipat, Haryana"
+},
+{
+  name: "Ritika Sharma",
+  rollNo: "23CV092",
+  course: "B.Tech Civil",
+  semester: 5,
+  email: "ritika.sharma@gmail.com",
+  phone: "9876543301",
+  cgpa: 8.75,
+  result: "Pass",
+  gender: "Female",
+  address: "Agra, Uttar Pradesh"
+},
+{
+  name: "Yash Verma",
+  rollNo: "23IT093",
+  course: "B.Tech IT",
+  semester: 6,
+  email: "yash.verma@gmail.com",
+  phone: "9876543302",
+  cgpa: 8.02,
+  result: "Pass",
+  gender: "Male",
+  address: "Noida, Uttar Pradesh"
+},
+{
+  name: "Simran Gupta",
+  rollNo: "23ECE094",
+  course: "B.Tech ECE",
+  semester: 4,
+  email: "simran.gupta@gmail.com",
+  phone: "9876543303",
+  cgpa: 9.42,
+  result: "Pass",
+  gender: "Female",
+  address: "Amritsar, Punjab"
+},
+{
+  name: "Manoj Kumar",
+  rollNo: "23AIML095",
+  course: "B.Tech AI & ML",
+  semester: 7,
+  email: "manoj.kumar@gmail.com",
+  phone: "9876543304",
+  cgpa: 7.37,
+  result: "Pass",
+  gender: "Male",
+  address: "Sonipat, Haryana"
+},
+{
+  name: "Pallavi Saini",
+  rollNo: "23CSE096",
+  course: "B.Tech CSE",
+  semester: 2,
+  email: "pallavi.saini@gmail.com",
+  phone: "9876543305",
+  cgpa: 9.64,
+  result: "Pass",
+  gender: "Female",
+  address: "Kurukshetra, Haryana"
+},
+{
+  name: "Anurag Tiwari",
+  rollNo: "23ME097",
+  course: "B.Tech Mechanical",
+  semester: 5,
+  email: "anurag.tiwari@gmail.com",
+  phone: "9876543306",
+  cgpa: 7.69,
+  result: "Pass",
+  gender: "Male",
+  address: "Kanpur, Uttar Pradesh"
+},
+{
+  name: "Muskan Verma",
+  rollNo: "23CV098",
+  course: "B.Tech Civil",
+  semester: 3,
+  email: "muskan.verma@gmail.com",
+  phone: "9876543307",
+  cgpa: 8.98,
+  result: "Pass",
+  gender: "Female",
+  address: "Jodhpur, Rajasthan"
+},
+{
+  name: "Kartik Sharma",
+  rollNo: "23IT099",
+  course: "B.Tech IT",
+  semester: 8,
+  email: "kartik.sharma@gmail.com",
+  phone: "9876543308",
+  cgpa: 7.57,
+  result: "Pass",
+  gender: "Male",
+  address: "Gurugram, Haryana"
+},
+{
+  name: "Aditi Kapoor",
+  rollNo: "23ECE100",
+  course: "B.Tech ECE",
+  semester: 6,
+  email: "aditi.kapoor@gmail.com",
+  phone: "9876543309",
+  cgpa: 9.24,
+  result: "Pass",
+  gender: "Female",
+  address: "Pune, Maharashtra"
+},
+{
+  name: "Nitin Arora",
+  rollNo: "23ME023",
+  course: "B.Tech Mechanical",
+  semester: 8,
+  email: "nitin.arora@gmail.com",
+  phone: "9876543232",
+  cgpa: 6.72,
+  result: "Pass",
+  gender: "Male",
+  address: "Faridabad, Haryana"
+},
+{
+  name: "Shreya Kulkarni",
+  rollNo: "23CV024",
+  course: "B.Tech Civil",
+  semester: 6,
+  email: "shreya.kulkarni@gmail.com",
+  phone: "9876543233",
+  cgpa: 9.06,
+  result: "Pass",
+  gender: "Female",
+  address: "Pune, Maharashtra"
+},
+{
+  name: "Mohit Bansal",
+  rollNo: "23IT025",
+  course: "B.Tech IT",
+  semester: 4,
+  email: "mohit.bansal@gmail.com",
+  phone: "9876543234",
+  cgpa: 7.49,
+  result: "Pass",
+  gender: "Male",
+  address: "Hisar, Haryana"
+}
      
     ]);
 

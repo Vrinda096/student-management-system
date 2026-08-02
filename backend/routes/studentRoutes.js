@@ -1,3 +1,4 @@
+const roleMiddleware = require("../middleware/roleMiddleware");
 const express = require("express");
 
 const router = express.Router();
@@ -10,22 +11,40 @@ const {
     deleteStudent
 } = require("../controllers/studentController");
 
-const authMiddleware = require("../middleware/authMiddleware");
+const {
+    authMiddleware,
+    adminOnly
+} = require("../middleware/authMiddleware");
 
-// Create Student
-router.post("/", authMiddleware, addStudent);
+// Only Admin can add student
+router.post(
+    "/",
+    authMiddleware,
+    roleMiddleware("admin"),
+    addStudent
+);
 
-// Get All Students
+// Everyone can view students
 router.get("/", authMiddleware, getStudents);
 
-// Get Student By ID
+// Everyone can view single student
 router.get("/:id", authMiddleware, getStudentById);
 
-// Update Student
-router.put("/:id", authMiddleware, updateStudent);
+// Only Admin can edit
+router.put(
+    "/:id",
+    authMiddleware,
+    roleMiddleware("admin"),
+    updateStudent
+);
 
-// Delete Student
-router.delete("/:id", authMiddleware, deleteStudent);
+// Only Admin can delete
+router.delete(
+    "/:id",
+    authMiddleware,
+    roleMiddleware("admin"),
+    deleteStudent
+);
 
 
 module.exports = router;

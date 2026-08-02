@@ -1,6 +1,7 @@
+import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/StudentList.css";
 import { toast } from "react-toastify";
 
@@ -12,6 +13,7 @@ function StudentList() {
     const [selectedCourse, setSelectedCourse] = useState("");
     const [selectedStudent, setSelectedStudent] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const role = localStorage.getItem("role");
     const handleView = (student) => {
         setSelectedStudent(student);
         setShowModal(true);
@@ -93,14 +95,14 @@ function StudentList() {
 
                 <h2>Students</h2>
 
-                <Link
-                    to="/add-student"
-                    className="add-btn"
-                >
-
-                    + Add Student
-
-                </Link>
+                {role === "admin" && (
+                    <Link
+                        to="/add-student"
+                        className="add-btn"
+                    >
+                        + Add Student
+                    </Link>
+                )}
 
             </div>
 
@@ -138,7 +140,7 @@ function StudentList() {
 
             </div>
 
-            
+
             <table className="student-table">
 
                 <thead>
@@ -167,25 +169,36 @@ function StudentList() {
                                 <td>{student.result}</td>
 
                                 <td>
-                                    <div className="action-buttons">
+    <div className="action-buttons">
 
-<button className="action-btn view-btn">
-   <FaEye/>
-   View
-</button>
+        <button
+            className="action-btn view-btn"
+            onClick={() => handleView(student)}
+        >
+            <FaEye />
+            View
+        </button>
 
-<button className="action-btn edit-btn">
-   <FaEdit/>
-   Edit
-</button>
+        {role === "admin" && (
+            <>
+                <Link
+                    to={`/edit-student/${student._id}`}
+                    className="action-btn edit-btn"
+                >
+                    Edit
+                </Link>
 
-<button className="action-btn delete-btn">
-   <FaTrash/>
-   Delete
-</button>
+                <button
+                    className="action-btn delete-btn"
+                    onClick={() => handleDelete(student._id)}
+                >
+                    Delete
+                </button>
+            </>
+        )}
 
-</div>
-                                </td>
+    </div>
+</td>
                             </tr>
                         ))
                     ) : (

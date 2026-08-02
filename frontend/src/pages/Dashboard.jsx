@@ -15,7 +15,8 @@ import {
 function Dashboard() {
 
     const navigate = useNavigate();
-
+const role = localStorage.getItem("role");
+const user = JSON.parse(localStorage.getItem("user"));
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
       const [totalStudents, setTotalStudents] = useState(0);
@@ -102,13 +103,12 @@ const [totalCourses, setTotalCourses] = useState(0);
 
                 </Link>
 
-                <Link to="/add-student">
-
-                    <FaPlus />
-
-                    Add Student
-
-                </Link>
+                {role === "admin" && (
+    <Link to="/add-student">
+        <FaPlus />
+        Add Student
+    </Link>
+)}
                 <Link to="/ai">
 
                     <FaRobot />
@@ -133,7 +133,13 @@ const [totalCourses, setTotalCourses] = useState(0);
             <div className="main">
                 <div className="navbar">
 
-                    <h1>📊 Dashboard</h1>
+                    <h2>
+    Welcome {user?.name}
+</h2>
+
+<p>
+    Logged in as <b>{role.toUpperCase()}</b>
+</p>
 
                     <div className="user">
 
@@ -150,48 +156,62 @@ const [totalCourses, setTotalCourses] = useState(0);
 
                 <div className="cards">
 
-                    <div className="card">
-    <h2>{loading ? "..." : totalStudents}</h2>
-    <p>Total Students</p>
+    {role === "admin" ? (
+        <>
+            <div className="card">
+                <h2>{loading ? "..." : totalStudents}</h2>
+                <p>Total Students</p>
+            </div>
+
+            <div className="card">
+                <h2>{loading ? "..." : totalCourses}</h2>
+                <p>Courses</p>
+            </div>
+
+            <div
+                className={`card ${
+                    systemStatus === "Active"
+                        ? "active-card"
+                        : "inactive-card"
+                }`}
+            >
+                <h2>
+                    {systemStatus === "Active" ? "🟢" : "🔴"}
+                </h2>
+
+                <p>System {systemStatus}</p>
+            </div>
+        </>
+    ) : (
+        <>
+            <div className="card">
+                <h2>{user?.name}</h2>
+                <p>Student Name</p>
+            </div>
+
+            <div className="card">
+                <h2>Student</h2>
+                <p>Role</p>
+            </div>
+
+            <div className="card">
+                <h2>👁️</h2>
+                <p>View Only Access</p>
+            </div>
+        </>
+    )}
+
 </div>
-
-                   <div className="card">
-    <h2>{loading ? "..." : totalCourses}</h2>
-    <p>Courses</p>
-</div>
-
-                    <div
-                        className={`card ${systemStatus === "Active"
-                                ? "active-card"
-                                : "inactive-card"
-                            }`}
-                    >
-                        <h2>
-                            {systemStatus === "Active" ? "🟢" : "🔴"}
-                        </h2>
-
-                        <p>
-                            System {systemStatus}
-                        </p>
-                    </div>
-
-                </div>
 
                 <div className="activity">
+    <h2>System Overview</h2>
 
-                    <h2>Recent Activities</h2>
-
-                    <ul>
-
-                        <li>✅ Student records loaded successfully</li>
-
-                        <li>✅ Authentication is active</li>
-
-                        <li>✅ Database connected</li>
-
-                    </ul>
-
-                </div>
+    <ul>
+        <li>📚 Manage student records easily</li>
+        <li>👨‍🎓 Add, update, and remove students</li>
+        <li>📊 View student information instantly</li>
+    </ul>
+</div>
 
                 <div className="quick-actions">
 
