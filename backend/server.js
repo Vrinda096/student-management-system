@@ -1,4 +1,3 @@
-
 const path = require("path");
 const dotenv = require("dotenv");
 const express = require("express");
@@ -8,12 +7,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const studentRoutes = require("./routes/studentRoutes");
 const aiRoutes = require("./routes/aiRoutes");
-const {
-  authMiddleware,
-  adminOnly,
-} = require("./middleware/authMiddleware");
 dotenv.config();
-
 connectDB();
 
 const app = express();
@@ -53,8 +47,6 @@ app.get("/", (req, res) => {
   res.send("Student Management API is Running...");
 });
 
-// Protected profile route
-const { authMiddleware } = require("./middleware/authMiddleware");
 
 app.get("/profile", authMiddleware, (req, res) => {
   res.json({
