@@ -174,8 +174,6 @@ function StudentList() {
 
        
               
-                    Edit
-                </Link>
 
                 <button
                     className="action-btn delete-btn"
@@ -183,8 +181,8 @@ function StudentList() {
                 >
                     Delete
                 </button>
-            </>
-        )}
+        
+        
 
     </div>
 </td>
