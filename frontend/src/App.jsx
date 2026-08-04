@@ -68,15 +68,7 @@ function App() {
 
 <Route path="/student"
 
-element={
 
-<StudentRoute>
-
-<StudentDashboard/>
-
-</StudentRoute>
-
-}
 
 />
 <Route
