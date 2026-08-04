@@ -61,7 +61,6 @@ function App() {
 
       <Route path="*" element={<NotFound />} />
     
-      <Route path="/student/:id" element={<StudentProfile />} />
      <Route
     path="/students"
     element={

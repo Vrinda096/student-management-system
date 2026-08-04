@@ -15,13 +15,13 @@ import {
 function Dashboard() {
 
     const navigate = useNavigate();
-const role = localStorage.getItem("role");
-const user = JSON.parse(localStorage.getItem("user"));
+    const role = localStorage.getItem("role");
+    const user = JSON.parse(localStorage.getItem("user"));
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
-      const [totalStudents, setTotalStudents] = useState(0);
+    const [totalStudents, setTotalStudents] = useState(0);
     const [systemStatus, setSystemStatus] = useState("Checking...");
-const [totalCourses, setTotalCourses] = useState(0);
+    const [totalCourses, setTotalCourses] = useState(0);
     const [darkMode, setDarkMode] = useState(false);
     useEffect(() => {
 
@@ -48,7 +48,7 @@ const [totalCourses, setTotalCourses] = useState(0);
                 course,
                 count: courses[course],
             }));
-
+            setCourseData(chartData);
             setTotalCourses(chartData.length);
 
             // Backend is working
@@ -104,11 +104,11 @@ const [totalCourses, setTotalCourses] = useState(0);
                 </Link>
 
                 {role === "admin" && (
-    <Link to="/add-student">
-        <FaPlus />
-        Add Student
-    </Link>
-)}
+                    <Link to="/add-student">
+                        <FaPlus />
+                        Add Student
+                    </Link>
+                )}
                 <Link to="/ai">
 
                     <FaRobot />
@@ -116,7 +116,7 @@ const [totalCourses, setTotalCourses] = useState(0);
                     AI Assistant
 
                 </Link>
-                
+
                 <button
                     className="logout-btn"
                     onClick={handleLogout}
@@ -134,12 +134,12 @@ const [totalCourses, setTotalCourses] = useState(0);
                 <div className="navbar">
 
                     <h2>
-    Welcome {user?.name}
-</h2>
+                        Welcome {user?.name}
+                    </h2>
 
-<p>
-    Logged in as <b>{role.toUpperCase()}</b>
-</p>
+                    <p>
+                        Logged in as <b>{role.toUpperCase()}</b>
+                    </p>
 
                     <div className="user">
 
@@ -156,63 +156,68 @@ const [totalCourses, setTotalCourses] = useState(0);
 
                 <div className="cards">
 
-    {role === "admin" ? (
-        <>
-            <div className="card">
-                <h2>{loading ? "..." : totalStudents}</h2>
-                <p>Total Students</p>
-            </div>
+                    {role === "admin" ? (
+                        <>
+                            <div className="card">
+                                <h2>{loading ? "..." : totalStudents}</h2>
+                                <p>Total Students</p>
+                            </div>
 
-            <div className="card">
-                <h2>{loading ? "..." : totalCourses}</h2>
-                <p>Courses</p>
-            </div>
+                            <div className="card">
+                                <h2>{loading ? "..." : totalCourses}</h2>
+                                <p>Courses</p>
+                            </div>
 
-            <div
-                className={`card ${
-                    systemStatus === "Active"
-                        ? "active-card"
-                        : "inactive-card"
-                }`}
-            >
-                <h2>
-                    {systemStatus === "Active" ? "🟢" : "🔴"}
-                </h2>
+                            <div
+                                className={`card ${systemStatus === "Active"
+                                        ? "active-card"
+                                        : "inactive-card"
+                                    }`}
+                            >
+                                <h2>
+                                    {systemStatus === "Active" ? "🟢" : "🔴"}
+                                </h2>
 
-                <p>System {systemStatus}</p>
-            </div>
-        </>
-    ) : (
-        <>
-            <div className="card">
-                <h2>{user?.name}</h2>
-                <p>Student Name</p>
-            </div>
+                                <p>System {systemStatus}</p>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className="card">
+                                <h2>{user?.name}</h2>
+                                <p>Student Name</p>
+                            </div>
 
-            <div className="card">
-                <h2>Student</h2>
-                <p>Role</p>
-            </div>
+                            <div className="card">
+                                <h2>Student</h2>
+                                <p>Role</p>
+                            </div>
 
-            <div className="card">
-                <h2>👁️</h2>
-                <p>View Only Access</p>
-            </div>
-        </>
-    )}
+                            <div className="card">
+                                <h2>👁️</h2>
+                                <p>View Only Access</p>
+                            </div>
+                        </>
+                    )}
 
-</div>
+                </div>
 
                 <div className="activity">
-    <h2>System Overview</h2>
+                    <h2>System Overview</h2>
 
-    <ul>
-        <li>📚 Manage student records easily</li>
-        <li>👨‍🎓 Add, update, and remove students</li>
-        <li>📊 View student information instantly</li>
-    </ul>
+                    <ul>
+                        <li>📚 Manage student records easily</li>
+                        <li>👨‍🎓 Add, update, and remove students</li>
+                        <li>📊 View student information instantly</li>
+                    </ul>
+                </div>
+<div className="chart-section">
+    <h2>
+        <FaChartBar /> Course Distribution
+    </h2>
+
+    <CourseChart courseData={courseData} />
 </div>
-
                 <div className="quick-actions">
 
                     <h2 style={{ marginBottom: "20px" }}>
@@ -229,12 +234,12 @@ const [totalCourses, setTotalCourses] = useState(0);
                         <Link to="/ai" className="action-btn">
                             🤖 AI Assistant
                         </Link>
-                    
+
                     </div>
 
 
                 </div>
-            
+
 
             </div>
 

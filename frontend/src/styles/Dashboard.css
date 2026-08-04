@@ -323,3 +323,21 @@ padding:15px;
 }
 
 }
+.chart-section{
+    margin-top:35px;
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.chart-section h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+.dark .chart-section{
+    background:#1e293b;
+    color:white;
+}
