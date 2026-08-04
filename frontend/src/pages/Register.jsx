@@ -11,6 +11,7 @@ function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("student");
 
     const handleSubmit = async (e) => {
 
@@ -21,8 +22,10 @@ function Register() {
           const response = await api.post("/auth/register", {
     name,
     email,
-    password
+    password,
+    role
 });
+
 
             toast.success(response.data.message);
 
