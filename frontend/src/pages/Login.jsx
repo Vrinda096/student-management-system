@@ -30,8 +30,7 @@ function Login() {
             console.log("Token:", response.data.token);
 
             localStorage.setItem("token", response.data.token);
-            localStorage.setItem("role", response.data.user.role);
-            localStorage.setItem("user", JSON.stringify(response.data.user));
+           
 
 
             localStorage.setItem(
@@ -42,11 +41,7 @@ function Login() {
 
             toast.success(response.data.message);
 
-            if (response.data.user.role === "admin") {
-    navigate("/admin");
-} else {
-    navigate("/student");
-}
+ 
 
 
         } catch (error) {

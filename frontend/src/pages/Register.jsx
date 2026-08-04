@@ -19,12 +19,12 @@ function Register() {
 
         try {
 
-          const response = await api.post("/auth/register", {
-    name,
-    email,
-    password,
-    role
-});
+            const response = await api.post("/auth/register", {
+                name,
+                email,
+                password,
+
+            });
 
 
             toast.success(response.data.message);
@@ -41,101 +41,101 @@ function Register() {
 
     };
 
-    return(
+    return (
 
-<div className="auth-container">
+        <div className="auth-container">
 
-<div className="auth-card">
+            <div className="auth-card">
 
-<h1 className="auth-title">
+                <h1 className="auth-title">
 
-🎓 Student Management System
+                    🎓 Student Management System
 
-</h1>
+                </h1>
 
-<p className="auth-subtitle">
+                <p className="auth-subtitle">
 
-Create Your Account
+                    Create Your Account
 
-</p>
+                </p>
 
-<form
-className="auth-form"
-onSubmit={handleSubmit}
->
+                <form
+                    className="auth-form"
+                    onSubmit={handleSubmit}
+                >
 
-<input
+                    <input
 
-type="text"
+                        type="text"
 
-placeholder="Full Name"
+                        placeholder="Full Name"
 
-value={name}
+                        value={name}
 
-onChange={(e)=>setName(e.target.value)}
+                        onChange={(e) => setName(e.target.value)}
 
-required
+                        required
 
-/>
+                    />
 
-<input
+                    <input
 
-type="email"
+                        type="email"
 
-placeholder="Email"
+                        placeholder="Email"
 
-value={email}
+                        value={email}
 
-onChange={(e)=>setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
 
-required
+                        required
 
-/>
+                    />
 
-<input
+                    <input
 
-type="password"
+                        type="password"
 
-placeholder="Password"
+                        placeholder="Password"
 
-value={password}
+                        value={password}
 
-onChange={(e)=>setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
 
-required
+                        required
 
-/>
+                    />
 
-<button
-className="auth-btn"
-type="submit"
->
+                    <button
+                        className="auth-btn"
+                        type="submit"
+                    >
 
-Register →
+                        Register →
 
-</button>
+                    </button>
 
-</form>
+                </form>
 
-<div className="auth-footer">
+                <div className="auth-footer">
 
-Already have an account?
+                    Already have an account?
 
-{" "}
+                    {" "}
 
-<Link to="/login">
+                    <Link to="/login">
 
-Login
+                        Login
 
-</Link>
+                    </Link>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-);
+    );
 
 }
 
