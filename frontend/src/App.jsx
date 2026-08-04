@@ -38,34 +38,14 @@ function App() {
 />
       <Route path="/students" element={<StudentList />} />
 
-      <Route
-    path="/add-student"
-    element={
-        <ProtectedRoute allowedRoles={["admin"]}>
-            <AddStudent />
-        </ProtectedRoute>
-    }
-/>
+      
 
-     <Route
-    path="/edit-student/:id"
-    element={
-        <ProtectedRoute allowedRoles={["admin"]}>
-            <EditStudent />
-        </ProtectedRoute>
-    }
-/>
+
+    
 
       <Route path="*" element={<NotFound />} />
     
-     <Route
-    path="/students"
-    element={
-        <ProtectedRoute allowedRoles={["admin", "student"]}>
-            <StudentList />
-        </ProtectedRoute>
-    }
-/>
+    
 
 <Route
   path="/student/:id"
@@ -84,19 +64,7 @@ function App() {
     </ProtectedRoute>
   }
 />
-<Route path="/admin"
 
-element={
-
-<AdminRoute>
-
-<AdminDashboard/>
-
-</AdminRoute>
-
-}
-
-/>
 
 <Route path="/student"
 

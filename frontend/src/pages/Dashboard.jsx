@@ -103,12 +103,7 @@ function Dashboard() {
 
                 </Link>
 
-                {role === "admin" && (
-                    <Link to="/add-student">
-                        <FaPlus />
-                        Add Student
-                    </Link>
-                )}
+                
                 <Link to="/ai">
 
                     <FaRobot />
@@ -156,7 +151,7 @@ function Dashboard() {
 
                 <div className="cards">
 
-                    {role === "admin" ? (
+                    (
                         <>
                             <div className="card">
                                 <h2>{loading ? "..." : totalStudents}</h2>
@@ -198,7 +193,7 @@ function Dashboard() {
                                 <p>View Only Access</p>
                             </div>
                         </>
-                    )}
+                    )
 
                 </div>
 

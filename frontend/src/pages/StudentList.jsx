@@ -95,14 +95,7 @@ function StudentList() {
 
                 <h2>Students</h2>
 
-                {role === "admin" && (
-                    <Link
-                        to="/add-student"
-                        className="add-btn"
-                    >
-                        + Add Student
-                    </Link>
-                )}
+              
 
             </div>
 
@@ -179,12 +172,8 @@ function StudentList() {
             View
         </button>
 
-        {role === "admin" && (
-            <>
-                <Link
-                    to={`/edit-student/${student._id}`}
-                    className="action-btn edit-btn"
-                >
+       
+              
                     Edit
                 </Link>
 
