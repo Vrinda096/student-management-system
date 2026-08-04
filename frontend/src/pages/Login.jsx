@@ -30,19 +30,10 @@ function Login() {
             console.log("Token:", response.data.token);
 
             localStorage.setItem("token", response.data.token);
-           
-
-
-            localStorage.setItem(
-                "user",
-                JSON.stringify(response.data.user)
-            );
+        
             console.log("After Saving:", localStorage.getItem("token"));
 
             toast.success(response.data.message);
-
- 
-
 
         } catch (error) {
 
