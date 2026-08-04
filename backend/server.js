@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-const studentRoutes = require("./routes/studentRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const { authMiddleware } = require("./middleware/authMiddleware");
 dotenv.config();
