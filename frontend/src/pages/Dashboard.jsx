@@ -15,8 +15,6 @@ import {
 function Dashboard() {
 
     const navigate = useNavigate();
-    const role = localStorage.getItem("role");
-    const user = JSON.parse(localStorage.getItem("user"));
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
     const [totalStudents, setTotalStudents] = useState(0);
