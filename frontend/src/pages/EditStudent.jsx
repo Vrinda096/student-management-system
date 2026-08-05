@@ -4,6 +4,7 @@ import api from "../services/api";
 import StudentForm from "../components/StudentForm";
 import { toast } from "react-toastify";
 import "../styles/EditStudent.css";
+
 function EditStudent() {
 
     const { id } = useParams();
@@ -11,23 +12,25 @@ function EditStudent() {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-    name: "",
-    rollNo: "",
-    course: "",
-    semester: "",
-    email: "",
-    phone: "",
-    cgpa: "",
-    result: "",
-    gender: "",
-    address: ""
-});
+        name: "",
+        rollNo: "",
+        course: "",
+        semester: "",
+        email: "",
+        phone: "",
+        cgpa: "",
+        result: "",
+        gender: "",
+        address: ""
+    });
+
 
     useEffect(() => {
 
         fetchStudent();
 
     }, []);
+
 
     const fetchStudent = async () => {
 
@@ -45,6 +48,7 @@ function EditStudent() {
 
     };
 
+
     const handleChange = (e) => {
 
         setFormData({
@@ -56,6 +60,7 @@ function EditStudent() {
         });
 
     };
+
 
     const handleSubmit = async (e) => {
 
@@ -69,35 +74,52 @@ function EditStudent() {
 
             navigate("/students");
 
-        } catch (error) {
-    console.log(error);
-    console.log(error.response);
 
-    alert(error.response?.data?.message || "Update Failed");
-}
+        } catch(error){
+
+            console.log(error);
+
+            alert(
+                error.response?.data?.message ||
+                "Update Failed"
+            );
+
+        }
 
     };
 
-   return(
 
-<div className="edit-page">
+    return (
 
-    <div className="edit-card">
+        <div className="edit-page">
 
-        <h2>Edit Student</h2>
+            <div className="edit-card">
 
-        <form>
+                <h2>
+                    ✏️ Edit Student
+                </h2>
 
-            {/* your inputs */}
 
-        </form>
+                <StudentForm
 
-    </div>
+                    formData={formData}
 
-</div>
+                    handleChange={handleChange}
 
-)
+                    handleSubmit={handleSubmit}
+
+                    buttonText="Update Student"
+
+                />
+
+
+            </div>
+
+        </div>
+
+    );
 
 }
 
 export default EditStudent;
+    
