@@ -6,12 +6,13 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const studentRoutes = require("./routes/studentRoutes");
 const { authMiddleware } = require("./middleware/authMiddleware");
 dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(express.json());
 // CORS Configuration
 app.use(
   cors({
@@ -24,11 +25,10 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+app.use("/api/students", studentRoutes);
 
-app.use(express.json());
 
-
-// 👇 ADD THIS HERE
+// ADD THIS HERE
 app.get("/test-cors", (req, res) => {
   res.json({
     origin: req.headers.origin,
