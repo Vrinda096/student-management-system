@@ -95,9 +95,6 @@ function EditStudent() {
 
             <div className="edit-card">
 
-                <h2>
-                    ✏️ Edit Student
-                </h2>
 
 
                 <StudentForm
