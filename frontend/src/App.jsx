@@ -9,7 +9,6 @@ import EditStudent from "./pages/EditStudent";
 import NotFound from "./pages/NotFound";
 import StudentProfile from "./pages/StudentProfile";
 import AIAssistant from "./pages/AIAssistant";
-
 function App() {
   return (
     <Routes>
@@ -37,11 +36,6 @@ function App() {
   }
 />
       <Route path="/students" element={<StudentList />} />
-
-      
-
-
-    
 
       <Route path="*" element={<NotFound />} />
     
