@@ -15,6 +15,7 @@ import {
 function Dashboard() {
 
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
     const [loading, setLoading] = useState(true);
     const [courseData, setCourseData] = useState([]);
     const [totalStudents, setTotalStudents] = useState(0);
@@ -131,7 +132,7 @@ function Dashboard() {
                     </h2>
 
                     <p>
-                        Logged in as <b>{role.toUpperCase()}</b>
+                    Welcome to Student Management System
                     </p>
 
                     <div className="user">
@@ -148,52 +149,27 @@ function Dashboard() {
                 </div>
 
                 <div className="cards">
+    <div className="card">
+        <h2>{loading ? "..." : totalStudents}</h2>
+        <p>Total Students</p>
+    </div>
 
-                    (
-                        <>
-                            <div className="card">
-                                <h2>{loading ? "..." : totalStudents}</h2>
-                                <p>Total Students</p>
-                            </div>
+    <div className="card">
+        <h2>{loading ? "..." : totalCourses}</h2>
+        <p>Courses</p>
+    </div>
 
-                            <div className="card">
-                                <h2>{loading ? "..." : totalCourses}</h2>
-                                <p>Courses</p>
-                            </div>
-
-                            <div
-                                className={`card ${systemStatus === "Active"
-                                        ? "active-card"
-                                        : "inactive-card"
-                                    }`}
-                            >
-                                <h2>
-                                    {systemStatus === "Active" ? "🟢" : "🔴"}
-                                </h2>
-
-                                <p>System {systemStatus}</p>
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div className="card">
-                                <h2>{user?.name}</h2>
-                                <p>Student Name</p>
-                            </div>
-
-                            <div className="card">
-                                <h2>Student</h2>
-                                <p>Role</p>
-                            </div>
-
-                            <div className="card">
-                                <h2>👁️</h2>
-                                <p>View Only Access</p>
-                            </div>
-                        </>
-                    )
-
-                </div>
+    <div
+        className={`card ${
+            systemStatus === "Active"
+                ? "active-card"
+                : "inactive-card"
+        }`}
+    >
+        <h2>{systemStatus === "Active" ? "🟢" : "🔴"}</h2>
+        <p>System {systemStatus}</p>
+    </div>
+</div>
 
                 <div className="activity">
                     <h2>System Overview</h2>
