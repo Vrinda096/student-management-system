@@ -40,12 +40,8 @@ const registerUser = async (req, res) => {
         });
     }
 };
-
-// Login User
 const loginUser = async (req, res) => {
-
     try {
-
         const { email, password } = req.body;
 
         if (!email || !password) {
@@ -70,26 +66,29 @@ const loginUser = async (req, res) => {
             });
         }
 
-
-    process.env.JWT_SECRET,
-    {
-        expiresIn: "1d"
-    }
-
-        
+        // Create JWT Token
+        const token = jwt.sign(
+            {
+                id: user._id
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d"
+            }
+        );
 
         res.status(200).json({
-    token
-});
+            token,
+            user
+        });
 
     } catch (error) {
+        console.error("Login Error:", error);
 
         res.status(500).json({
             message: error.message
         });
-
     }
-
 };
 
 module.exports = {
