@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import api from "../services/api";
 import StudentForm from "../components/StudentForm";
 import { toast } from "react-toastify";
+import "../styles/EditStudent.css";
 function EditStudent() {
 
     const { id } = useParams();
@@ -77,18 +78,25 @@ function EditStudent() {
 
     };
 
-    return (
+   return(
 
-    <StudentForm
-        formData={formData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        buttonText="✏️ Update Student"
-        title="Update Student"
-        subtitle="Modify the student details below"
-    />
+<div className="edit-page">
 
-);
+    <div className="edit-card">
+
+        <h2>Edit Student</h2>
+
+        <form>
+
+            {/* your inputs */}
+
+        </form>
+
+    </div>
+
+</div>
+
+)
 
 }
 
