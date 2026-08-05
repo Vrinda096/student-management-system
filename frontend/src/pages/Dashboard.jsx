@@ -81,8 +81,7 @@ function Dashboard() {
 
                 <Link to="/ai">
 
-                    <FaRobot />
-
+                
                     AI Assistant
 
                 </Link>
