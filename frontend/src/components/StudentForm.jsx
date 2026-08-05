@@ -5,7 +5,7 @@ function StudentForm({
     handleChange,
     handleSubmit,
     buttonText,
-    title = "Add New Student",
+    title = "Update Student",
     subtitle = "Fill in the student details below"
 }) {
 
