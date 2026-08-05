@@ -89,15 +89,13 @@ function StudentList() {
     });
     return (
 
-        <div className="student-container">
+    <div className="student-page">
 
-            <div className="student-header">
+        <div className="student-header">
 
-                <h2>Students</h2>
+            <h2>Students</h2>
 
-              
-
-            </div>
+        </div>
 
             <div className="filter-section">
 

@@ -26,7 +26,15 @@ function Dashboard() {
             setTotalStudents(response.data.students.length);
             const students = response.data.students;
 
+const uniqueCourses = [
+  ...new Set(
+    students
+      .map(student => student.course?.trim())
+      .filter(Boolean)
+  )
+];
 
+setTotalCourses(uniqueCourses.length);
 
             // Backend is working
             setSystemStatus("Active");

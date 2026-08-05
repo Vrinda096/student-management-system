@@ -1,4 +1,4 @@
-.modal-overlay{
+/* .modal-overlay{
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.55);
@@ -96,4 +96,138 @@
     font-weight:600;
 
     white-space:nowrap;
+} */
+
+
+
+.student-page{
+
+    min-height:100vh;
+
+    width:100%;
+
+    padding:40px;
+
+    background:#f5f7fb;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.student-header{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin-bottom:25px;
+
+}
+
+
+.student-header h2{
+
+    font-size:32px;
+
+    color:#1e293b;
+
+}
+
+
+
+.filter-section{
+
+    width:90%;
+
+    max-width:1200px;
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+.search-box,
+.course-filter{
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:15px;
+
+}
+
+
+
+.search-box{
+
+    flex:1;
+
+}
+
+.course-filter{
+
+    width:220px;
+
+}
+.student-table{
+
+    width:90%;
+
+    max-width:1200px;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    border-collapse:collapse;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.student-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
+}
+
+
+
+.student-table td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.student-table tr:hover{
+
+    background:#f8fafc;
+
 }
