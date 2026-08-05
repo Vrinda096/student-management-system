@@ -25,7 +25,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.use("/api/students", studentRoutes);
+app.use("/api/students", authMiddleware, studentRoutes);
 
 
 // ADD THIS HERE
