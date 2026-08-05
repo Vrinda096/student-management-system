@@ -162,6 +162,7 @@ function StudentList() {
                                 <td>
                                     <div className="action-buttons">
 
+                                        {/* View Button */}
                                         <button
                                             className="action-btn view-btn"
                                             onClick={() => handleView(student)}
@@ -171,16 +172,24 @@ function StudentList() {
                                         </button>
 
 
+                                        {/* Edit Button */}
+                                        <Link
+                                            to={`/edit-student/${student._id}`}
+                                            className="action-btn edit-btn"
+                                        >
+                                            <FaEdit />
+                                            Edit
+                                        </Link>
 
 
+                                        {/* Delete Button */}
                                         <button
                                             className="action-btn delete-btn"
                                             onClick={() => handleDelete(student._id)}
                                         >
+                                            <FaTrash />
                                             Delete
                                         </button>
-
-
 
                                     </div>
                                 </td>
