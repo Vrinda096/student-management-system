@@ -89,13 +89,13 @@ function StudentList() {
     });
     return (
 
-    <div className="student-page">
+        <div className="student-page">
 
-        <div className="student-header">
+            <div className="student-header">
 
-            <h2>Students</h2>
+                <h2>Students</h2>
 
-        </div>
+            </div>
 
             <div className="filter-section">
 
@@ -160,35 +160,35 @@ function StudentList() {
                                 <td>{student.result}</td>
 
                                 <td>
-    <div className="action-buttons">
+                                    <div className="action-buttons">
 
-        <button
-            className="action-btn view-btn"
-            onClick={() => handleView(student)}
-        >
-            <FaEye />
-            View
-        </button>
+                                        <button
+                                            className="action-btn view-btn"
+                                            onClick={() => handleView(student)}
+                                        >
+                                            <FaEye />
+                                            View
+                                        </button>
 
-       
-              
 
-                <button
-                    className="action-btn delete-btn"
-                    onClick={() => handleDelete(student._id)}
-                >
-                    Delete
-                </button>
-        
-        
 
-    </div>
-</td>
+
+                                        <button
+                                            className="action-btn delete-btn"
+                                            onClick={() => handleDelete(student._id)}
+                                        >
+                                            Delete
+                                        </button>
+
+
+
+                                    </div>
+                                </td>
                             </tr>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="4">
+                            <td colSpan="6">
                                 No Students Found
                             </td>
                         </tr>
