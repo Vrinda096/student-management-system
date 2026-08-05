@@ -1,23 +1,12 @@
-import CourseChart from "../components/CourseChart";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import {
-    FaHome,
-    FaUsers,
-    FaPlus,
-    FaSignOutAlt,
-    FaRobot,
-    FaChartBar
-} from "react-icons/fa";
-
 function Dashboard() {
 
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user"));
     const [loading, setLoading] = useState(true);
-    const [courseData, setCourseData] = useState([]);
     const [totalStudents, setTotalStudents] = useState(0);
     const [systemStatus, setSystemStatus] = useState("Checking...");
     const [totalCourses, setTotalCourses] = useState(0);
@@ -37,18 +26,7 @@ function Dashboard() {
             setTotalStudents(response.data.students.length);
             const students = response.data.students;
 
-            const courses = {};
-
-            students.forEach((student) => {
-                courses[student.course] = (courses[student.course] || 0) + 1;
-            });
-
-            const chartData = Object.keys(courses).map((course) => ({
-                course,
-                count: courses[course],
-            }));
-            setCourseData(chartData);
-            setTotalCourses(chartData.length);
+            
 
             // Backend is working
             setSystemStatus("Active");
@@ -180,13 +158,7 @@ function Dashboard() {
                         <li>📊 View student information instantly</li>
                     </ul>
                 </div>
-<div className="chart-section">
-    <h2>
-        <FaChartBar /> Course Distribution
-    </h2>
 
-    <CourseChart courseData={courseData} />
-</div>
                 <div className="quick-actions">
 
                     <h2 style={{ marginBottom: "20px" }}>
