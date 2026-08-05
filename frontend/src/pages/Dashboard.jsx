@@ -26,7 +26,7 @@ function Dashboard() {
             setTotalStudents(response.data.students.length);
             const students = response.data.students;
 
-            
+
 
             // Backend is working
             setSystemStatus("Active");
@@ -66,7 +66,6 @@ function Dashboard() {
 
                 <Link to="/dashboard">
 
-                    <FaHome />
 
                     Dashboard
 
@@ -74,13 +73,12 @@ function Dashboard() {
 
                 <Link to="/students">
 
-                    <FaUsers />
 
                     Students
 
                 </Link>
 
-                
+
                 <Link to="/ai">
 
                     <FaRobot />
@@ -93,8 +91,6 @@ function Dashboard() {
                     className="logout-btn"
                     onClick={handleLogout}
                 >
-
-                    <FaSignOutAlt />
 
                     {" "}Logout
 
@@ -110,7 +106,7 @@ function Dashboard() {
                     </h2>
 
                     <p>
-                    Welcome to Student Management System
+                        Welcome to Student Management System
                     </p>
 
                     <div className="user">
@@ -127,27 +123,26 @@ function Dashboard() {
                 </div>
 
                 <div className="cards">
-    <div className="card">
-        <h2>{loading ? "..." : totalStudents}</h2>
-        <p>Total Students</p>
-    </div>
+                    <div className="card">
+                        <h2>{loading ? "..." : totalStudents}</h2>
+                        <p>Total Students</p>
+                    </div>
 
-    <div className="card">
-        <h2>{loading ? "..." : totalCourses}</h2>
-        <p>Courses</p>
-    </div>
+                    <div className="card">
+                        <h2>{loading ? "..." : totalCourses}</h2>
+                        <p>Courses</p>
+                    </div>
 
-    <div
-        className={`card ${
-            systemStatus === "Active"
-                ? "active-card"
-                : "inactive-card"
-        }`}
-    >
-        <h2>{systemStatus === "Active" ? "🟢" : "🔴"}</h2>
-        <p>System {systemStatus}</p>
-    </div>
-</div>
+                    <div
+                        className={`card ${systemStatus === "Active"
+                                ? "active-card"
+                                : "inactive-card"
+                            }`}
+                    >
+                        <h2>{systemStatus === "Active" ? "🟢" : "🔴"}</h2>
+                        <p>System {systemStatus}</p>
+                    </div>
+                </div>
 
                 <div className="activity">
                     <h2>System Overview</h2>
