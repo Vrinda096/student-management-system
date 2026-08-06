@@ -26,15 +26,15 @@ function Dashboard() {
             setTotalStudents(response.data.students.length);
             const students = response.data.students;
 
-const uniqueCourses = [
-  ...new Set(
-    students
-      .map(student => student.course?.trim())
-      .filter(Boolean)
-  )
-];
+            const uniqueCourses = [
+                ...new Set(
+                    students
+                        .map(student => student.course?.trim())
+                        .filter(Boolean)
+                )
+            ];
 
-setTotalCourses(uniqueCourses.length);
+            setTotalCourses(uniqueCourses.length);
 
             // Backend is working
             setSystemStatus("Active");
@@ -66,42 +66,44 @@ setTotalCourses(uniqueCourses.length);
         <div className={darkMode ? "dashboard dark" : "dashboard"}>
             {/* <div className="sidebar"> */}
 
-                <div className="logo">
+            <div className="logo">
 
-                    <h2>🎓 SMS</h2>
+                <h2>🎓 SMS</h2>
 
-                </div>
+            </div>
 
-                <Link to="/dashboard">
-
-
-                    Dashboard
-
-                </Link>
-
-                <Link to="/students">
+            <Link to="/dashboard">
 
 
-                    Students
+                Dashboard
 
-                </Link>
+            </Link>
+
+            <Link to="/students">
 
 
-                <Link to="/ai">
+                Students
 
-                
-                    AI Assistant
+            </Link>
+            <Link to="/add-student">
+                Add Student
+            </Link>
 
-                </Link>
+            <Link to="/ai">
 
-                <button
-                    className="logout-btn"
-                    onClick={handleLogout}
-                >
 
-                    {" "}Logout
+                AI Assistant
 
-                </button>
+            </Link>
+
+            <button
+                className="logout-btn"
+                onClick={handleLogout}
+            >
+
+                {" "}Logout
+
+            </button>
 
             {/* </div> */}
 
@@ -142,8 +144,8 @@ setTotalCourses(uniqueCourses.length);
 
                     <div
                         className={`card ${systemStatus === "Active"
-                                ? "active-card"
-                                : "inactive-card"
+                            ? "active-card"
+                            : "inactive-card"
                             }`}
                     >
                         <h2>{systemStatus === "Active" ? "🟢" : "🔴"}</h2>
