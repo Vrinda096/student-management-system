@@ -1,64 +1,79 @@
-import { Bar } from "react-chartjs-2";
-
 import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
+    ResponsiveContainer,
+    BarChart,
+    Bar,
+    CartesianGrid,
     Tooltip,
-    Legend,
-} from "chart.js";
+    XAxis,
+    YAxis
+} from "recharts";
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-);
+function CourseChart({ students }) {
 
-function CourseChart({ courseData }) {
+    const courseData = [];
 
-    const data = {
-        labels: courseData.map((c) => c.course),
+    students.forEach(student => {
 
-        datasets: [
-            {
-                label: "Number of Students",
-                data: courseData.map((c) => c.count),
+        const existing = courseData.find(
+            item => item.course === student.course
+        );
 
-                backgroundColor: [
-                    "#3B82F6",
-                    "#10B981",
-                    "#F59E0B",
-                    "#EF4444",
-                    "#8B5CF6",
-                    "#06B6D4",
-                ],
+        if(existing){
 
-                borderRadius: 8,
-            },
-        ],
-    };
+            existing.students++;
 
-    const options = {
-        responsive: true,
+        }else{
 
-        plugins: {
-            legend: {
-                position: "top",
-            },
+            courseData.push({
 
-            title: {
-                display: true,
-                text: "Students by Course",
-            },
-        },
-    };
+                course:student.course,
 
-    return <Bar data={data} options={options} />;
+                students:1
+
+            });
+
+        }
+
+    });
+
+    return(
+
+        <div className="chart-card">
+
+            <h2>📊 Students by Course</h2>
+
+            <ResponsiveContainer
+                width="100%"
+                height={350}
+            >
+
+                <BarChart
+                    data={courseData}
+                >
+
+                    <CartesianGrid
+                        strokeDasharray="3 3"
+                    />
+
+                    <XAxis dataKey="course"/>
+
+                    <YAxis/>
+
+                    <Tooltip/>
+
+                    <Bar
+                        dataKey="students"
+                        fill="#2563EB"
+                    />
+
+                </BarChart>
+
+            </ResponsiveContainer>
+
+        </div>
+
+    );
+
 }
 
 export default CourseChart;

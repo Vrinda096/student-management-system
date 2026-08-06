@@ -1,0 +1,23 @@
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f8fafc;
+
+}
+
+.layout-right{
+
+    flex:1;
+
+    margin-left:260px;
+
+}
+
+.layout-content{
+
+    padding:30px;
+
+}

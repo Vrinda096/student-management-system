@@ -1,32 +1,69 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "../styles/Sidebar.css";
 
-function Sidebar(){
+function Sidebar() {
 
-    return(
+    const location = useLocation();
+    const navigate = useNavigate();
 
-        <div className="sidebar">
+    const logout = () => {
 
-            <h2>
-                Student MS
-            </h2>
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        navigate("/login");
 
+    };
 
-            <Link to="/dashboard">
-                🏠 Dashboard
-            </Link>
+    return (
 
+        <aside className="sidebar">
 
-            <Link to="/students">
-                👨‍🎓 Students
-            </Link>
+            <div className="logo">
 
+                🎓 SMS
 
-            <Link to="/add-student">
-                ➕ Add Student
-            </Link>
+            </div>
 
+            <nav>
 
-        </div>
+                <Link
+                    className={location.pathname==="/dashboard"?"active":""}
+                    to="/dashboard"
+                >
+                    🏠 Dashboard
+                </Link>
+
+                <Link
+                    className={location.pathname==="/students"?"active":""}
+                    to="/students"
+                >
+                    👨‍🎓 Students
+                </Link>
+
+                <Link
+                    className={location.pathname==="/add-student"?"active":""}
+                    to="/add-student"
+                >
+                    ➕ Add Student
+                </Link>
+
+                <Link
+                    className={location.pathname==="/ai"?"active":""}
+                    to="/ai"
+                >
+                    🤖 AI Assistant
+                </Link>
+
+            </nav>
+
+            <button
+                className="logout-btn"
+                onClick={logout}
+            >
+                Logout
+            </button>
+
+        </aside>
 
     );
 
