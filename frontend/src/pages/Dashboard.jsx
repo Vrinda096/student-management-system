@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import Sidebar from "../components/Sidebar";
 function Dashboard() {
 
     const navigate = useNavigate();
