@@ -1,0 +1,35 @@
+.recent-students{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.recent-students h3{
+
+margin-bottom:20px;
+
+}
+
+.student-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:15px 0;
+
+border-bottom:1px solid #eee;
+
+}
+
+.student-item:last-child{
+
+border:none;
+
+}

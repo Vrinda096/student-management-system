@@ -1,0 +1,55 @@
+.quick-actions{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.quick-actions h3{
+
+margin-bottom:20px;
+
+font-size:24px;
+
+}
+
+.quick-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.quick-links a{
+
+padding:16px;
+
+background:#2563eb;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.quick-links a:hover{
+
+transform:translateY(-3px);
+
+background:#1d4ed8;
+
+}

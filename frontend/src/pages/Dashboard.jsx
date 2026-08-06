@@ -4,8 +4,6 @@ import api from "../services/api";
 import Layout from "../components/Layout";
 import DashboardCards from "../components/DashboardCards";
 
-import CourseChart from "../components/CourseChart";
-
 import QuickActions from "../components/QuickActions";
 
 import RecentStudents from "../components/RecentStudents";
@@ -154,7 +152,7 @@ function Dashboard() {
 
                 />
 
-                <DashboardCards
+                {/* <DashboardCards
 
                     title="Male"
 
@@ -178,7 +176,7 @@ function Dashboard() {
 
                 />
 
-                <CourseChart students={students}/>
+                <CourseChart students={students}/> */}
 
         <div className="dashboard-bottom">
 
