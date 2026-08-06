@@ -1,16 +1,24 @@
+import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import "../styles/Layout.css";
 
 function Layout({ children }) {
+
+    const [darkMode, setDarkMode] = useState(false);
+
     return (
-        <div className="layout">
+
+        <div className={darkMode ? "layout dark" : "layout"}>
 
             <Sidebar />
 
             <div className="layout-right">
 
-                <Navbar />
+                <Navbar
+                    darkMode={darkMode}
+                    setDarkMode={setDarkMode}
+                />
 
                 <main className="layout-content">
 
@@ -21,7 +29,9 @@ function Layout({ children }) {
             </div>
 
         </div>
+
     );
+
 }
 
 export default Layout;

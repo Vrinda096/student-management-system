@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import StudentForm from "../components/StudentForm";
 import { toast } from "react-toastify";
+import Layout from "../components/Layout";
 function AddStudent() {
 
     const navigate = useNavigate();
@@ -49,17 +50,30 @@ function AddStudent() {
 
     };
 
-    return (
+//     return (
 
-    <StudentForm
-    formData={formData}
-    handleChange={handleChange}
-    handleSubmit={handleSubmit}
-    buttonText="➕ Add Student"
-    title="Add New Student"
-    subtitle="Fill in the student details below"
-/>
+//     <StudentForm
+//     formData={formData}
+//     handleChange={handleChange}
+//     handleSubmit={handleSubmit}
+//     buttonText="➕ Add Student"
+//     title="Add New Student"
+//     subtitle="Fill in the student details below"
+// />
 
+// );
+
+return (
+    <Layout>
+        <StudentForm
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            buttonText="➕ Add Student"
+            title="Add New Student"
+            subtitle="Fill in the student details below"
+        />
+    </Layout>
 );
 
 }

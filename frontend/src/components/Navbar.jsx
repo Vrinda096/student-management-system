@@ -1,6 +1,6 @@
 import "../styles/Navbar.css";
 
-function Navbar() {
+function Navbar({ darkMode, setDarkMode }) {
 
     const user =
         JSON.parse(localStorage.getItem("user"));
@@ -8,10 +8,10 @@ function Navbar() {
     const today = new Date().toLocaleDateString(
         "en-IN",
         {
-            weekday:"long",
-            day:"numeric",
-            month:"long",
-            year:"numeric"
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
         }
     );
 
@@ -33,9 +33,12 @@ function Navbar() {
 
             <div className="navbar-right">
 
-                <button className="theme-btn">
+                <button
+                    className="theme-btn"
+                    onClick={() => setDarkMode(!darkMode)}
+                >
 
-                    🌙 Dark
+                    {darkMode ? "☀ Light" : "🌙 Dark"}
 
                 </button>
 

@@ -21,3 +21,77 @@
     padding:30px;
 
 }
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+.layout.dark{
+
+    background:#0f172a;
+
+}
+
+.layout.dark .layout-content{
+
+    background:#0f172a;
+
+}
+
+.layout.dark .navbar{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+.layout.dark .navbar h2,
+.layout.dark .navbar p{
+
+    color:white;
+
+}
+
+.layout.dark .dashboard-card,
+.layout.dark .chart-card,
+.layout.dark .quick-card,
+.layout.dark .recent-card,
+.layout.dark .student-table,
+.layout.dark .form-card{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+.layout.dark input,
+.layout.dark select,
+.layout.dark textarea{
+
+    background:#111827;
+
+    color:white;
+
+    border:1px solid #374151;
+
+}
+
+.layout.dark table{
+
+    color:white;
+
+}
+
+.layout.dark th{
+
+    background:#2563eb;
+
+}
+
+.layout.dark td{
+
+    color:white;
+
+}
