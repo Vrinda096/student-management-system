@@ -64,7 +64,7 @@ setTotalCourses(uniqueCourses.length);
     return (
 
         <div className={darkMode ? "dashboard dark" : "dashboard"}>
-            <div className="sidebar">
+            {/* <div className="sidebar"> */}
 
                 <div className="logo">
 
@@ -103,7 +103,7 @@ setTotalCourses(uniqueCourses.length);
 
                 </button>
 
-            </div>
+            {/* </div> */}
 
             <div className="main">
                 <div className="navbar">
