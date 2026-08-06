@@ -2,7 +2,7 @@ function RecentStudents({ students }) {
 
     return (
 
-        <div className="recent-card">
+        <div className="student-table">
 
             <h2>📋 Recent Students</h2>
 

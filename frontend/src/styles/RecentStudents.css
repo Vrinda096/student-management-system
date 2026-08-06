@@ -1,4 +1,4 @@
-.recent-students{
+/* .recent-students{
 
 background:white;
 
@@ -31,5 +31,59 @@ border-bottom:1px solid #eee;
 .student-item:last-child{
 
 border:none;
+
+} */
+
+
+
+.recent-students{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+height:100%;
+
+}
+
+.recent-students h3{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+}
+
+.student-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.student-table th{
+
+background:#2563eb;
+
+color:white;
+
+padding:14px;
+
+text-align:left;
+
+}
+
+.student-table td{
+
+padding:16px 14px;
+
+border-bottom:1px solid #eee;
+
+font-size:17px;
 
 }

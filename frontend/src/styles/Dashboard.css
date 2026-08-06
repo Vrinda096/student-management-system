@@ -109,17 +109,16 @@ margin-top:35px;
 } */
 .dashboard-bottom{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:35% 65%;
     gap:25px;
     margin-top:30px;
+    align-items:start;
 }
 
 @media(max-width:1000px){
 
 .dashboard-bottom{
-
-grid-template-columns:1fr;
-
+    grid-template-columns:1fr;
 }
 
 }
