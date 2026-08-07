@@ -38,7 +38,7 @@ function Login() {
 
             navigate("/dashboard");
 
-        } else if (user.role === "student") {
+        } else if (user.role === "student" && user.student) {
 
             navigate("/profile");
 

@@ -75,7 +75,7 @@ function App() {
             {/* ================= STUDENT ROUTES ================= */}
 
             <Route
-                path="/profile"
+                path="/student/:id"
                 element={
                     <StudentRoute>
                         <StudentProfile />
