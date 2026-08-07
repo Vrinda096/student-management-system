@@ -14,37 +14,103 @@ function StudentProfile() {
     const user = JSON.parse(localStorage.getItem("user"));
     const role = localStorage.getItem("role");
 
+    const markAsRecentlyViewed = (student) => {
+
+    const existing =
+        JSON.parse(localStorage.getItem("recentStudents")) || [];
+
+    // Remove the student if already present
+    const filtered = existing.filter(
+        item => item._id !== student._id
+    );
+
+    // Put the newly viewed student at the top
+    const updated = [
+        {
+            ...student,
+            viewedAt: new Date().toISOString()
+        },
+        ...filtered
+    ];
+
+    // Keep only the latest 5
+    localStorage.setItem(
+        "recentStudents",
+        JSON.stringify(updated.slice(0, 5))
+    );
+};
+
     useEffect(() => {
 
         fetchStudent();
 
     }, []);
 
+    // const fetchStudent = async () => {
+
+    //     try {
+
+    //         /*
+    //          * For a student:
+    //          * the backend should return the student linked
+    //          * to the logged-in user.
+    //          */
+
+    //         const res = await api.get("/students/me");
+
+    //         setStudent(res.data.student);
+    //         markAsRecentlyViewed(res.data.student);
+
+    //     } catch (error) {
+
+    //         console.log(error);
+
+    //     } finally {
+
+    //         setLoading(false);
+
+    //     }
+
+    // };
     const fetchStudent = async () => {
 
-        try {
+    try {
 
-            /*
-             * For a student:
-             * the backend should return the student linked
-             * to the logged-in user.
-             */
+        let res;
 
-            const res = await api.get("/students/me");
+        if (role === "student") {
 
-            setStudent(res.data.student);
+            // Student can only see their own profile
+            res = await api.get("/students/me");
 
-        } catch (error) {
+        } else {
 
-            console.log(error);
+            // Admin views the selected student's profile
+            const id = window.location.pathname.split("/").pop();
 
-        } finally {
-
-            setLoading(false);
+            res = await api.get(`/students/${id}`);
 
         }
 
-    };
+        setStudent(res.data.student);
+
+        // Only admin views should appear in
+        // "Recently Viewed Students"
+        if (role === "admin") {
+            markAsRecentlyViewed(res.data.student);
+        }
+
+    } catch (error) {
+
+        console.log(error);
+
+    } finally {
+
+        setLoading(false);
+
+    }
+
+};
 
     if (loading) {
 
