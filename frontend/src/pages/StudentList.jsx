@@ -15,9 +15,35 @@ function StudentList() {
     const [showModal, setShowModal] = useState(false);
     const role = localStorage.getItem("role");
     const handleView = (student) => {
-        setSelectedStudent(student);
-        setShowModal(true);
-    };
+
+    // Get existing recently viewed students
+    const existing =
+        JSON.parse(localStorage.getItem("recentStudents")) || [];
+
+    // Remove this student if already present
+    const filtered = existing.filter(
+        item => item._id !== student._id
+    );
+
+    // Put newly viewed student at the top
+    const updated = [
+        {
+            ...student,
+            viewedAt: new Date().toISOString()
+        },
+        ...filtered
+    ];
+
+    // Keep only latest 5
+    localStorage.setItem(
+        "recentStudents",
+        JSON.stringify(updated.slice(0, 5))
+    );
+
+    // Open modal
+    setSelectedStudent(student);
+    setShowModal(true);
+};
     useEffect(() => {
         fetchStudents();
     }, []);

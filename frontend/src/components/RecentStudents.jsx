@@ -1,41 +1,33 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 function RecentStudents() {
 
     const [recentStudents, setRecentStudents] = useState([]);
 
-    const location = useLocation();
-
-    const loadRecentStudents = () => {
-
-        const recent =
-            JSON.parse(localStorage.getItem("recentStudents")) || [];
-
-        setRecentStudents(recent);
-    };
-
     useEffect(() => {
 
-        loadRecentStudents();
+        const loadRecentStudents = () => {
 
-    }, [location]);
+            const recent =
+                JSON.parse(localStorage.getItem("recentStudents")) || [];
 
-    useEffect(() => {
+            setRecentStudents(recent);
 
-        const handleStorageChange = () => {
-            loadRecentStudents();
         };
 
+        // Load when Dashboard opens
+        loadRecentStudents();
+
+        // Check again if localStorage changes
         window.addEventListener(
             "recentStudentsUpdated",
-            handleStorageChange
+            loadRecentStudents
         );
 
         return () => {
             window.removeEventListener(
                 "recentStudentsUpdated",
-                handleStorageChange
+                loadRecentStudents
             );
         };
 
@@ -43,18 +35,13 @@ function RecentStudents() {
 
     return (
 
-        <div className="student-table">
+        <div className="recent-card">
 
             <h2>📋 Recently Viewed Students</h2>
 
             {recentStudents.length === 0 ? (
 
-                <p style={{
-                    marginTop: "20px",
-                    color: "#64748b"
-                }}>
-                    No students viewed yet.
-                </p>
+                <p>No students viewed yet.</p>
 
             ) : (
 
@@ -71,7 +58,7 @@ function RecentStudents() {
 
                     <tbody>
 
-                        {recentStudents.map((student) => (
+                        {recentStudents.map(student => (
 
                             <tr key={student._id}>
 

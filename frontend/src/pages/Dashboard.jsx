@@ -150,7 +150,7 @@ function Dashboard() {
 
                 <QuickActions />
 
-                <RecentStudents students={students} />
+                <RecentStudents  />
 
             </div>
 
