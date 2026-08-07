@@ -38,6 +38,11 @@ function StudentProfile() {
         "recentStudents",
         JSON.stringify(updated.slice(0, 5))
     );
+
+    // Tell other components that recent students changed
+    window.dispatchEvent(
+        new Event("recentStudentsUpdated")
+    );
 };
 
     useEffect(() => {

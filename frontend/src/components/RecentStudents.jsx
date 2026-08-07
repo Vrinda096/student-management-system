@@ -1,15 +1,43 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function RecentStudents() {
 
     const [recentStudents, setRecentStudents] = useState([]);
 
-    useEffect(() => {
+    const location = useLocation();
+
+    const loadRecentStudents = () => {
 
         const recent =
             JSON.parse(localStorage.getItem("recentStudents")) || [];
 
         setRecentStudents(recent);
+    };
+
+    useEffect(() => {
+
+        loadRecentStudents();
+
+    }, [location]);
+
+    useEffect(() => {
+
+        const handleStorageChange = () => {
+            loadRecentStudents();
+        };
+
+        window.addEventListener(
+            "recentStudentsUpdated",
+            handleStorageChange
+        );
+
+        return () => {
+            window.removeEventListener(
+                "recentStudentsUpdated",
+                handleStorageChange
+            );
+        };
 
     }, []);
 
@@ -21,7 +49,10 @@ function RecentStudents() {
 
             {recentStudents.length === 0 ? (
 
-                <p style={{ marginTop: "20px", color: "#64748b" }}>
+                <p style={{
+                    marginTop: "20px",
+                    color: "#64748b"
+                }}>
                     No students viewed yet.
                 </p>
 
@@ -40,7 +71,7 @@ function RecentStudents() {
 
                     <tbody>
 
-                        {recentStudents.map(student => (
+                        {recentStudents.map((student) => (
 
                             <tr key={student._id}>
 
