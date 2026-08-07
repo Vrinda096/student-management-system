@@ -4,6 +4,18 @@ import "../styles/Sidebar.css";
 function Sidebar() {
 
     const role = localStorage.getItem("role");
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+
+        // Remove login information
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+        localStorage.removeItem("user");
+
+        // Go back to login page
+        navigate("/login");
+    };
 
     return (
 
@@ -12,7 +24,6 @@ function Sidebar() {
             <h2>
                 🎓 SMS
             </h2>
-
 
             {/* ================= ADMIN SIDEBAR ================= */}
 
@@ -36,7 +47,6 @@ function Sidebar() {
                 </>
             )}
 
-
             {/* ================= STUDENT SIDEBAR ================= */}
 
             {role === "student" && (
@@ -51,10 +61,18 @@ function Sidebar() {
                 </>
             )}
 
+            {/* ================= LOGOUT ================= */}
+
+            <button
+                className="logout-btn"
+                onClick={handleLogout}
+            >
+                🚪 Logout
+            </button>
+
         </div>
 
     );
-
 }
 
 export default Sidebar;
