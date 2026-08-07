@@ -47,3 +47,42 @@
 .login-box p {
     margin-top: 15px;
 }
+
+.login-type {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.login-type p {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.login-type-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.login-type-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #2563EB;
+    border-radius: 10px;
+    background: white;
+    color: #2563EB;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-type-btn.active {
+    background: #2563EB;
+    color: white;
+}
+
+.login-type-btn:hover {
+    background: #2563EB;
+    color: white;
+}

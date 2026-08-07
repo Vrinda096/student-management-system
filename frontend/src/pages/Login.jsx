@@ -5,62 +5,82 @@ import { Link } from "react-router-dom";
 import "../styles/Login.css";
 import { toast } from "react-toastify";
 import "../styles/Auth.css";
+
 function Login() {
+
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
-
     const [password, setPassword] = useState("");
+
+    // NEW: selected login type
+    const [loginAs, setLoginAs] = useState("student");
 
     const handleSubmit = async (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    try {
+        try {
 
-        const response = await api.post("/auth/login", {
-            email,
-            password,
-        });
+            const response = await api.post("/auth/login", {
+                email,
+                password,
+            });
 
-        const user = response.data.user;
-        const token = response.data.token;
+            const user = response.data.user;
 
-        // Save authentication information
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem("role", user.role);
+            // IMPORTANT:
+            // Do not trust the selected button for authorization.
+            // The actual role comes from the backend.
+            if (user.role !== loginAs) {
 
-        toast.success(response.data.message || "Login Successful");
+                toast.error(
+                    `This account is registered as ${user.role}. Please select ${user.role} login.`
+                );
 
-        // Redirect according to role
-        if (user.role === "admin") {
+                return;
+            }
 
-            navigate("/dashboard");
+            // Save login information
+            localStorage.setItem(
+                "token",
+                response.data.token
+            );
 
-        } else if (user.role === "student" && user.student) {
+            localStorage.setItem(
+                "user",
+                JSON.stringify(user)
+            );
 
-            navigate("/profile");
+            localStorage.setItem(
+                "role",
+                user.role
+            );
 
-        } else {
+            // Redirect according to actual backend role
+            if (user.role === "admin") {
 
-            toast.error("Invalid user role");
+                navigate("/dashboard");
 
-            localStorage.clear();
+            } else if (user.role === "student") {
+
+                navigate("/profile");
+
+            }
+
+            toast.success(response.data.message);
+
+        } catch (error) {
+
+            toast.error(
+                error.response?.data?.message ||
+                "Login Failed"
+            );
 
         }
 
-    } catch (error) {
+    };
 
-        console.log(error);
-
-        toast.error(
-            error.response?.data?.message || "Login Failed"
-        );
-
-    }
-
-};
 
     return (
 
@@ -80,38 +100,73 @@ function Login() {
 
                 </p>
 
+
+                {/* ================= LOGIN AS ================= */}
+
+                <div className="login-type">
+
+                    <p>Login As</p>
+
+                    <div className="login-type-buttons">
+
+                        <button
+                            type="button"
+                            className={
+                                loginAs === "admin"
+                                    ? "login-type-btn active"
+                                    : "login-type-btn"
+                            }
+                            onClick={() => setLoginAs("admin")}
+                        >
+                            👨‍💼 Admin
+                        </button>
+
+
+                        <button
+                            type="button"
+                            className={
+                                loginAs === "student"
+                                    ? "login-type-btn active"
+                                    : "login-type-btn"
+                            }
+                            onClick={() => setLoginAs("student")}
+                        >
+                            🎓 Student
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                {/* ================= LOGIN FORM ================= */}
+
                 <form
                     className="auth-form"
                     onSubmit={handleSubmit}
                 >
 
                     <input
-
                         type="email"
-
                         placeholder="Enter Email"
-
                         value={email}
-
-                        onChange={(e) => setEmail(e.target.value)}
-
+                        onChange={(e) =>
+                            setEmail(e.target.value)
+                        }
                         required
-
                     />
+
 
                     <input
-
                         type="password"
-
                         placeholder="Enter Password"
-
                         value={password}
-
-                        onChange={(e) => setPassword(e.target.value)}
-
+                        onChange={(e) =>
+                            setPassword(e.target.value)
+                        }
                         required
-
                     />
+
 
                     <button
                         className="auth-btn"
@@ -124,6 +179,7 @@ function Login() {
 
                 </form>
 
+
                 <div className="auth-footer">
 
                     Don't have an account?
@@ -131,9 +187,7 @@ function Login() {
                     {" "}
 
                     <Link to="/register">
-
                         Register
-
                     </Link>
 
                 </div>
