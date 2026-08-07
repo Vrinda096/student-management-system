@@ -48,9 +48,15 @@ function Dashboard() {
 
             const data = response.data.students;
 
-            setStudents(data);
+            // setStudents(data);
 
             setTotalStudents(data.length);
+
+            const recentStudents = [...data]
+                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                .slice(0, 5);
+
+            setStudents(recentStudents);
 
             const uniqueCourses = [
                 ...new Set(

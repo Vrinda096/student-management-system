@@ -2,7 +2,7 @@ function RecentStudents({ students }) {
 
     return (
 
-        <div className="student-table">
+        <div className="recent-card">
 
             <h2>📋 Recent Students</h2>
 
@@ -11,18 +11,15 @@ function RecentStudents({ students }) {
                 <thead>
 
                     <tr>
-
                         <th>Name</th>
-
                         <th>Course</th>
-
                     </tr>
 
                 </thead>
 
                 <tbody>
 
-                    {students.slice(0,5).map(student=>(
+                    {students.map((student) => (
 
                         <tr key={student._id}>
 

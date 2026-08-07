@@ -125,16 +125,13 @@ margin-top:35px;
 }
 
 .quick-card,
-.recent-card{
-
-background:white;
-
-padding:25px;
-
-border-radius:18px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
+.recent-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .quick-grid{
