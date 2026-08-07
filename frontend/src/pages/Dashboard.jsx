@@ -117,75 +117,36 @@ function Dashboard() {
             <div className="cards-grid">
 
                 <DashboardCards
-
                     title="Students"
-
                     value={loading ? "..." : totalStudents}
-
                     icon={<FaUserGraduate />}
-
                     color="#2563EB"
-
                 />
 
                 <DashboardCards
-
                     title="Courses"
-
                     value={loading ? "..." : totalCourses}
-
                     icon={<FaBook />}
-
                     color="#7C3AED"
-
                 />
 
                 <DashboardCards
-
                     title="System"
-
                     value={loading ? "..." : systemStatus}
-
                     icon={<FaCheckCircle />}
-
                     color="#22C55E"
-
                 />
 
-                {/* <DashboardCards
+            </div>
 
-                    title="Male"
 
-                    value={loading ? "..." : maleStudents}
+            <div className="dashboard-bottom">
 
-                    icon={<FaMale />}
+                <QuickActions />
 
-                    color="#0EA5E9"
+                <RecentStudents students={students} />
 
-                />
-
-                <DashboardCards
-
-                    title="Female"
-
-                    value={loading ? "..." : femaleStudents}
-
-                    icon={<FaFemale />}
-
-                    color="#EC4899"
-
-                />
-
-                <CourseChart students={students}/> */}
-                </div>
-
-        <div className="dashboard-bottom">
-
-            <QuickActions/>
-
-            <RecentStudents students={students}/>
-
-        </div>
+            </div>
 
 
         </Layout>
