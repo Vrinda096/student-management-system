@@ -16,31 +16,39 @@ function StudentList() {
     const role = localStorage.getItem("role");
     const handleView = (student) => {
 
-    // Get existing recently viewed students
-    const existing =
-        JSON.parse(localStorage.getItem("recentStudents")) || [];
+    console.log("VIEWED STUDENT:", student);
 
-    // Remove this student if already present
-    const filtered = existing.filter(
+    let recentStudents = [];
+
+    try {
+        recentStudents =
+            JSON.parse(localStorage.getItem("recentStudents")) || [];
+    } catch (error) {
+        recentStudents = [];
+    }
+
+    // Remove if already present
+    recentStudents = recentStudents.filter(
         item => item._id !== student._id
     );
 
-    // Put newly viewed student at the top
-    const updated = [
-        {
-            ...student,
-            viewedAt: new Date().toISOString()
-        },
-        ...filtered
-    ];
+    // Add newest viewed student at beginning
+    recentStudents.unshift(student);
 
-    // Keep only latest 5
+    // Keep only 5
+    recentStudents = recentStudents.slice(0, 5);
+
+    // SAVE
     localStorage.setItem(
         "recentStudents",
-        JSON.stringify(updated.slice(0, 5))
+        JSON.stringify(recentStudents)
     );
 
-    // Open modal
+    console.log(
+        "SAVED RECENT STUDENTS:",
+        JSON.parse(localStorage.getItem("recentStudents"))
+    );
+
     setSelectedStudent(student);
     setShowModal(true);
 };
