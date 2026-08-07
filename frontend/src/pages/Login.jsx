@@ -18,68 +18,67 @@ function Login() {
 
     const handleSubmit = async (e) => {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        try {
+    try {
 
-            const response = await api.post("/auth/login", {
-                email,
-                password,
-            });
+        const response = await api.post("/auth/login", {
+            email,
+            password,
+        });
 
-            const user = response.data.user;
+        const user = response.data.user;
 
-            // IMPORTANT:
-            // Do not trust the selected button for authorization.
-            // The actual role comes from the backend.
-            if (user.role !== loginAs) {
+        console.log("Logged in user:", user);
+        console.log("Actual role:", user.role);
 
-                toast.error(
-                    `This account is registered as ${user.role}. Please select ${user.role} login.`
-                );
+        // Save login information
+        localStorage.setItem(
+            "token",
+            response.data.token
+        );
 
-                return;
-            }
+        localStorage.setItem(
+            "user",
+            JSON.stringify(user)
+        );
 
-            // Save login information
-            localStorage.setItem(
-                "token",
-                response.data.token
-            );
+        localStorage.setItem(
+            "role",
+            user.role
+        );
 
-            localStorage.setItem(
-                "user",
-                JSON.stringify(user)
-            );
+        // Redirect according to the ACTUAL role
+        // received from backend
+        if (user.role === "admin") {
 
-            localStorage.setItem(
-                "role",
-                user.role
-            );
+            navigate("/dashboard");
 
-            // Redirect according to actual backend role
-            if (user.role === "admin") {
+        } else if (user.role === "student") {
 
-                navigate("/dashboard");
+            navigate("/profile");
 
-            } else if (user.role === "student") {
+        } else {
 
-                navigate("/profile");
-
-            }
-
-            toast.success(response.data.message);
-
-        } catch (error) {
-
-            toast.error(
-                error.response?.data?.message ||
-                "Login Failed"
-            );
+            toast.error("Invalid user role");
+            return;
 
         }
 
-    };
+        toast.success(response.data.message);
+
+    } catch (error) {
+
+        console.log("Login error:", error.response?.data);
+
+        toast.error(
+            error.response?.data?.message ||
+            "Login Failed"
+        );
+
+    }
+
+};
 
 
     return (
