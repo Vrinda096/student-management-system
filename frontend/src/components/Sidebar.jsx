@@ -1,69 +1,56 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import "../styles/Sidebar.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
 
-    const location = useLocation();
-    const navigate = useNavigate();
-
-    const logout = () => {
-
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        navigate("/login");
-
-    };
+    const role = localStorage.getItem("role");
 
     return (
 
-        <aside className="sidebar">
+        <div className="sidebar">
 
-            <div className="logo">
-
+            <h2>
                 🎓 SMS
+            </h2>
 
-            </div>
 
-            <nav>
+            {/* ================= ADMIN SIDEBAR ================= */}
 
-                <Link
-                    className={location.pathname==="/dashboard"?"active":""}
-                    to="/dashboard"
-                >
-                    🏠 Dashboard
-                </Link>
+            {role === "admin" && (
+                <>
+                    <Link to="/dashboard">
+                        🏠 Dashboard
+                    </Link>
 
-                <Link
-                    className={location.pathname==="/students"?"active":""}
-                    to="/students"
-                >
-                    👨‍🎓 Students
-                </Link>
+                    <Link to="/students">
+                        👨‍🎓 Students
+                    </Link>
 
-                <Link
-                    className={location.pathname==="/add-student"?"active":""}
-                    to="/add-student"
-                >
-                    ➕ Add Student
-                </Link>
+                    <Link to="/add-student">
+                        ➕ Add Student
+                    </Link>
 
-                <Link
-                    className={location.pathname==="/ai"?"active":""}
-                    to="/ai"
-                >
-                    🤖 AI Assistant
-                </Link>
+                    <Link to="/ai">
+                        🤖 AI Assistant
+                    </Link>
+                </>
+            )}
 
-            </nav>
 
-            <button
-                className="logout-btn"
-                onClick={logout}
-            >
-                Logout
-            </button>
+            {/* ================= STUDENT SIDEBAR ================= */}
 
-        </aside>
+            {role === "student" && (
+                <>
+                    <Link to="/profile">
+                        👤 My Profile
+                    </Link>
+
+                    <Link to="/ai">
+                        🤖 AI Assistant
+                    </Link>
+                </>
+            )}
+
+        </div>
 
     );
 

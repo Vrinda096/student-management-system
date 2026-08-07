@@ -1,80 +1,112 @@
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+
 import Dashboard from "./pages/Dashboard";
 import StudentList from "./pages/StudentList";
 import AddStudent from "./pages/AddStudent";
 import EditStudent from "./pages/EditStudent";
-import NotFound from "./pages/NotFound";
 import StudentProfile from "./pages/StudentProfile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import AIAssistant from "./pages/AIAssistant";
+import NotFound from "./pages/NotFound";
+
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
+import StudentRoute from "./components/StudentRoute";
+
 function App() {
-  return (
-    <Routes>
 
-      <Route path="/" element={<Login />} />
+    return (
 
-      <Route path="/login" element={<Login />} />
+        <Routes>
 
-      <Route path="/register" element={<Register />} />
-      
-<Route
-  path="/ai"
-  element={
-    <ProtectedRoute>
-      <AIAssistant />
-    </ProtectedRoute>
-  }
-/>
-  <Route
-  path="/dashboard"
-  element={
-    <ProtectedRoute>
-      <Dashboard />
-    </ProtectedRoute>
-  }
-/>
-      <Route path="/students" element={<StudentList />} />
+            {/* Public Routes */}
 
-      <Route path="*" element={<NotFound />} />
-    
-    
+            <Route
+                path="/login"
+                element={<Login />}
+            />
 
-<Route
-  path="/student/:id"
-  element={
-    <ProtectedRoute>
-      <StudentProfile />
-    </ProtectedRoute>
-  }
-/>
-
-<Route
-  path="/add-student"
-  element={
-    <ProtectedRoute>
-      <AddStudent />
-    </ProtectedRoute>
-  }
-/>
+            <Route
+                path="/register"
+                element={<Register />}
+            />
 
 
-<Route path="/student"
+            {/* ================= ADMIN ROUTES ================= */}
+
+            <Route
+                path="/dashboard"
+                element={
+                    <AdminRoute>
+                        <Dashboard />
+                    </AdminRoute>
+                }
+            />
+
+            <Route
+                path="/students"
+                element={
+                    <AdminRoute>
+                        <StudentList />
+                    </AdminRoute>
+                }
+            />
+
+            <Route
+                path="/add-student"
+                element={
+                    <AdminRoute>
+                        <AddStudent />
+                    </AdminRoute>
+                }
+            />
+
+            <Route
+                path="/edit/:id"
+                element={
+                    <AdminRoute>
+                        <EditStudent />
+                    </AdminRoute>
+                }
+            />
 
 
+            {/* ================= STUDENT ROUTES ================= */}
 
-/>
-<Route
-  path="/edit-student/:id"
-  element={
-    <ProtectedRoute>
-      <EditStudent />
-    </ProtectedRoute>
-  }
-/>
-    </Routes>
-  );
+            <Route
+                path="/profile"
+                element={
+                    <StudentRoute>
+                        <StudentProfile />
+                    </StudentRoute>
+                }
+            />
+
+
+            {/* ================= COMMON ROUTES ================= */}
+
+            <Route
+                path="/ai"
+                element={
+                    <ProtectedRoute>
+                        <AIAssistant />
+                    </ProtectedRoute>
+                }
+            />
+
+
+            {/* 404 */}
+
+            <Route
+                path="*"
+                element={<NotFound />}
+            />
+
+        </Routes>
+
+    );
+
 }
 
 export default App;

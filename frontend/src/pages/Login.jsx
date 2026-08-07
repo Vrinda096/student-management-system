@@ -14,42 +14,53 @@ function Login() {
 
     const handleSubmit = async (e) => {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        try {
-            console.log("API URL:", api.defaults.baseURL);
-            console.log("Login URL:", `${api.defaults.baseURL}/auth/login`);
+    try {
 
-            const response = await api.post("/auth/login", {
-                email,
-                password,
-            });
+        const response = await api.post("/auth/login", {
+            email,
+            password,
+        });
 
+        const user = response.data.user;
+        const token = response.data.token;
 
-            console.log("Response:", response.data);
-            console.log("Token:", response.data.token);
+        // Save authentication information
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("role", user.role);
 
-            localStorage.setItem("user", JSON.stringify(response.data.user));
+        toast.success(response.data.message || "Login Successful");
+
+        // Redirect according to role
+        if (user.role === "admin") {
 
             navigate("/dashboard");
-            localStorage.setItem("token", response.data.token);
 
-            console.log("After Saving:", localStorage.getItem("token"));
+        } else if (user.role === "student") {
 
-            toast.success(response.data.message);
+            navigate("/profile");
 
-        } catch (error) {
+        } else {
 
-            toast.error(
-                error.response?.data?.message || "Login Failed"
-            );
+            toast.error("Invalid user role");
+
+            localStorage.clear();
 
         }
 
-    };
+    } catch (error) {
 
+        console.log(error);
 
+        toast.error(
+            error.response?.data?.message || "Login Failed"
+        );
 
+    }
+
+};
 
     return (
 
