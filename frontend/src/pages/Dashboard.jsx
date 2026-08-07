@@ -177,6 +177,7 @@ function Dashboard() {
                 />
 
                 <CourseChart students={students}/> */}
+                </div>
 
         <div className="dashboard-bottom">
 
@@ -186,7 +187,6 @@ function Dashboard() {
 
         </div>
 
-            </div>
 
         </Layout>
 
