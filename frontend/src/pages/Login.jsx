@@ -50,6 +50,41 @@ function Login() {
 
         // Redirect according to the ACTUAL role
         // received from backend
+        // if (user.role === "admin") {
+
+        //     navigate("/dashboard");
+
+        // } else if (user.role === "student") {
+
+        //     navigate("/profile");
+
+        // } else {
+
+        //     toast.error("Invalid user role");
+        //     return;
+
+        // }
+
+        // Check whether selected login type matches
+// the actual account role
+
+        if (loginAs !== user.role) {
+
+            toast.error(
+                `This account is registered as ${user.role}, not ${loginAs}.`
+            );
+
+            // Remove incorrect login session
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            localStorage.removeItem("role");
+
+            return;
+        }
+
+
+        // Redirect according to role
+
         if (user.role === "admin") {
 
             navigate("/dashboard");
@@ -57,11 +92,6 @@ function Login() {
         } else if (user.role === "student") {
 
             navigate("/profile");
-
-        } else {
-
-            toast.error("Invalid user role");
-            return;
 
         }
 
