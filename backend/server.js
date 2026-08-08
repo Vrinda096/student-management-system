@@ -1,61 +1,208 @@
-const path = require("path");
+// const path = require("path");
+// const dotenv = require("dotenv");
+// const express = require("express");
+// const cors = require("cors");
+
+// const connectDB = require("./config/db");
+// const authRoutes = require("./routes/authRoutes");
+// const aiRoutes = require("./routes/aiRoutes");
+// const studentRoutes = require("./routes/studentRoutes");
+// const { authMiddleware } = require("./middleware/authMiddleware");
+// dotenv.config();
+// connectDB();
+
+// const app = express();
+// app.use(express.json());
+// // CORS Configuration
+
+
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://student-management-system-production-60ad.up.railway.app",
+//     ],
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   })
+// );
+// app.use("/api/students", authMiddleware, studentRoutes);
+
+
+// // ADD THIS HERE
+// app.get("/test-cors", (req, res) => {
+//   res.json({
+//     origin: req.headers.origin,
+//     message: "CORS test works",
+//   });
+// });
+
+
+// // Routes
+// app.use("/api/auth", authRoutes);
+// app.use("/api/ai", aiRoutes);
+
+// // Test route
+// app.get("/", (req, res) => {
+//   res.send("Student Management API is Running...");
+// });
+
+
+// app.get("/profile", authMiddleware, (req, res) => {
+//   res.json({
+//     message: "Welcome!",
+//     user: req.user,
+//   });
+// });
+
+// const PORT = process.env.PORT || 5000;
+
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+
+
 const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
 
 const connectDB = require("./config/db");
+
 const authRoutes = require("./routes/authRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const studentRoutes = require("./routes/studentRoutes");
+
 const { authMiddleware } = require("./middleware/authMiddleware");
+
 dotenv.config();
+
 connectDB();
 
 const app = express();
-app.use(express.json());
-// CORS Configuration
+
+
+// ===============================
+// CORS
+// ===============================
+
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://student-management-system-production-60ad.up.railway.app"
+];
+
 app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://student-management-system-production-60ad.up.railway.app",
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
+    cors({
+        origin: function (origin, callback) {
+
+            // Allow requests such as Postman/server requests
+            if (!origin) {
+                return callback(null, true);
+            }
+
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+
+            return callback(
+                new Error("Not allowed by CORS")
+            );
+
+        },
+
+        credentials: true,
+
+        methods: [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "OPTIONS"
+        ],
+
+        allowedHeaders: [
+            "Content-Type",
+            "Authorization"
+        ]
+    })
 );
-app.use("/api/students", authMiddleware, studentRoutes);
 
 
-// ADD THIS HERE
-app.get("/test-cors", (req, res) => {
-  res.json({
-    origin: req.headers.origin,
-    message: "CORS test works",
-  });
-});
+// ===============================
+// BODY PARSER
+// ===============================
+
+app.use(express.json());
 
 
-// Routes
+// ===============================
+// ROUTES
+// ===============================
+
 app.use("/api/auth", authRoutes);
+
+app.use("/api/students", studentRoutes);
+
 app.use("/api/ai", aiRoutes);
 
-// Test route
+
+// ===============================
+// TEST CORS
+// ===============================
+
+app.get("/test-cors", (req, res) => {
+
+    res.json({
+        success: true,
+        origin: req.headers.origin,
+        message: "CORS test works"
+    });
+
+});
+
+
+// ===============================
+// ROOT ROUTE
+// ===============================
+
 app.get("/", (req, res) => {
-  res.send("Student Management API is Running...");
+
+    res.send(
+        "Student Management API is Running..."
+    );
+
 });
 
 
-app.get("/profile", authMiddleware, (req, res) => {
-  res.json({
-    message: "Welcome!",
-    user: req.user,
-  });
-});
+// ===============================
+// PROFILE TEST
+// ===============================
+
+app.get(
+    "/profile",
+    authMiddleware,
+    (req, res) => {
+
+        res.json({
+            message: "Welcome!",
+            user: req.user
+        });
+
+    }
+);
+
+
+// ===============================
+// SERVER
+// ===============================
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+    console.log(
+        `Server running on port ${PORT}`
+    );
+
 });
