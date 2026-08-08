@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
 
@@ -54,7 +55,7 @@ function Sidebar() {
                     <Link to="/profile">
                         👤 My Profile
                     </Link>
-                                        
+
                 </>
             )}
 
