@@ -67,5 +67,13 @@
     cursor: pointer;
 
     font-size: 16px;
+    
+    font-weight:600;
 } 
+
+.logout-btn:hover{
+
+    background:#dc2626;
+
+}
  

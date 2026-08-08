@@ -54,10 +54,7 @@ function Sidebar() {
                     <Link to="/profile">
                         👤 My Profile
                     </Link>
-
-                    <Link to="/ai">
-                        🤖 AI Assistant
-                    </Link>
+                                        
                 </>
             )}
 

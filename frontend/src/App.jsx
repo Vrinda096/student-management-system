@@ -76,14 +76,14 @@ function App() {
                     </AdminRoute>
                 }
             /> */ }
-<Route
-    path="/edit-student/:id"
-    element={
-        <AdminRoute>
-            <EditStudent />
-        </AdminRoute>
-    }
-/>
+            <Route
+                path="/edit-student/:id"
+                element={
+                    <AdminRoute>
+                        <EditStudent />
+                    </AdminRoute>
+                }
+            />
 
             {/* ================= STUDENT ROUTES ================= */}
 
