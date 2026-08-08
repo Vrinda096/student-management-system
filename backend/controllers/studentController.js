@@ -529,56 +529,6 @@ const getMyStudent = async (req, res) => {
 
 };
 // Get logged-in student's own profile
-const getMyProfile = async (req, res) => {
-
-    try {
-
-        if (req.user.role !== "student") {
-
-            return res.status(403).json({
-                success: false,
-                message: "Access denied"
-            });
-
-        }
-
-        if (!req.user.student) {
-
-            return res.status(404).json({
-                success: false,
-                message: "Student profile not linked"
-            });
-
-        }
-
-        const student = await Student.findById(req.user.student);
-
-        if (!student) {
-
-            return res.status(404).json({
-                success: false,
-                message: "Student profile not found"
-            });
-
-        }
-
-        res.status(200).json({
-            success: true,
-            student
-        });
-
-    } catch (error) {
-
-        console.log(error);
-
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
-
-    }
-
-};
 
 
 module.exports = {
