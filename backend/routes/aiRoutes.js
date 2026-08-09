@@ -1,19 +1,9 @@
-const express=require("express");
+const express = require("express");
+const router = express.Router();
 
-const router=express.Router();
+const { generateAI } = require("../controllers/aiController");
+const { authMiddleware } = require("../middleware/authMiddleware");
 
+router.post("/ask", authMiddleware, generateAI);
 
-const {
-generateAI
-}=require("../controllers/aiController");
-
-
-
-router.post(
-"/ask",
-generateAI
-);
-
-
-
-module.exports=router;
+module.exports = router;
