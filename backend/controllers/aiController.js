@@ -9,6 +9,21 @@ exports.generateAI = async (req, res) => {
         const students = await Student.find();
         const question = prompt.toLowerCase();
 
+        // Count TOTAL students
+if (
+    question.includes("how many students") ||
+    question.includes("total students") ||
+    question.includes("number of students") ||
+    question === "how many students are there"
+) {
+    const count = await Student.countDocuments();
+
+    return res.json({
+        success: true,
+        answer: `${count}`
+    });
+}
+
         // Count B.Tech CSE students
 if (
     question.includes("how many") &&
