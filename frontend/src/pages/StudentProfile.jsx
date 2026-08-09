@@ -77,37 +77,61 @@ function StudentProfile() {
     //     }
 
     // };
-    const fetchStudent = async () => {
+//     const fetchStudent = async () => {
+
+//     try {
+
+//         let res;
+
+//         if (role === "student") {
+
+//             // Student can only see their own profile
+//             res = await api.get("/students/me");
+
+//         } else {
+
+//             // Admin views the selected student's profile
+//             const id = window.location.pathname.split("/").pop();
+
+//             res = await api.get(`/students/${id}`);
+
+//         }
+
+//         setStudent(res.data.student);
+
+//         // Only admin views should appear in
+//         // "Recently Viewed Students"
+//         if (role === "admin") {
+//             markAsRecentlyViewed(res.data.student);
+//         }
+
+//     } catch (error) {
+
+//         console.log(error);
+
+//     } finally {
+
+//         setLoading(false);
+
+//     }
+
+// };
+const fetchStudent = async () => {
 
     try {
 
-        let res;
+        const res = await api.get("/students/me");
 
-        if (role === "student") {
-
-            // Student can only see their own profile
-            res = await api.get("/students/me");
-
-        } else {
-
-            // Admin views the selected student's profile
-            const id = window.location.pathname.split("/").pop();
-
-            res = await api.get(`/students/${id}`);
-
-        }
+        console.log("My student profile:", res.data);
 
         setStudent(res.data.student);
 
-        // Only admin views should appear in
-        // "Recently Viewed Students"
-        if (role === "admin") {
-            markAsRecentlyViewed(res.data.student);
-        }
-
     } catch (error) {
 
-        console.log(error);
+        console.log(
+            "Profile error:",
+            error.response?.data || error
+        );
 
     } finally {
 
