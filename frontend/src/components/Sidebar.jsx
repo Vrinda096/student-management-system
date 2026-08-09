@@ -178,7 +178,7 @@ function Sidebar({ collapsed, setCollapsed }) {
                         </span>
                     </Link>
 
-                    <Link to="/add-profile" title="Complete Profile">
+                    {/* <Link to="/add-profile" title="Complete Profile">
                         <span className="sidebar-icon">📝</span>
                         <span className="sidebar-text">
                             Complete Profile
@@ -190,7 +190,7 @@ function Sidebar({ collapsed, setCollapsed }) {
                         <span className="sidebar-text">
                             AI Assistant
                         </span>
-                    </Link>
+                    </Link> */}
 
                 </nav>
 
