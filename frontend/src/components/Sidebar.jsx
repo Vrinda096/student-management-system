@@ -56,19 +56,25 @@ function Sidebar() {
                         👤 My Profile
                     </Link>
 
+                    <Link to="/add-profile">
+                        ➕ Add Profile
+                    </Link>
+
+
                 </>
             )}
 
-            {/* ================= LOGOUT ================= */}
 
-            <button
-                className="logout-btn"
-                onClick={handleLogout}
-            >
-                🚪 Logout
-            </button>
+{/* ================= LOGOUT ================= */ }
 
-        </div>
+<button
+    className="logout-btn"
+    onClick={handleLogout}
+>
+    🚪 Logout
+</button>
+
+        </div >
 
     );
 }

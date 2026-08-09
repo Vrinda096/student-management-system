@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 import StudentRoute from "./components/StudentRoute";
-
+import AddProfile from "./pages/AddProfile";
 function App() {
 
     return (
@@ -102,6 +102,14 @@ function App() {
                 element={
                     <StudentRoute>
                         <StudentProfile />
+                    </StudentRoute>
+                }
+            />
+            <Route
+                path="/add-profile"
+                element={
+                    <StudentRoute>
+                        <AddProfile />
                     </StudentRoute>
                 }
             />
