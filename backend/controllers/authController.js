@@ -8,6 +8,96 @@ const bcrypt = require("bcryptjs");
 // REGISTER USER
 // ==========================================
 
+// const registerUser = async (req, res) => {
+
+//     try {
+
+//         const {
+//             name,
+//             email,
+//             password
+//         } = req.body;
+
+
+//         if (!name || !email || !password) {
+
+//             return res.status(400).json({
+//                 success: false,
+//                 message: "Please fill all fields"
+//             });
+
+//         }
+
+
+//         const existingUser = await User.findOne({
+//             email
+//         });
+
+
+//         if (existingUser) {
+
+//             return res.status(400).json({
+//                 success: false,
+//                 message: "Email already registered"
+//             });
+
+//         }
+
+
+//         const hashedPassword = await bcrypt.hash(
+//             password,
+//             10
+//         );
+
+
+//         /*
+//          * New registered users are students by default.
+//          *
+//          * The Student document will be linked later
+//          * using the student's email.
+//          */
+
+//         const user = new User({
+
+//             name,
+
+//             email,
+
+//             password: hashedPassword,
+
+//             role: "student"
+
+//         });
+
+
+//         await user.save();
+
+
+//         res.status(201).json({
+
+//             success: true,
+
+//             message: "User Registered Successfully"
+
+//         });
+
+
+//     } catch (error) {
+
+//         console.log(error);
+
+//         res.status(500).json({
+
+//             success: false,
+
+//             message: error.message
+
+//         });
+
+//     }
+
+// };
+
 const registerUser = async (req, res) => {
 
     try {
@@ -15,19 +105,50 @@ const registerUser = async (req, res) => {
         const {
             name,
             email,
-            password
+            password,
+            rollNo,
+            course,
+            semester,
+            phone,
+            cgpa,
+            result,
+            gender,
+            address
         } = req.body;
 
 
-        if (!name || !email || !password) {
+        // ==============================
+        // CHECK REQUIRED FIELDS
+        // ==============================
+
+        if (
+            !name ||
+            !email ||
+            !password ||
+            !rollNo ||
+            !course ||
+            !semester ||
+            !phone ||
+            cgpa === undefined ||
+            !result ||
+            !gender ||
+            !address
+        ) {
 
             return res.status(400).json({
+
                 success: false,
+
                 message: "Please fill all fields"
+
             });
 
         }
 
+
+        // ==============================
+        // CHECK EXISTING USER
+        // ==============================
 
         const existingUser = await User.findOne({
             email
@@ -37,12 +158,65 @@ const registerUser = async (req, res) => {
         if (existingUser) {
 
             return res.status(400).json({
+
                 success: false,
+
                 message: "Email already registered"
+
             });
 
         }
 
+
+        // ==============================
+        // CHECK EXISTING STUDENT
+        // ==============================
+
+        const existingStudent = await Student.findOne({
+            $or: [
+                { email },
+                { rollNo }
+            ]
+        });
+
+
+        if (existingStudent) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message:
+                    "Student with this email or roll number already exists"
+
+            });
+
+        }
+
+
+        // ==============================
+        // CREATE STUDENT PROFILE
+        // ==============================
+
+        const student = await Student.create({
+
+            name,
+            rollNo,
+            course,
+            semester,
+            email,
+            phone,
+            cgpa,
+            result,
+            gender,
+            address
+
+        });
+
+
+        // ==============================
+        // HASH PASSWORD
+        // ==============================
 
         const hashedPassword = await bcrypt.hash(
             password,
@@ -50,14 +224,11 @@ const registerUser = async (req, res) => {
         );
 
 
-        /*
-         * New registered users are students by default.
-         *
-         * The Student document will be linked later
-         * using the student's email.
-         */
+        // ==============================
+        // CREATE USER ACCOUNT
+        // ==============================
 
-        const user = new User({
+        const user = await User.create({
 
             name,
 
@@ -65,19 +236,37 @@ const registerUser = async (req, res) => {
 
             password: hashedPassword,
 
-            role: "student"
+            role: "student",
+
+            student: student._id
 
         });
 
 
-        await user.save();
-
+        // ==============================
+        // SUCCESS
+        // ==============================
 
         res.status(201).json({
 
             success: true,
 
-            message: "User Registered Successfully"
+            message:
+                "Student registered successfully",
+
+            user: {
+
+                id: user._id,
+
+                name: user.name,
+
+                email: user.email,
+
+                role: user.role,
+
+                student: user.student
+
+            }
 
         });
 
@@ -97,7 +286,6 @@ const registerUser = async (req, res) => {
     }
 
 };
-
 
 // ==========================================
 // LOGIN USER
