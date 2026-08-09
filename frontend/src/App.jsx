@@ -22,9 +22,9 @@ function App() {
         <Routes>
 
             <Route
-            path="/"
-            element={<Navigate to="/login" replace />}
-        />
+                path="/"
+                element={<Navigate to="/login" replace />}
+            />
 
             {/* Public Routes */}
 
@@ -87,15 +87,24 @@ function App() {
 
             {/* ================= STUDENT ROUTES ================= */}
 
-            <Route
+            {/* <Route
                 path="/student/:id"
                 element={
                     <StudentRoute>
                         <StudentProfile />
                     </StudentRoute>
                 }
-            />
+            /> */}
+            {/* ================= STUDENT ROUTES ================= */}
 
+            <Route
+                path="/profile"
+                element={
+                    <StudentRoute>
+                        <StudentProfile />
+                    </StudentRoute>
+                }
+            />
 
             {/* ================= COMMON ROUTES ================= */}
 
