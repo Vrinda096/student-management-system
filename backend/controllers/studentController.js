@@ -485,6 +485,158 @@ const getMyStudentProfile = async (req, res) => {
 
 };
 
+// =====================================================
+// STUDENT: CREATE OWN PROFILE
+// =====================================================
+
+const createMyProfile = async (req, res) => {
+
+    try {
+
+        // Only students can create their own profile
+        if (req.user.role !== "student") {
+
+            return res.status(403).json({
+
+                success: false,
+
+                message: "Only students can create a profile"
+
+            });
+
+        }
+
+
+        // Prevent creating a second profile
+        if (req.user.student) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message: "Student profile already exists"
+
+            });
+
+        }
+
+
+        const {
+
+            rollNo,
+            course,
+            semester,
+            phone,
+            cgpa,
+            result,
+            gender,
+            address
+
+        } = req.body;
+
+
+        // Required fields
+        if (
+            !rollNo ||
+            !course ||
+            !semester ||
+            !phone ||
+            cgpa === undefined ||
+            !result ||
+            !gender ||
+            !address
+        ) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message: "All profile fields are required"
+
+            });
+
+        }
+
+
+        // Check duplicate roll number
+        const rollExists = await Student.findOne({
+            rollNo
+        });
+
+
+        if (rollExists) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message: "Roll Number already exists"
+
+            });
+
+        }
+
+
+        // Create Student document
+        const student = await Student.create({
+
+            name: req.user.name,
+
+            email: req.user.email,
+
+            rollNo,
+
+            course,
+
+            semester,
+
+            phone,
+
+            cgpa,
+
+            result,
+
+            gender,
+
+            address
+
+        });
+
+
+        // IMPORTANT:
+        // Link the Student document to the User account
+        req.user.student = student._id;
+
+        await req.user.save();
+
+
+        res.status(201).json({
+
+            success: true,
+
+            message: "Profile created successfully",
+
+            student
+
+        });
+
+
+    } catch (error) {
+
+        console.log("CREATE PROFILE ERROR:", error);
+
+
+        res.status(500).json({
+
+            success: false,
+
+            message: error.message
+
+        });
+
+    }
+
+};
 // Get Logged-in Student Profile
 const getMyStudent = async (req, res) => {
 
@@ -537,6 +689,7 @@ module.exports = {
     getStudents,
     getStudentById,
     getMyStudent,
+    createMyProfile,
     updateStudent,
     deleteStudent,
     getMyProfile

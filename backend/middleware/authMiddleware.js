@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
-const authMiddleware = (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
 
     const authHeader = req.headers.authorization;
 
@@ -8,7 +9,7 @@ const authMiddleware = (req, res, next) => {
 
         return res.status(401).json({
             success: false,
-            message: "Access Denied. No Token Provided."
+            message: "No token provided"
         });
 
     }
@@ -22,15 +23,30 @@ const authMiddleware = (req, res, next) => {
             process.env.JWT_SECRET
         );
 
-        req.user = decoded;
+        // Get the actual User document from MongoDB
+        const user = await User.findById(decoded.id);
+
+        if (!user) {
+
+            return res.status(401).json({
+                success: false,
+                message: "User not found"
+            });
+
+        }
+
+        // Store actual User document
+        req.user = user;
 
         next();
 
     } catch (error) {
 
-        return res.status(401).json({
+        console.log("AUTH ERROR:", error);
+
+        return res.status(403).json({
             success: false,
-            message: "Invalid or Expired Token"
+            message: "Invalid or expired token"
         });
 
     }

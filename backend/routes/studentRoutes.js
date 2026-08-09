@@ -103,6 +103,8 @@ router.get("/", authMiddleware, getStudents);
 
 router.get("/me", authMiddleware, getMyProfile);
 
+router.post("/me", authMiddleware, createMyProfile);
+
 router.get("/:id", authMiddleware, getStudentById);
 
 router.put("/:id", authMiddleware, updateStudent);
