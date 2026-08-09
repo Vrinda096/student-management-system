@@ -56,9 +56,9 @@ function Sidebar() {
                         👤 My Profile
                     </Link>
 
-                    <Link to="/add-profile">
+                    {/* <Link to="/add-profile">
                         ➕ Add Profile
-                    </Link>
+                    </Link> */}
 
 
                 </>
