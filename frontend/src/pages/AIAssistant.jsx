@@ -151,11 +151,18 @@ function AIAssistant() {
             </button>
 
             {answer && (
-                <div className="ai-answer">
-                    <h2>Answer</h2>
-                    <p>{answer}</p>
+    <div className="ai-answer">
+        <h2>Answer</h2>
+
+        <div className="answer-text">
+            {answer.split("\n").map((line, index) => (
+                <div key={index}>
+                    {line}
                 </div>
-            )}
+            ))}
+        </div>
+    </div>
+)}
 
         </div>
     );
