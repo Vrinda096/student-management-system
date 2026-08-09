@@ -470,36 +470,7 @@ const createMyProfile = async (req, res) => {
 
     try {
 
-        // Only students can create their own profile
-        if (req.user.role !== "student") {
-
-            return res.status(403).json({
-
-                success: false,
-
-                message: "Only students can create a profile"
-
-            });
-
-        }
-
-
-        // Prevent creating a second profile
-        if (req.user.student) {
-
-            return res.status(400).json({
-
-                success: false,
-
-                message: "Student profile already exists"
-
-            });
-
-        }
-
-
         const {
-
             rollNo,
             course,
             semester,
@@ -508,107 +479,65 @@ const createMyProfile = async (req, res) => {
             result,
             gender,
             address
-
         } = req.body;
 
+        const updateData = {};
 
-        // Required fields
-        if (
-            !rollNo ||
-            !course ||
-            !semester ||
-            !phone ||
-            cgpa === undefined ||
-            !result ||
-            !gender ||
-            !address
-        ) {
+        if (rollNo !== undefined && rollNo !== "")
+            updateData.rollNo = rollNo;
 
-            return res.status(400).json({
+        if (course !== undefined && course !== "")
+            updateData.course = course;
 
+        if (semester !== undefined && semester !== "")
+            updateData.semester = semester;
+
+        if (phone !== undefined && phone !== "")
+            updateData.phone = phone;
+
+        if (cgpa !== undefined && cgpa !== "")
+            updateData.cgpa = cgpa;
+
+        if (result !== undefined && result !== "")
+            updateData.result = result;
+
+        if (gender !== undefined && gender !== "")
+            updateData.gender = gender;
+
+        if (address !== undefined && address !== "")
+            updateData.address = address;
+
+
+        const student = await Student.findOneAndUpdate(
+            { email: req.user.email },
+            { $set: updateData },
+            {
+                returnDocument: "after"
+            }
+        );
+
+        if (!student) {
+
+            return res.status(404).json({
                 success: false,
-
-                message: "All profile fields are required"
-
+                message: "Student profile not found"
             });
 
         }
 
-
-        // Check duplicate roll number
-        const rollExists = await Student.findOne({
-            rollNo
-        });
-
-
-        if (rollExists) {
-
-            return res.status(400).json({
-
-                success: false,
-
-                message: "Roll Number already exists"
-
-            });
-
-        }
-
-
-        // Create Student document
-        const student = await Student.create({
-
-            name: req.user.name,
-
-            email: req.user.email,
-
-            rollNo,
-
-            course,
-
-            semester,
-
-            phone,
-
-            cgpa,
-
-            result,
-
-            gender,
-
-            address
-
-        });
-
-
-        // IMPORTANT:
-        // Link the Student document to the User account
-        req.user.student = student._id;
-
-        await req.user.save();
-
-
-        res.status(201).json({
-
+        res.status(200).json({
             success: true,
-
-            message: "Profile created successfully",
-
+            message: "Profile details saved successfully",
             student
-
         });
-
 
     } catch (error) {
 
-        console.log("CREATE PROFILE ERROR:", error);
-
+        console.log("PROFILE UPDATE ERROR:", error);
 
         res.status(500).json({
-
             success: false,
-
             message: error.message
-
         });
 
     }
