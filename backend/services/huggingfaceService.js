@@ -26,12 +26,15 @@ async function askAI(prompt) {
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error("========== HUGGING FACE ERROR ==========");
+        console.error("Status:", error.response?.status);
+        console.error("Response:", error.response?.data);
+        console.error("Message:", error.message);
 
-        if (error.response) {
-            console.log(error.response.data);
-        } else {
-            console.log(error.message);
-        }
+        // if (error.response) {
+        //     console.log(error.response.data);
+        // } else {
+        //     console.log(error.message);
+        // }
 
         throw new Error("Failed to generate AI response");
     }
