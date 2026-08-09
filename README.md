@@ -82,10 +82,8 @@ The AI assistant can be used to:
 - GitHub
 
 ---
-
 ## 🏗️ Project Architecture
 
-```text
 Student Management System
 │
 ├── frontend
@@ -139,6 +137,8 @@ Student Management System
 │   └── package.json
 │
 └── README.md
+
+---
 
 ## 📸 Screenshots
 
