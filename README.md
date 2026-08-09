@@ -139,3 +139,8 @@ Student Management System
 │   └── package.json
 │
 └── README.md
+
+## 📸 Screenshots
+
+### 🔐 Login Page
+<img width="954" height="490" alt="image" src="https://github.com/user-attachments/assets/87b4daed-dfc1-49d7-a348-a6959e318704" />
