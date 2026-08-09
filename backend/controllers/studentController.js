@@ -199,59 +199,36 @@ const getMyProfile = async (req, res) => {
 
     try {
 
-        if (!req.user.student) {
-
-            return res.status(404).json({
-
-                success: false,
-
-                message: "No student profile linked to this account"
-
-            });
-
-        }
-
-
-        const student = await Student.findById(
-            req.user.student
-        );
-
+        const student = await Student.findOne({
+            email: req.user.email
+        });
 
         if (!student) {
 
             return res.status(404).json({
-
                 success: false,
-
                 message: "Student profile not found"
-
             });
 
         }
 
-
         res.status(200).json({
-
             success: true,
-
             student
-
         });
 
     } catch (error) {
 
+        console.log("Get Profile Error:", error);
+
         res.status(500).json({
-
             success: false,
-
             message: error.message
-
         });
 
     }
 
 };
-
 
 // =====================================================
 // ADMIN: UPDATE ANY STUDENT
@@ -689,10 +666,10 @@ module.exports = {
     getStudents,
     getStudentById,
     getMyStudent,
-    createMyProfile,
     updateStudent,
     deleteStudent,
-    getMyProfile
+    getMyProfile,
+    createMyProfile
     // getMyStudentProfile,
     // updateMyProfile
 };
