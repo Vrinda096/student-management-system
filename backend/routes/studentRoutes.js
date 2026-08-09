@@ -92,7 +92,8 @@ const {
     getStudentById,
     updateStudent,
     deleteStudent,
-    getMyProfile
+    getMyProfile,
+    createMyProfile
 } = require("../controllers/studentController");
 
 const { authMiddleware } = require("../middleware/authMiddleware");
